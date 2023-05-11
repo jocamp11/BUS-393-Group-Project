@@ -1,6 +1,8 @@
 -- Drop Tables
 
 -- Testing
+
+-- in github
 DROP TABLE customer;
 DROP TABLE preferences;
 
