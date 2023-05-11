@@ -26,7 +26,7 @@ CREATE TABLE preferences (
     make VARCHAR2(20) NOT NULL,
     model VARCHAR2(20) NOT NULL,
     max_price NUMBER(12) NOT NULL,
-    start_date DATE DEFAULT SYSDATE NOT NULL,
+    start_date DATE NOT NULL,
     end_date DATE NOT NULL,
     FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
     CONSTRAINT preferences_end_date CHECK (end_date > start_date)
@@ -63,3 +63,12 @@ INSERT INTO customer (first_name, last_name, street, city, state, zip, phone, em
 VALUES ('Amy', 'Chen', '555 Hill Blvd', 'Fresno', 'CA', '93721', '555-9999', 'amy.chen@example.com');
 
 -- Insert Preferences Data
+
+-- Ian Thomas with 3 preferences
+-- CHECK/CHANGE CustomerIDs
+
+INSERT INTO preferences (customer_id, make, model, max_price, start_date, end_date)
+VALUES (1, 'Porsche', '911', 70000, SYSDATE, SYSDATE + 365); 
+INSERT INTO preferences (customer_id, make, model, max_price, start_date, end_date)
+VALUES (1, 'Tesla', 'Model S', 90000, SYSDATE, SYSDATE + 365);\
+INSERT INTO preferences (customer_id, make, model, max_price, start_date, end_date)
