@@ -16,3 +16,6 @@ CREATE TABLE employees (
 );
 
 -- Insert Employee Data
+
+INSERT INTO employees (first_name, last_name, address, city, state, zip, phone, email, title, commission_pct)
+VALUES ()
