@@ -1,5 +1,6 @@
 -- Drop Tables
 
+-- Testing
 DROP TABLE customer;
 DROP TABLE preferences;
 
