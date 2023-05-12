@@ -1,7 +1,8 @@
 -- Drop Tables
 -- in github
-DROP TABLE customer;
+
 DROP TABLE preferences;
+DROP TABLE customer;
 
 --  1 Creating Tables
  
