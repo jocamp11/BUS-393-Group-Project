@@ -65,3 +65,5 @@ INSERT INTO customer (first_name, last_name, street, city, state, zip, phone, em
 VALUES ('Amy', 'Chen', '555 Hill Blvd', 'Fresno', 'CA', '93721', '555-9999', 'amy.chen@example.com');
 
 -- Insert Preferences Data
+
+-- Test
