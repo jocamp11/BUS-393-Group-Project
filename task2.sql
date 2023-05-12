@@ -37,20 +37,20 @@ VALUES (1004, 'Adam', 'Packer', '2102 Vicente Dr', 'San Luis Obispo', 93401, '80
 INSERT INTO employees (employee_id, first_name, last_name, address, city, zip, phone, hire_date, email, title, commission_pct)
 VALUES (1005, 'Larry', 'Jones', '1778 Huasana Dr', 'San Luis Obispo', 93401, '805-403-9091', '1/1/2018' ,'larryj@gmail.com','Sales Person', 0.24)
 
-INSERT INTO employees (employee_id, first_name, last_name, address, city, zip, phone, hire_date, email, title, commission_pct)
-VALUES (1006, 'Steve', 'Euro', '1966 Lima Dr', 'San Luis Obispo', 93401, '805-324-5043', '3/4/2019' ,'stevee@gmail.com','Cashier', Null)
+INSERT INTO employees (employee_id, first_name, last_name, address, city, zip, phone, hire_date, email, title, commission_pct, manager_id)
+VALUES (1006, 'Steve', 'Euro', '1966 Lima Dr', 'San Luis Obispo', 93401, '805-324-5043', '3/4/2019' ,'stevee@gmail.com','Cashier', Null, 1002)
 
-INSERT INTO employees (employee_id, first_name, last_name, address, city, zip, phone, hire_date, email, title, commission_pct)
-VALUES (1007, 'Alice', 'Credit', '1765 Pinecove Dr', 'San Luis Obispo', 93401, '805-301-9213', '3/10/2019' ,'alicec@gmail.com','Bookkeeper', Null)
+INSERT INTO employees (employee_id, first_name, last_name, address, city, zip, phone, hire_date, email, title, commission_pct, manager_id)
+VALUES (1007, 'Alice', 'Credit', '1765 Pinecove Dr', 'San Luis Obispo', 93401, '805-301-9213', '3/10/2019' ,'alicec@gmail.com','Bookkeeper', Null, 1001)
 
-INSERT INTO employees (employee_id, first_name, last_name, address, city, zip, phone, hire_date, email, title, commission_pct)
-VALUES (1008, 'Alan', 'Wrench', '1150 Seaward St', 'San Luis Obispo', 93401, '805-124-6721', '6/6/2019' ,'alanw@gmail.com','Service Worker', Null) 
+INSERT INTO employees (employee_id, first_name, last_name, address, city, zip, phone, hire_date, email, title, commission_pct, manager_id)
+VALUES (1008, 'Alan', 'Wrench', '1150 Seaward St', 'San Luis Obispo', 93401, '805-124-6721', '6/6/2019' ,'alanw@gmail.com','Service Worker', Null, 1002) 
 
-INSERT INTO employees (employee_id,first_name, last_name, address, city, zip, phone, hire_date, email, title, commission_pct)
-VALUES (1009, 'Woody', 'Apple', '1524 Balboa St', 'San Luis Obispo', 93401, '805-221-7214', '8/10/2019' ,'woodya@gmail.com','Service Worker', Null)
+INSERT INTO employees (employee_id,first_name, last_name, address, city, zip, phone, hire_date, email, title, commission_pct, manager_id)
+VALUES (1009, 'Woody', 'Apple', '1524 Balboa St', 'San Luis Obispo', 93401, '805-221-7214', '8/10/2019' ,'woodya@gmail.com','Service Worker', Null, 1002)
 
-INSERT INTO employees (employee_id,first_name, last_name, address, city, zip, phone, hire_date, email, title, commission_pct)
-VALUES (1010, 'Sherry', 'Sophomore', '93 Mustang Ln', 'San Luis Obispo', 93401, '415-714-2098', '1/14/2023' ,'sherrys@gmail.com','Intern', Null)
+INSERT INTO employees (employee_id,first_name, last_name, address, city, zip, phone, hire_date, email, title, commission_pct, manager_id)
+VALUES (1010, 'Sherry', 'Sophomore', '93 Mustang Ln', 'San Luis Obispo', 93401, '415-714-2098', '1/14/2023' ,'sherrys@gmail.com','Intern', Null, 1009)
 
 -- #4 Create View Data
 
