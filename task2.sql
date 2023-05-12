@@ -19,23 +19,23 @@ CREATE TABLE employee (
 
 -- Insert Employee Data
 
-INSERT INTO employees (employee_id,first_name, last_name, address, city, zip, phone, hire_date, email, title, commission_pct)
-VALUES (1000, 'Larry', 'Margaria', '475 Sage St', 'San Luis Obispo', 93401, '805-423-6782', '9/1/2001' ,'larrym@gmail.com','Owner/Manager', Null)
+INSERT INTO employees (employee_id,first_name, last_name, address, city, zip, phone, hire_date, email, title, commission_pct, manager_id)
+VALUES (1000, 'Larry', 'Margaria', '475 Sage St', 'San Luis Obispo', 93401, '805-423-6782', '9/1/2001' ,'larrym@gmail.com','Owner/Manager', Null, Null)
 
-INSERT INTO employees (employee_id, first_name, last_name, address, city, zip, phone, hire_date, email, title, commission_pct)
-VALUES (1001, 'Jim', 'Kaney', '512 Lawrence Dr', 'San Luis Obispo', 93401, '805-521-8432','10/30/2002','jimk@gmail.com','Accounting Manager', Null)
+INSERT INTO employees (employee_id, first_name, last_name, address, city, zip, phone, hire_date, email, title, commission_pct, manager_id)
+VALUES (1001, 'Jim', 'Kaney', '512 Lawrence Dr', 'San Luis Obispo', 93401, '805-521-8432','10/30/2002','jimk@gmail.com','Accounting Manager', Null, 1000)
 
-INSERT INTO employees (employee_id, first_name, last_name, address, city, zip, phone, email, hire_date, title, commission_pct)
-VALUES (1002, 'Norm', 'Allen', '1713 Singletree Ct', 'San Luis Obispo', 93401, '805-555-4892','11/3/2002','norma@gmail.com','Service Manager', Null)
+INSERT INTO employees (employee_id, first_name, last_name, address, city, zip, phone, email, hire_date, title, commission_pct, manager_id)
+VALUES (1002, 'Norm', 'Allen', '1713 Singletree Ct', 'San Luis Obispo', 93401, '805-555-4892','11/3/2002','norma@gmail.com','Service Manager', Null, 1000)
 
-INSERT INTO employees (employee_id, first_name, last_name, address, city, zip, phone, hire_date, email, title, commission_pct)
-VALUES (1003, 'Mary', 'Long', '33 Marsh St', 'San Luis Obispo', 93401, '805-843-9023', '11/5/2007' ,'maryl@gmail.com','Sales Manager', 0.25)
+INSERT INTO employees (employee_id, first_name, last_name, address, city, zip, phone, hire_date, email, title, commission_pct, manager_id)
+VALUES (1003, 'Mary', 'Long', '33 Marsh St', 'San Luis Obispo', 93401, '805-843-9023', '11/5/2007' ,'maryl@gmail.com','Sales Manager', 0.25, 1000)
 
-INSERT INTO employees (employee_id, first_name, last_name, address, city, zip, phone, hire_date, email, title, commission_pct)
-VALUES (1004, 'Adam', 'Packer', '2102 Vicente Dr', 'San Luis Obispo', 93401, '805-902-6232', '10/21/2017' ,'adamp@gmail.com','Sales Person', 0.22)
+INSERT INTO employees (employee_id, first_name, last_name, address, city, zip, phone, hire_date, email, title, commission_pct, manager_id)
+VALUES (1004, 'Adam', 'Packer', '2102 Vicente Dr', 'San Luis Obispo', 93401, '805-902-6232', '10/21/2017' ,'adamp@gmail.com','Sales Person', 0.22, 1003)
 
-INSERT INTO employees (employee_id, first_name, last_name, address, city, zip, phone, hire_date, email, title, commission_pct)
-VALUES (1005, 'Larry', 'Jones', '1778 Huasana Dr', 'San Luis Obispo', 93401, '805-403-9091', '1/1/2018' ,'larryj@gmail.com','Sales Person', 0.24)
+INSERT INTO employees (employee_id, first_name, last_name, address, city, zip, phone, hire_date, email, title, commission_pct, manager_id)
+VALUES (1005, 'Larry', 'Jones', '1778 Huasana Dr', 'San Luis Obispo', 93401, '805-403-9091', '1/1/2018' ,'larryj@gmail.com','Sales Person', 0.24, 1003)
 
 INSERT INTO employees (employee_id, first_name, last_name, address, city, zip, phone, hire_date, email, title, commission_pct, manager_id)
 VALUES (1006, 'Steve', 'Euro', '1966 Lima Dr', 'San Luis Obispo', 93401, '805-324-5043', '3/4/2019' ,'stevee@gmail.com','Cashier', Null, 1002)
