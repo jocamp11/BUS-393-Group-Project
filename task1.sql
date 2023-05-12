@@ -95,11 +95,11 @@ FROM customer;
 CREATE OR REPLACE VIEW PreferenceList
 AS SELECT c.first_name AS "First Name", c.last_name AS "Last Name", p.make AS "Make", p.model AS "Model", p.max_price "Max Price", p.start_date "Start Date", p.end_date AS "End Date"
 FROM customer c JOIN preferences p
-ON (c.customer_id = p.customer_id)
+ON (c.customer_id = p.customer_id);
 
 -- VIEW Creation for query C
 CREATE OR REPLACE VIEW PreferenceListAll
 AS SELECT c.first_name AS "First Name", c.last_name AS "Last Name", phone, NVL(p.make, 'No Preference') AS "Make", p.model AS "Model", p.max_price "Max Price", p.start_date "Start Date", p.end_date AS "End Date"
 FROM customer c LEFT JOIN preferences p
-ON (c.customer_id = p.customer_id)
+ON (c.customer_id = p.customer_id);
 
