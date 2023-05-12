@@ -63,10 +63,8 @@ FROM employee
 ORDER BY last_name;
 
 CREATE OR REPLACE VIEW EmployeeReportingList
-AS SELECT CONCAT(m.first_name, ' ', m.last_name) AS "Manager Title",
-       CONCAT(r.first_name, ' ', r.last_name) AS "Reportee Title"
+AS SELECT m.first_name || ' ' || m.last_name AS "Manager Title",
+       r.first_name || ' ' || r.last_name AS "Reportee Title"
 FROM employee m
-JOIN employee r ON m.employee_id = r.manager_id
+INNER JOIN employee r ON m.employee_id = r.manager_id
 ORDER BY m.last_name;
-
-
