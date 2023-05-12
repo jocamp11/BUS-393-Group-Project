@@ -1,6 +1,6 @@
 --Drop Table
 
-DROP TABLE employee CASCADE CONSTRAINTS PURGE
+DROP TABLE employee
 
 -- Create Employee Table
 
