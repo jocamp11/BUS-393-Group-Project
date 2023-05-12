@@ -1,6 +1,6 @@
 -- Create Employee Table
 
-CREATE TABLE employees (
+CREATE TABLE employee (
     employee_id NUMBER(4) PRIMARY KEY,
     first_name VARCHAR2(20) NOT NULL,
     last_name VARCHAR2(20) NOT NULL,
@@ -12,7 +12,9 @@ CREATE TABLE employees (
     email VARCHAR2(50) NOT NULL UNIQUE,
     hire_date DATE DEFAULT SYSDATE NOT NULL,
     title VARCHAR2(20) NOT NULL,
-    commission_pct NUMBER(2,2) CHECK(commission_pct BETWEEN 0.20 AND 0.30)
+    commission_pct NUMBER(2,2) CHECK(commission_pct BETWEEN 0.20 AND 0.30),
+    manager_id NUMBER(4) NULL,
+    FOREIGN KEY (manager_id) REFERENCES employee(employee_id)
 );
 
 -- Insert Employee Data
