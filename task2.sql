@@ -64,9 +64,9 @@ ORDER BY last_name;
 
 CREATE OR REPLACE VIEW EmployeeReportingList
 AS SELECT m.first_name || ' ' || m.last_name AS "Manager",
-    m.title AS "Title",
+    m.title AS "Manager Title",
     r.first_name || ' ' || r.last_name AS "Reportee",
-    r.title AS "Title"
+    r.title AS "Reportee Title"
 FROM employee m
 INNER JOIN employee r ON m.employee_id = r.manager_id
 ORDER BY m.last_name;
