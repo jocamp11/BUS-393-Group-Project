@@ -42,11 +42,11 @@ CREATE TABLE preferences (
 
 -- Inserts with DEFAULT clause
 INSERT INTO customer (first_name, last_name, street, city, zip, phone, email) 
+VALUES ('Ian', 'Thomas', '268 Tunnel Ave', 'Los Angeles', '90004', '213.815.4351', 'ian.thomas@gmail.com');
+INSERT INTO customer (first_name, last_name, street, city, zip, phone, email) 
 VALUES ('John', 'Smith', '1000 Los Valley Road', 'San Luis Obispo', '93408', '805.123.1234', 'jsmith@hotmail.com');
 INSERT INTO customer (first_name, last_name, street, city, zip, phone, email)
 VALUES ('Mary', 'Jones', '12 Peach Street', 'San Luis Obispo', '93401', '800.333.4444', 'mjones@hotmail.com');
-INSERT INTO customer (first_name, last_name, street, city, zip, phone, email) 
-VALUES ('Ian', 'Thomas', '268 Tunnel Ave', 'Los Angeles', '90004', '213.815.4351', 'ian.thomas@gmail.com');
 INSERT INTO customer (first_name, last_name, street, city, zip, phone, email) 
 VALUES ('Hank', 'Franklin', '321 Pine St', 'San Diego', '92101', '555-3456', 'alice.smith@example.com');
 INSERT INTO customer (first_name, last_name, street, city, zip, phone, email) 
@@ -71,4 +71,7 @@ VALUES ('Amy', 'Chen', '555 Hill Blvd', 'Fresno', 'CA', '93721', '555-9999', 'am
 INSERT INTO preferences (customer_id, make, model, max_price, start_date, end_date)
 VALUES (1, 'Porsche', '911', 70000, SYSDATE, (SYSDATE + 365)) -- Ian Thomas
 INSERT INTO preferences (customer_id, make, model, max_price, start_date, end_date)
-VALUES (1, '')
+VALUES (1, 'Mazda', 'Miata', 29000, SYSDATE, (SYSDATE + 365)) -- Ian Thomas
+INSERT INTO preferences (customer_id, make, model, max_price, start_date, end_date)
+VALUES (1, 'Land Rover', 'Custom', 38000, SYSDATE, (SYSDATE + 365)) -- Ian Thomas
+
