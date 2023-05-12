@@ -1,3 +1,4 @@
+-- Nathan Markham, Jesus Ocampo, and Dylan Kau
 --Drop Table
 
 DROP TABLE employee;
