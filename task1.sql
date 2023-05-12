@@ -36,6 +36,7 @@ CREATE TABLE preferences (
 -- Insert Customer Data
 
 -- Inserts with DEFAULT clause
+
 INSERT INTO customer (customer_id, first_name, last_name, street, city, zip, phone, email) 
 VALUES (100, 'John', 'Smith', '1000 Los Valley Road', 'San Luis Obispo', '93408', '805.123.1234', 'jsmith@hotmail.com');
 INSERT INTO customer (first_name, last_name, street, city, zip, phone, email)
