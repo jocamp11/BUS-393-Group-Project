@@ -65,11 +65,8 @@ ORDER BY last_name;
 CREATE OR REPLACE VIEW EmployeeReportingList
 AS SELECT  CONCAT(mgr.first_name, ' ', mgr.last_name) AS "Manager",
             CONCAT(emp.first_name, ' ', emp.last_name) AS "Reportee"
-FROM employee AS emp
-JOIN employee AS mgr ON (emp.manager_id = mgr.employee_id)
+FROM employee AS emp JOIN employee AS mgr 
+ON (emp.manager_id = mgr.employee_id)
 ORDER BY mgr.last_name;
 
---CREATE OR REPLACE VIEW PreferenceList
---AS SELECT c.first_name AS "First Name", c.last_name AS "Last Name", p.make AS "Make", p.model AS "Model", p.max_price "Max Price", p.start_date "Start Date", p.end_date AS "End Date"
---FROM customer c JOIN preferences p
---ON (c.customer_id = p.customer_id);
+
