@@ -39,25 +39,25 @@ CREATE TABLE preferences (
 
 INSERT INTO customer (customer_id, first_name, last_name, street, city, zip, phone, email) 
 VALUES (100, 'John', 'Smith', '1000 Los Valley Road', 'San Luis Obispo', '93408', '805.123.1234', 'jsmith@hotmail.com');
-INSERT INTO customer (first_name, last_name, street, city, zip, phone, email)
+INSERT INTO customer (customer_id, first_name, last_name, street, city, zip, phone, email)
 VALUES (101, 'Mary', 'Jones', '12 Peach Street', 'San Luis Obispo', '93401', '800.333.4444', 'mjones@hotmail.com');
-INSERT INTO customer (first_name, last_name, street, city, zip, phone, email) 
+INSERT INTO customer (customer_id, first_name, last_name, street, city, zip, phone, email) 
 VALUES (102, 'Ian', 'Thomas', '268 Tunnel Ave', 'Los Angeles', '90004', '213.815.4351', 'ian.thomas@gmail.com');
-INSERT INTO customer (first_name, last_name, street, city, zip, phone, email) 
+INSERT INTO customer (customer_id, first_name, last_name, street, city, zip, phone, email) 
 VALUES (103, 'Hank', 'Franklin', '321 Pine St', 'San Diego', '92101', '555-3456', 'alice.smith@example.com');
-INSERT INTO customer (first_name, last_name, street, city, zip, phone, email) 
+INSERT INTO customer (customer_id, first_name, last_name, street, city, zip, phone, email) 
 VALUES (104, 'Bill', 'Johnson', '654 Broadway', 'Fresno', '93721', '555-7890', 'mike.johnson@example.com');
 
 -- Inserts without DEFAULT clause
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email) 
 VALUES (105, 'Sara', 'Lee', '111 Baker St', 'Los Angeles', 'CA', '90001', '555-5555', 'sara.lee@example.com');
-INSERT INTO customer (first_name, last_name, street, city, state, zip, phone, email) 
+INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email) 
 VALUES (106, 'Tom', 'Jones', '222 Music Ave', 'San Francisco', 'CA', '94102', '555-6666', 'tom.jones@example.com');
-INSERT INTO customer (first_name, last_name, street, city, state, zip, phone, email) 
+INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email) 
 VALUES (107, 'Karen', 'White', '333 Snow Dr', 'Sacramento', 'CA', '95814', '555-7777', 'karen.white@example.com');
-INSERT INTO customer (first_name, last_name, steet, city, state, zip, phone, email) 
+INSERT INTO customer (customer_id, first_name, last_name, steet, city, state, zip, phone, email) 
 VALUES (108, 'Mark', 'Davis', '444 Lake Rd', 'San Diego', 'CA', '92101', '555-8888', 'mark.davis@example.com');
-INSERT INTO customer (first_name, last_name, street, city, state, zip, phone, email) 
+INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email) 
 VALUES (109, 'Amy', 'Chen', '555 Hill Blvd', 'Fresno', 'CA', '93721', '555-9999', 'amy.chen@example.com');
 
 -- Insert Preferences Data
