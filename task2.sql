@@ -59,7 +59,7 @@ VALUES (1010, 'Sherry', 'Sophomore', '93 Mustang Ln', 'San Luis Obispo', '93401'
 
 
 CREATE VIEW employee_contact_list AS 
-    SELECT first_name, last_name, phone AS phone, email
+    SELECT first_name, last_name, phone, email
     FROM employee
     ORDER BY last_name;
 
