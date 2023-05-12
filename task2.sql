@@ -68,5 +68,5 @@ CREATE VIEW employee_reporting_data AS
     SELECT  CONCAT(mgr.first_name, ' ', mgr.last_name) AS manager_title,
             CONCAT(emp.first_name, ' ', emp.last_name) AS reportee_title
     FROM employee AS emp
-    JOIN employee AS mgr ON emp.manager_id = mgr.employee_id
+    JOIN employee AS mgr ON (emp.manager_id = mgr.employee_id)
     ORDER BY mgr.last_name;
