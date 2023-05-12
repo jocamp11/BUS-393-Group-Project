@@ -84,4 +84,18 @@ VALUES (6, 104, 'Porsche', '914', 200000, '07/21/2003');
 INSERT INTO preferences (preference_id, customer_id, make, model, max_price, start_date)
 VALUES (7, 105, 'Triumph', 'Spitfire', 90000, '08/22/2004');
 INSERT INTO preferences (preference_id, customer_id, make, model, max_price, start_date)
-VALUES (7, 106, 'Ford', 'Mustang', 60000, '09/11/2018');
+VALUES (8, 106, 'Ford', 'Mustang', 60000, '09/11/2018');
+
+-- VIEW Creation for query A
+CREATE OR REPLACE VIEW CustomerList
+AS SELECT first_name AS "First Name", last_name AS "Last Name", street, city, state, phone, email
+FROM customer;
+
+-- VIEW Creation for query B
+CREATE OR REPLACE VIEW PreferenceList
+AS SELECT c.first_name AS "First Name", c.last_name AS "Last Name", p.make AS "Make", p.model AS "Model", p.max_price "Max Price", p.start_date "Start Date", p.end_date AS "End Date"
+FROM customer c JOIN preferences p
+ON (c.customer_id = p.customer_id)
+
+-- VIEW Creation for query C
+
