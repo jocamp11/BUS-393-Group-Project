@@ -19,7 +19,7 @@ CREATE TABLE employee (
     title VARCHAR2(20) NOT NULL,
     commission_pct NUMBER(2,2) CHECK(commission_pct BETWEEN 0.20 AND 0.30),
     manager_id NUMBER(4) NULL,
-    FOREIGN KEY (manager_id) REFERENCES employee(employee_id));
+    FOREIGN KEY manager_id REFERENCES employee(employee_id));
 
 -- Insert Employee Data
 
@@ -57,16 +57,19 @@ INSERT INTO employee (employee_id,first_name, last_name, address, city, zip, pho
 VALUES (1010, 'Sherry', 'Sophomore', '93 Mustang Ln', 'San Luis Obispo', '93401', '415-714-2098', '1/14/2023' ,'sherrys@gmail.com','Intern', Null, 1009);
 
 -- #4 Create View Data
+CREATE OR REPLACE VIEW EmployeeContactList 
+AS SELECT first_name AS "First Name", last_name AS "Last Name", phone AS "Phone", email AS "Email"
+FROM employee
+ORDER BY last_name;
 
+CREATE OR REPLACE VIEW EmployeeReportingList
+AS SELECT  CONCAT(mgr.first_name, ' ', mgr.last_name) AS "Manager",
+            CONCAT(emp.first_name, ' ', emp.last_name) AS "Reportee"
+FROM employee AS emp
+JOIN employee AS mgr ON (emp.manager_id = mgr.employee_id)
+ORDER BY mgr.last_name;
 
-CREATE VIEW employee_contact_list AS 
-    SELECT first_name, last_name, phone, email
-    FROM employee
-    ORDER BY last_name;
-
-CREATE VIEW employee_reporting_data AS
-    SELECT  CONCAT(mgr.first_name, ' ', mgr.last_name) AS manager_title,
-            CONCAT(emp.first_name, ' ', emp.last_name) AS reportee_title
-    FROM employee AS emp
-    JOIN employee AS mgr ON (emp.manager_id = mgr.employee_id)
-    ORDER BY mgr.last_name;
+--CREATE OR REPLACE VIEW PreferenceList
+--AS SELECT c.first_name AS "First Name", c.last_name AS "Last Name", p.make AS "Make", p.model AS "Model", p.max_price "Max Price", p.start_date "Start Date", p.end_date AS "End Date"
+--FROM customer c JOIN preferences p
+--ON (c.customer_id = p.customer_id);
