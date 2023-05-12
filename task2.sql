@@ -17,8 +17,6 @@ CREATE TABLE employees (
 
 -- Insert Employee Data
 
-INSERT INTO employees (first_name, last_name, address, city, state, zip, phone, email, title, commission_pct)
-VALUES ()
 INSERT INTO employees (employee_id,first_name, last_name, address, city, zip, phone, hire_date, email, title, commission_pct)
 VALUES (1000, 'Larry', 'Margaria', '475 Sage St', 'San Luis Obispo', 93401, '805-423-6782', '9/1/2001' ,'larrym@gmail.com','Owner/Manager', Null)
 
