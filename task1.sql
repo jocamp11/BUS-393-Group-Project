@@ -1,3 +1,4 @@
+-- Nathan Markham, Jesus Ocampo, and Dylan Kau
 -- Drop Tables
 -- in github
 
@@ -19,23 +20,8 @@ CREATE TABLE customer (
     phone VARCHAR2(12) NOT NULL UNIQUE,
     email VARCHAR2(50) NOT NULL UNIQUE);
 
-CREATE TABLE preferences (
-    preference_id NUMBER(6) PRIMARY KEY,
-    customer_id NUMBER(6) NOT NULL,
-    make VARCHAR2(20) NOT NULL,
-    model VARCHAR2(20) NOT NULL,
-    max_price NUMBER(12),
-    start_date DATE DEFAULT SYSDATE NOT NULL,
-    end_date DATE,
-    FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
-    CONSTRAINT preferences_end_date CHECK (end_date > start_date));
-
-
-
---  2 Data 
 
 -- Insert Customer Data
-
 -- Inserts with DEFAULT clause
 
 INSERT INTO customer (customer_id, first_name, last_name, street, city, zip, phone, email) 
@@ -60,6 +46,18 @@ INSERT INTO customer (customer_id, first_name, last_name, street, city, state, z
 VALUES (108, 'Mark', 'Davis', '444 Lake Rd', 'San Diego', 'CA', '92101', '555-8888', 'mark.davis@example.com');
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email) 
 VALUES (109, 'Amy', 'Chen', '555 Hill Blvd', 'Fresno', 'CA', '93721', '555-9999', 'amy.chen@example.com');
+
+
+CREATE TABLE preferences (
+    preference_id NUMBER(6) PRIMARY KEY,
+    customer_id NUMBER(6) NOT NULL,
+    make VARCHAR2(20) NOT NULL,
+    model VARCHAR2(20) NOT NULL,
+    max_price NUMBER(12),
+    start_date DATE DEFAULT SYSDATE NOT NULL,
+    end_date DATE,
+    FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
+    CONSTRAINT preferences_end_date CHECK (end_date > start_date));
 
 -- Insert Preferences Data
 -- One customer (102) has 3 preferences
@@ -86,6 +84,7 @@ INSERT INTO preferences (preference_id, customer_id, make, model, max_price, sta
 VALUES (7, 105, 'Triumph', 'Spitfire', 90000, '08/22/2004');
 INSERT INTO preferences (preference_id, customer_id, make, model, max_price, start_date)
 VALUES (8, 106, 'Ford', 'Mustang', 60000, '09/11/2018');
+
 
 -- VIEW Creation for query A
 CREATE OR REPLACE VIEW CustomerList
