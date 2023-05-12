@@ -1,6 +1,8 @@
 -- Drop Tables
 
 -- Testing
+
+-- in github
 DROP TABLE customer;
 DROP TABLE preferences;
 
@@ -63,12 +65,3 @@ INSERT INTO customer (first_name, last_name, street, city, state, zip, phone, em
 VALUES ('Amy', 'Chen', '555 Hill Blvd', 'Fresno', 'CA', '93721', '555-9999', 'amy.chen@example.com');
 
 -- Insert Preferences Data
-
--- Ian Thomas with 3 preferences
--- CHECK/CHANGE CustomerIDs
-
-INSERT INTO preferences (customer_id, make, model, max_price, start_date, end_date)
-VALUES (1, 'Porsche', '911', 70000, SYSDATE, SYSDATE + 365); 
-INSERT INTO preferences (customer_id, make, model, max_price, start_date, end_date)
-VALUES (1, 'Tesla', 'Model S', 90000, SYSDATE, SYSDATE + 365);\
-INSERT INTO preferences (customer_id, make, model, max_price, start_date, end_date)
