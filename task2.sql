@@ -19,7 +19,7 @@ CREATE TABLE employee (
     title VARCHAR2(20) NOT NULL,
     commission_pct NUMBER(2,2) CHECK(commission_pct BETWEEN 0.20 AND 0.30),
     manager_id NUMBER(4) NULL,
-    FOREIGN KEY manager_id REFERENCES employee(employee_id));
+    FOREIGN KEY (manager_id) REFERENCES employee(employee_id));
 
 -- Insert Employee Data
 
