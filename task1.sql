@@ -66,4 +66,9 @@ VALUES ('Amy', 'Chen', '555 Hill Blvd', 'Fresno', 'CA', '93721', '555-9999', 'am
 
 -- Insert Preferences Data
 
--- Test
+
+-- Change customer_id 
+INSERT INTO preferences (customer_id, make, model, max_price, start_date, end_date)
+VALUES (1, 'Porsche', '911', 70000, SYSDATE, (SYSDATE + 365)) -- Ian Thomas
+INSERT INTO preferences (customer_id, make, model, max_price, start_date, end_date)
+VALUES (1, '')
