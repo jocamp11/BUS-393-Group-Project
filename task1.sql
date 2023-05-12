@@ -55,7 +55,7 @@ INSERT INTO customer (customer_id, first_name, last_name, street, city, state, z
 VALUES (106, 'Tom', 'Jones', '222 Music Ave', 'San Francisco', 'CA', '94102', '555-6666', 'tom.jones@example.com');
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email) 
 VALUES (107, 'Karen', 'White', '333 Snow Dr', 'Sacramento', 'CA', '95814', '555-7777', 'karen.white@example.com');
-INSERT INTO customer (customer_id, first_name, last_name, steet, city, state, zip, phone, email) 
+INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email) 
 VALUES (108, 'Mark', 'Davis', '444 Lake Rd', 'San Diego', 'CA', '92101', '555-8888', 'mark.davis@example.com');
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email) 
 VALUES (109, 'Amy', 'Chen', '555 Hill Blvd', 'Fresno', 'CA', '93721', '555-9999', 'amy.chen@example.com');
