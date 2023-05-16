@@ -53,7 +53,7 @@ CREATE TABLE preferences (
     customer_id NUMBER(6) NOT NULL,
     make VARCHAR2(20) NOT NULL,
     model VARCHAR2(20) NOT NULL,
-    max_price NUMBER(8, 2) MOT NULL CHECK(max_price > 0),
+    max_price NUMBER(8, 2) NOT NULL CHECK(max_price > 0),
     start_date DATE DEFAULT SYSDATE,
     end_date DATE,
     FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
