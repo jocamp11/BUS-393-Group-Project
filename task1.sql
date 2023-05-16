@@ -11,12 +11,12 @@ DROP TABLE customer;
 
 CREATE TABLE customer (
     customer_id NUMBER(6) PRIMARY KEY,
-    first_name VARCHAR2(20) NOT NULL,
-    last_name VARCHAR2(20) NOT NULL,
-    street VARCHAR2(50) NOT NULL,
-    city VARCHAR2(20) NOT NULL,
+    first_name VARCHAR2(20),
+    last_name VARCHAR2(20),
+    street VARCHAR2(50),
+    city VARCHAR2(20),
     state VARCHAR2(2) DEFAULT 'CA' NOT NULL,
-    zip NUMBER(5) NOT NULL,
+    zip CHAR(5),
     phone VARCHAR2(12) NOT NULL UNIQUE,
     email VARCHAR2(50) NOT NULL UNIQUE);
 
@@ -53,11 +53,13 @@ CREATE TABLE preferences (
     customer_id NUMBER(6) NOT NULL,
     make VARCHAR2(20) NOT NULL,
     model VARCHAR2(20) NOT NULL,
-    max_price NUMBER(12),
-    start_date DATE DEFAULT SYSDATE NOT NULL,
+    max_price NUMBER(8, 2) MOT NULL CHECK(max_price > 0),
+    start_date DATE DEFAULT SYSDATE,
     end_date DATE,
     FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
     CONSTRAINT preferences_end_date CHECK (end_date > start_date));
+    -- customer_id    NUMBER(6)     NOT NULL REFERENCES customer(customer_id),
+    -- CHECK (end_date > start_date
 
 -- Insert Preferences Data
 -- One customer (102) has 3 preferences
