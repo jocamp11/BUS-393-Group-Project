@@ -1,7 +1,7 @@
 -- Nathan Markham, Jesus Ocampo, and Dylan Kau
 -- Drop Tables
 -- in github
-
+-- test
 DROP TABLE preferences;
 DROP TABLE customer;
 
