@@ -21,6 +21,12 @@ CREATE TABLE employee (
     manager_id NUMBER(4) REFERENCES employee(employee_id),
     CHECK (employee_id <> manager_id));
 
+-- PRIMARY KEY (employee_id),
+-- UNIQUE (phone),
+-- UNIQUE (email),
+-- FOREIGN KEY (manager_id) REFERENCES employee(employee_id),
+-- CHECK ((title = 'SalesPerson' AND commission_pct BETWEEN 0.2 AND 0.3) OR (title <>'Saleperson' AND commission_pct is NULL));
+
 -- Insert Employee Data
 
 INSERT INTO employee (employee_id,first_name, last_name, address, city, zip, phone, hire_date, email, title, commission_pct, manager_id)
