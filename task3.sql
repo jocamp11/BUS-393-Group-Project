@@ -68,3 +68,9 @@ CREATE TABLE Services_Provided  (
   Service_Code    VARCHAR2(20),
   Service_Date    Date,
   PRIMARY KEY(Service_Code, Service_Date));
+  
+  
+CREATE VIEW Service_List
+AS SELECT Service_Code, Description, Cost, Price, Months, Mileage
+FROM Services
+ORDER BY Service_Code;
