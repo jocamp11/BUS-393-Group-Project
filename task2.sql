@@ -1,7 +1,7 @@
 -- Nathan Markham, Jesus Ocampo, and Dylan Kau
 --Drop Table
 
-DROP TABLE employee;
+DROP TABLE employee CASCADE PURGE;
 
 -- Create Employee Table
 
