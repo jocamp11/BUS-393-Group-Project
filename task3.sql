@@ -33,15 +33,15 @@ CREATE TABLE Parts  (
   CHECK(Price > 0),);
   
 INSERT INTO Parts (Part_Code, Description, Cost, Price)
-VALUES('OIL10W30','Oil 10W30', 2.79, 3.95)
+VALUES('OIL10W30','Oil 10W30', 2.79, 3.95);
 INSERT INTO Parts (Part_Code, Description, Cost, Price)
-VALUES('OILFILTER','Oil Filter', 6.95, 11.95)
+VALUES('OILFILTER','Oil Filter', 6.95, 11.95);
 INSERT INTO Parts (Part_Code, Description, Cost, Price)
-VALUES('WINDSHIELDFLUID','Windshield Fluid', 2.96, 4.95)
+VALUES('WINDSHIELDFLUID','Windshield Fluid', 2.96, 4.95);
 INSERT INTO Parts (Part_Code, Description, Cost, Price)
-VALUES('SPARKPLUG4', 'Spark plug set (4)', 9.95, 19.95)
+VALUES('SPARKPLUG4', 'Spark plug set (4)', 9.95, 19.95);
 INSERT INTO Parts (Part_Code, Description, Cost, Price)
-VALUES('AIRFILTER', 'Air Filter', 3.95, 8.95)
+VALUES('AIRFILTER', 'Air Filter', 3.95, 8.95);
 
 
 
