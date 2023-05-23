@@ -44,7 +44,10 @@ INSERT INTO Parts (Part_Code, Description, Cost, Price)
 VALUES('AIRFILTER', 'Air Filter', 3.95, 8.95);
 
 
-
+CREATE TABLE Service_Parts (
+  Part_Code     VARCHAR2(20)
+, 
+);
 
 
 
