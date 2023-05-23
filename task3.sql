@@ -30,7 +30,7 @@ CREATE TABLE Parts  (
   Cost            NUMBER(6,2)     NOT NULL,
   Price           NUMBER(6,2)     NOT NULL,
   CHECK(Cost > 0),
-  CHECK(Price > 0),);
+  CHECK(Price > 0));
   
 INSERT INTO Parts (Part_Code, Description, Cost, Price)
 VALUES('OIL10W30','Oil 10W30', 2.79, 3.95);
@@ -53,7 +53,7 @@ CREATE TABLE Service_Parts (
 CREATE VIEW Part_List
 AS SELECT Part_Code, Description, Cost, Price
 FROM Parts
-ORDERED BY Part_Code
+ORDER BY Part_Code
 
 
 
