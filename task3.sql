@@ -21,6 +21,8 @@ INSERT INTO Services  (Service_Code, Description, Cost, Price, Months, Mileage)
 VALUES ('FLUIDS', 'Fluid Replacement', 29.95, 49.96, 30, 30000);
 INSERT INTO Services  (Service_Code, Description, Cost, Price, Months, Mileage)
 VALUES ('TUNEUPBASIC', 'Basic Engine tune up', 69.95, 149.95, 18, 18000);
+INSERT INTO Services  (Service_Code, Description, Cost, Price, Months, Mileage)
+VALUES ('MULTIPOINTINSP', 'Multi-Point inspection', 29.95, 59.95, 6, 6000);
   
 CREATE TABLE Parts  (
   Part_Code       VARCHAR2(20)    PRIMARY KEY,
