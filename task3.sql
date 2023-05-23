@@ -46,9 +46,9 @@ VALUES('AIRFILTER', 'Air Filter', 3.95, 8.95);
 -- Will add in the foreign key for the Service Invoice Later
 
 CREATE TABLE Service_Parts (
-  Part_Code     VARCHAR2(20)
-, Service_Date  DATE
-, PRIMARY KEY(Part_Code, Service_Date));
+  Part_Code     VARCHAR2(20),
+  Service_Date  DATE,
+  PRIMARY KEY(Part_Code, Service_Date));
 
 
 
@@ -67,4 +67,4 @@ CREATE TABLE Service_Parts (
 CREATE TABLE Services_Provided  (
   Service_Code    VARCHAR2(20),
   Service_Date    Date,
-  PRIMARY KEY(Service_Code, Service_Date)
+  PRIMARY KEY(Service_Code, Service_Date));
