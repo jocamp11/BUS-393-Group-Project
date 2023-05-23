@@ -50,10 +50,10 @@ CREATE TABLE Service_Parts (
   Service_Date  DATE,
   PRIMARY KEY(Part_Code, Service_Date));
 
-
-
-
-
+CREATE VIEW Part_List
+AS SELECT Part_Code, Description, Cost, Price
+FROM Parts
+ORDERED BY Part_Code
 
 
 
