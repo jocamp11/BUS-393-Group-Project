@@ -42,3 +42,25 @@ INSERT INTO Parts (Part_Code, Description, Cost, Price)
 VALUES('SPARKPLUG4', 'Spark plug set (4)', 9.95, 19.95)
 INSERT INTO Parts (Part_Code, Description, Cost, Price)
 VALUES('AIRFILTER', 'Air Filter', 3.95, 8.95)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--  We will add in the foreign key for the Service Invoice Later
+
+CREATE TABLE Services_Provided  (
+  Service_Code    VARCHAR2(20),
+  Service_Date    Date,
+  PRIMARY KEY(Service_Code, Service_Date)
