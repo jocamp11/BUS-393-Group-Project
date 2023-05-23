@@ -2,8 +2,8 @@
 -- Drop Tables
 -- in github
 -- test
-DROP TABLE preferences;
-DROP TABLE customer;
+DROP TABLE preferences CASCADE PURGE;
+DROP TABLE customer CASCADE PURGE;
 
 --  1 Creating Tables
  
