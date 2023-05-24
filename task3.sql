@@ -43,6 +43,7 @@ VALUES('SPARKPLUG4', 'Spark plug set (4)', 9.95, 19.95);
 INSERT INTO Parts (Part_Code, Description, Cost, Price)
 VALUES('AIRFILTER', 'Air Filter', 3.95, 8.95);
 
+-- This is the associative entity table between the Service_invoice table and Parts table
 -- Will add in the foreign key for the Service Invoice Later
 
 CREATE TABLE Service_Parts (
@@ -50,27 +51,22 @@ CREATE TABLE Service_Parts (
   Service_Date  DATE,
   PRIMARY KEY(Part_Code, Service_Date));
 
-CREATE VIEW Part_List
-AS SELECT Part_Code, Description, Cost, Price
-FROM Parts
-ORDER BY Part_Code
-
-
-
-
-
-
-
-
+-- This is the associative entity table between the Service_Invoice table and Services table
 --  We will add in the foreign key for the Service Invoice Later
 
 CREATE TABLE Services_Provided  (
   Service_Code    VARCHAR2(20),
   Service_Date    Date,
   PRIMARY KEY(Service_Code, Service_Date));
-  
-  
+
+-- Views for task 3
+
 CREATE VIEW Service_List
 AS SELECT Service_Code, Description, Cost, Price, Months, Mileage
 FROM Services
 ORDER BY Service_Code;
+
+CREATE VIEW Part_List
+AS SELECT Part_Code, Description, Cost, Price
+FROM Parts
+ORDER BY Part_Code
