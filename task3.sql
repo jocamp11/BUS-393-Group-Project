@@ -69,4 +69,4 @@ ORDER BY Service_Code;
 CREATE VIEW Part_List
 AS SELECT Part_Code, Description, Cost, Price
 FROM Parts
-ORDER BY Part_Code
+ORDER BY Part_Code;
