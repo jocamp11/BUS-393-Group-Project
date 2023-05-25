@@ -17,7 +17,9 @@ CREATE TABLE Sales_Vehicle (
   CHECK(mileage > 0)
   CHECK (purchase_price > 0),
   CHECK (list_price > 0));
-
+ -- We are assuming that there are cases where price could be lower than cost 
+ -- (EX: A car isn't selling and Larry is willing to give a good deal to get rid of it)
+  
 
 CREATE TABLE Service_Vehicle (
   VIN       VARCHAR2(17)  PRIMARY KEY,
