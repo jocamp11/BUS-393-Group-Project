@@ -16,7 +16,8 @@ CREATE TABLE Sales_Vehicle (
 
 CREATE TABLE Service_Vehicle (
   VIN       VARCHAR2(17)  PRIMARY KEY,
-  year      NUMBER(4),
-  make      VARCHAR2(30),
-  model     VARCHAR2(30),
-  mileage   NUMBER(8, 2));
+  year      NUMBER(4)     NOT NULL,
+  make      VARCHAR2(30)  NOT NULL,
+  model     VARCHAR2(30)  NOT NULL,
+  mileage   NUMBER(8, 2)  NOT NULL,
+  CHECK(mileage > 0));
