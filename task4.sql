@@ -1,17 +1,17 @@
 CREATE TABLE Sales_Vehicle (
   VIN             VARCHAR2(17)  PRIMARY KEY,
-  year            NUMBER(4),
-  make            VARCHAR2(30),
-  model           VARCHAR2(30),
-  exterior_color  VARCHAR2(20),
+  year            NUMBER(4)     NOT NULL,
+  make            VARCHAR2(30)  NOT NULL,
+  model           VARCHAR2(30)  NOT NULL,
+  exterior_color  VARCHAR2(20)  NOT NULL,
   trim            VARCHAR2(20),
-  mileage         NUMBER(8, 2),
+  mileage         NUMBER(8, 2)  NOT NULL,
   condition       VARCHAR2(20),
-  status          VARCHAR2(20),
-  purchase_price  NUMBER(8, 2)
-  list_price      NUMBER(8, 2),
-  status          VARCHAR2(20)
-);
+  status          VARCHAR2(7)  NOT NULL,
+  purchase_price  NUMBER(8, 2),
+  list_price      NUMBER(8, 2)  NOT NULL,
+  CHECK(status IN ('SOLD', 'FORSALE', 'TRADEIN'),
+  CHECK(mileage > 0));
 
 
 CREATE TABLE Service_Vehicle (
@@ -19,5 +19,4 @@ CREATE TABLE Service_Vehicle (
   year      NUMBER(4),
   make      VARCHAR2(30),
   model     VARCHAR2(30),
-  mileage   NUMBER(8, 2)
-);
+  mileage   NUMBER(8, 2));
