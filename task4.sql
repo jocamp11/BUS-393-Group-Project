@@ -14,7 +14,9 @@ CREATE TABLE Sales_Vehicle (
   purchase_price  NUMBER(8, 2),
   list_price      NUMBER(8, 2)  NOT NULL,
   CHECK(status IN ('SOLD', 'FORSALE', 'TRADEIN'),
-  CHECK(mileage > 0));
+  CHECK(mileage > 0)
+  CHECK (purchase_price > 0),
+  CHECK (list_price > 0));
 
 
 CREATE TABLE Service_Vehicle (
