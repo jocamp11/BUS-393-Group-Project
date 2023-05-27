@@ -1,3 +1,5 @@
+-- -- Nathan Markham, Jesus Ocampo, and Dylan Kau
+
 DROP TABLE Sales_Vehicle CASCADE CONSTRAINTS PURGE
 DROP TABLE Service_Vehicle CASCADE CONSTRAINTS PURGE
 
