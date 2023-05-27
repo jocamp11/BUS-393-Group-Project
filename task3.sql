@@ -1,3 +1,5 @@
+-- Jesus Ocampo, Nathan Markham, Dylan Kau
+
 DROP TABLE Parts CASCADE CONSTRAINTS PURGE;
 DROP TABLE Services CASCADE CONSTRAINTS PURGE;
 
