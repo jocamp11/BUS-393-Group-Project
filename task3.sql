@@ -2,6 +2,8 @@
 
 DROP TABLE Parts CASCADE CONSTRAINTS PURGE;
 DROP TABLE Services CASCADE CONSTRAINTS PURGE;
+DROP TABLE Service_Parts CASCADE CONSTRAINTS PURGE;
+DROP TABLE Services_Provided CASCADE CONSTRAINTS PURGE;
 
 CREATE TABLE Services (
   Service_Code    VARCHAR2(20)    PRIMARY KEY,
@@ -63,12 +65,12 @@ CREATE TABLE Services_Provided  (
 
 -- Views for task 3
 
-CREATE VIEW Service_List
+CREATE OR REPLACE VIEW Service_List
 AS SELECT Service_Code, Description, Cost, Price, Months, Mileage
 FROM Services
 ORDER BY Service_Code;
 
-CREATE VIEW Part_List
+CREATE OR REPLACE VIEW Part_List
 AS SELECT Part_Code, Description, Cost, Price
 FROM Parts
 ORDER BY Part_Code;
