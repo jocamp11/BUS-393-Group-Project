@@ -17,7 +17,6 @@ CREATE TABLE Vendor (
   fax           NUMBER(10));
   
 CREATE TABLE Purchase_Order (
-   -- Associative entity Vehicle, Vendor and Employee (NEED TO CREATE VENDOR TABLE)
   purchase_orderID  NUMBER(6)   PRIMARY KEY,
   terms             VARCHAR2(10) 
     CONSTRAINT po_terms_method CHECK('credit', 'cash', 'check', 'financed'),
