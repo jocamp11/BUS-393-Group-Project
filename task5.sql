@@ -27,12 +27,12 @@ CREATE TABLE Vendor (
   
 CREATE TABLE Purchase_Order (
   purchase_orderID  NUMBER(6)   PRIMARY KEY,
-  terms             VARCHAR2(10) 
-    CONSTRAINT po_terms_method CHECK('credit', 'cash', 'check'),
+  terms             VARCHAR2(10) NOT NULL,
   VIN               NUMBER(17)  NOT NULL REFERENCES customer(customer_id),
   vendor_id         NUMBER(6)   NOT NULL REFERENCES sales_vechicle(VIN),
   employee_id       NUMBER(6)   NOT NULL REFERENCES employee(employee_id),
-  purchase_date     DATE
+  purchase_date     DATE,
+  CHECK (terms IN ('credit', 'cash', 'check)
   );
   
   CREATE TABLE Service_Invoice (
