@@ -32,7 +32,7 @@ CREATE TABLE Purchase_Order (
   vendor_id         NUMBER(6)   NOT NULL REFERENCES sales_vechicle(VIN),
   employee_id       NUMBER(6)   NOT NULL REFERENCES employee(employee_id),
   purchase_date     DATE,
-  CHECK (terms IN ('credit', 'cash', 'check)
+  CHECK (terms IN ('credit', 'cash', 'check')
   );
   
   CREATE TABLE Service_Invoice (
