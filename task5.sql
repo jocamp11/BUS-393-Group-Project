@@ -1,3 +1,12 @@
+-- Team Names:
+-- Nathan Markham, Jesus Ocampo, Dylan Kau
+
+-- DROP TABLE statements
+DROP TABLE Sales_Invoice CASCADE CONSTRAINS PURGE
+DROP TABLE Vendor CASCADE CONSTRAINS PURGE
+DROP TABLE Purchase_Order CASCADE CONSTRAINS PURGE
+DROP TABLE Service_Invoice CASCADE CONSTRAINS PURGE
+
 CREATE TABLE Sales_Invoice(
   invoice_id    NUMBER(6)   PRIMARY KEY,
   customer_id   NUMBER(6)   NOT NULL REFERENCES customer(customer_id),
