@@ -88,4 +88,25 @@ WHERE purchase_ID = 3;
                         
 --Jesus' 2 Car Purchases (Step 3 in task 5)
 
+  
+-- Porsche from 1960's
+-- Fourth sales vehicle insert statement
+  
 
+-- PO for car
+  
+
+-- Update car po to add manager approval
+  
+
+-- Fifth sales vehicle insert statement
+  
+  
+ -- PO for car
+  
+  
+-- Update car po to add manager approval
+  
+  
+ 
+-- Update of car purchase order to add manager approval
