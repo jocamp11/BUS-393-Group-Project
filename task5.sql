@@ -42,7 +42,9 @@ CREATE TABLE Purchase_Order (
     );
 
   -- First sales vehicle insert statement
-  INSERT INTO Sales_Vehicle (invoice_id, customer_id
+  INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
+  VALUES (17392043928394073, 1963, 'Lincoln', 'Continental', 'black', 'convertible', 'Good', 'FORSALE', 55000, 90000);
+                        
 
 
 
