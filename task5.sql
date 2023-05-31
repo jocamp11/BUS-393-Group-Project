@@ -10,8 +10,9 @@ DROP TABLE Service_Invoice CASCADE CONSTRAINS PURGE
 CREATE TABLE Sales_Invoice(
   invoice_id    NUMBER(6)   PRIMARY KEY,
   customer_id   NUMBER(6)   NOT NULL REFERENCES customer(customer_id),
-  VIN           NUMBER(6)   NOT NULL REFERENCES sales_vehicle(VIN),
+  VIN           NUMBER(6)   UNIQUE NOT NULL REFERENCES sales_vehicle(VIN),
   employee_id   NUMBER(6)   NOT NULL REFERENCES employee(employee_id),
+  tradein_VIN   NUMBER(6)   UNIQUE,
   sale_date     DATE,
   CHECK(terms IN('cash', 'check', 'credit')));
 
@@ -40,6 +41,8 @@ CREATE TABLE Purchase_Order (
     
     );
 
+  -- First sales vehicle insert statement
+  INSERT INTO Sales_Vehicle (invoice_id, customer_id
 
 
 
