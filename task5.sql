@@ -30,7 +30,7 @@ CREATE TABLE Vendor (
 CREATE TABLE Purchase_Order (
   purchase_ID  NUMBER(6)   PRIMARY KEY,
   terms             VARCHAR2(6) NOT NULL,
-  VIN               NUMBER(17)  NOT NULL REFERENCES sales_vehicle(VIN),
+  VIN               NUMBER(17)  UNIQUE NOT NULL REFERENCES sales_vehicle(VIN),
   vendor_id         NUMBER(6)   NOT NULL REFERENCES vendor(vendor_id),
   employee_id       NUMBER(6)   NOT NULL REFERENCES employee(employee_id),
   approving_manager NUMBER(6)   REFERENCES employee(employee_id),
