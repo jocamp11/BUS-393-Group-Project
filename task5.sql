@@ -86,6 +86,6 @@ UPDATE Purchase_Order
 SET approving_manager = 1000
 WHERE purchase_ID = 3;
                         
-
+--Jesus' 2 Car Purchases (Step 3 in task 5)
 
 
