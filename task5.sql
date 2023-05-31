@@ -68,7 +68,7 @@ VALUES (84638459374937489, 1967, 'Cheverlet', 'Corvette Stingray', 'blue', 'conv
 INSERT INTO Purchase_Order (purchase_ID, terms, VIN, vendor_id, employee_id, purchase_date)
 VALUES (2, 'credit', 84638459374937489, 100, 1004, '05/23/2023');
   
--- Update of Lincoln Continental purchase order to add manager approval
+-- Update of Cheverlet Stingray purchase order to add manager approval
 UPDATE Purchase_Order
 SET approving_manager = 1003
 WHERE purchase_ID = 2;
@@ -81,7 +81,7 @@ VALUES (93759382749506876, 1962, 'Ford', 'Galaxie 500', 'white', NULL, 'Good', '
 INSERT INTO Purchase_Order (purchase_ID, terms, VIN, vendor_id, employee_id, purchase_date)
 VALUES (3, 'cash', 93759382749506876, 100, 1005, '05/26/2023');
   
--- Update of Lincoln Continental purchase order to add manager approval
+-- Update of Ford Galaxie 500 purchase order to add manager approval
 UPDATE Purchase_Order
 SET approving_manager = 1000
 WHERE purchase_ID = 3;
