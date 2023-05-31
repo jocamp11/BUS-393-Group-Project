@@ -62,13 +62,13 @@ WHERE purchase_ID = 1;
   
 -- Second sales vehicle insert statement
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
-VALUES (84638459374937489, 1967, 'Cheverlet', 'Corvette Stingray', 'blue', 'convertible', 'Great', 'FORSALE', 40000, 60000);
+VALUES (84638459374937489, 1967, 'Chevrolet', 'Corvette Stingray', 'blue', 'convertible', 'Great', 'FORSALE', 40000, 60000);
   
--- PO for Cheverlet Stingray
+-- PO for Chevrolet Stingray
 INSERT INTO Purchase_Order (purchase_ID, terms, VIN, vendor_id, employee_id, purchase_date)
 VALUES (2, 'credit', 84638459374937489, 100, 1004, '05/23/2023');
   
--- Update of Cheverlet Stingray purchase order to add manager approval
+-- Update of Chevrolet Stingray purchase order to add manager approval
 UPDATE Purchase_Order
 SET approving_manager = 1003
 WHERE purchase_ID = 2;
