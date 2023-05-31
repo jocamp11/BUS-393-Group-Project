@@ -29,9 +29,9 @@ CREATE TABLE Vendor (
   
 CREATE TABLE Purchase_Order (
   purchase_orderID  NUMBER(6)   PRIMARY KEY,
-  terms             VARCHAR2(10) NOT NULL,
-  VIN               NUMBER(17)  NOT NULL REFERENCES customer(customer_id),
-  vendor_id         NUMBER(6)   NOT NULL REFERENCES sales_vechicle(VIN),
+  terms             VARCHAR2(6) NOT NULL,
+  VIN               NUMBER(17)  NOT NULL REFERENCES sales_vehicle(VIN),
+  vendor_id         NUMBER(6)   NOT NULL REFERENCES vendor(vendor_id),
   employee_id       NUMBER(6)   NOT NULL REFERENCES employee(employee_id),
   purchase_date     DATE,
   CHECK (terms IN ('credit', 'cash', 'check')
@@ -40,10 +40,18 @@ CREATE TABLE Purchase_Order (
   CREATE TABLE Service_Invoice (
     
     );
+  
+  -- Create a vendor to buy vehicles from
+  INSERT INTO Vendor (vendor_id, vendor_name, contact_name, street, city, state, zip, phone, fax)
+  VALUES (1, 'Vintage Auto America', 'Jason Jackson', '1045 Johnson St.', 'Atascadero', 'CA', '93420', 2547368594)
 
   -- First sales vehicle insert statement
   INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
   VALUES (17392043928394073, 1963, 'Lincoln', 'Continental', 'black', 'convertible', 'Good', 'FORSALE', 55000, 90000);
+  
+  -- PO for Lincoln Continental
+  INSERT INTO Purchase_Order (purchase_orderID, terms, VIN, vendor_id, employee_id, purchase_date)
+  VALUES (1, 'cash', 17392043928394073, 1, 
                         
 
 
