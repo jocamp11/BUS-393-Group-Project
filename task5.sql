@@ -286,7 +286,7 @@ SET status = 'FORSALE'
 WHERE VIN = '4T1BE46K8XU123456'; 
 
 -- Step 5
--- Dylan's service Invoices 
+-- Service Invoices 
 --- New customers -- not sold by SLO VA
 -- Add new customers
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
@@ -336,7 +336,7 @@ VALUES('TR-01',6/4/2023,'8Z7TCDKX1WL123456');
 --Sold by SLO VA (only one part)
 -- copy sales-vehicle into service
 INSERT INTO service_vehicle (VIN, year, make, model, mileage)
-SELECT('24681357902468135', 1995, 'Toyota', 'Tacoma', 67000);
+SELECT('24681357902468135', 1995, 'Toyota', 'Tacoma', 67000)
 FROM sales_vehicle;
 -- create new service-invoice
 INSERT INTO service_invoice (invoice_number, employee_id, customer_id, service_date, service_vin, terms);
