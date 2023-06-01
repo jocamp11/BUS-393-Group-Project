@@ -47,10 +47,8 @@ CREATE TABLE Service_Invoice (
   service_date DATE NOT NULL,
   service_code VARCHAR2(20) NOT NULL,
   service_VIN VARCHAR2(17) NOT NULL REFERENCES service_vehicle(VIN), 
-  parts_code VARCHAR2(20),
-  misc_charge NUMBER(7),
-  Taxes Number(5,4) NOT NULL   
-  );
+  parts_code VARCHAR2(20),   
+);
   
 --Nate's 3 Car Purchases (Step 3 in task 5)
 -- Create a vendor to buy vehicles from  *this wasn't listed but I beleive we have to do it
@@ -265,11 +263,28 @@ UPDATE Sales_Vehicle
 SET status = 'SOLD'
 WHERE VIN = '56789012345678901';
 
-  
 -- update trade in
 UPDATE Sales_Vehicle
 SET status = 'FORSALE'
 WHERE VIN = '4T1BE46K8XU123456'; 
+
+--2nd customer (no trade-in)
+INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
+VALUES (111, 'Wardell', 'Curry', '1667 41st Ave', 'San Francisco', 94122, 4157164547, 'stephcurry30@gmail.com')
+
+-- add sales invoice
+INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN)
+VALUES (10001, 111, 98765432109876543, 1004, 'check', NULL)
+  
+-- update sales invoice to add approval from Larry
+UPDATE Sales_Invoice
+SET approving_manager = 100
+WHERE  invoice_id = 10005
+
+-- update sales vehicle status to sold
+UPDATE Sales_Vehicle
+SET status = 'SOLD'
+WHERE VIN = 98765432109876543
 
 -- Jesus'  Service Invoices (Step 5 in task 5)
 -- One that was sold by SLO Vintage Auto (Only one part and only one service)
