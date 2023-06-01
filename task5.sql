@@ -194,6 +194,17 @@ UPDATE Sales_Vehicle
 SET status = 'FORSALE'
 WHERE VIN = '83940738467859487';
   
+-- 2nd Customer to the customer table (trade-in)
+INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
+VALUES (111, Stephen, Curry, '5678 Warriors Rd.', 'San Francisco', 'CA', '94016', '8158490049', 'stephencurry30@warriors.com');
+ 
+-- Add trade in vehicle for 2nd customer to the sales vehicles table
+INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
+VALUES ('78394072647589475', 1974, 'Pontiac', 'Firebird', 'black', NULL, 'Good', 'TRADEIN', 20000, NULL);
+  
+-- Add sales invoice for the 2nd car being bought
+INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN)
+VALUES (10000, 110, '17392043928394073', 1005, 'cash', '78394072647589475');
 
 -- Jesus' 2 sales (Step 4 in task 5) out of 5 total
 -- 3rd customer to the customer table (trade-in)
