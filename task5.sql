@@ -106,7 +106,7 @@ VALUES (101, 'LAX Porsche', 'Alan Jones', '112 Airport Drive', 'Los Angeles', 'C
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
 VALUES (22241113642310809, 2023, 'Porsche', '911 Carrera', 'Metallic Black', 'Shadow Grey', 'New', 'FORSALE', 97175, 89400);
                   
--- PO for car
+-- Purchase Order for Porsche 911 Carrera
 INSERT INTO Purchase_Order (purchase_id, terms, VIN, vendor_id, employee_id, purchase_date)
 VALUES (4, 'credit', 22241113642310809, 101, 1005, '04/22/2023');
 
@@ -123,7 +123,7 @@ VALUES (102, 'Classic Cars', 'Roger Falcione', '7400 E Monte Cristo Ave', 'Scott
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
 VALUES (23163571633042318, 1997, 'Nissan', 'Skyline', 'Bayside Blue', 'GT-R V-Spec', 75000, 'Very Good', 'FORSALE', 53000, 85000);
   
- -- PO for car
+ -- Purchase Order for Nissan Skyline
 INSERT INTO Purchase_Order (purchase_id, terms, VIN, vendor_id, employee_id, purchase_date)
 VALUES (5, 'cash', 23163571633042318, 102, 1005, '05/31/2023');
   
@@ -131,16 +131,8 @@ VALUES (5, 'cash', 23163571633042318, 102, 1005, '05/31/2023');
 UPDATE Purchase_Order
 SET    approving_manager = 1000
 WHERE  purchase_id = 5
-  
- 
-  
-  
-  
-  
-  
-  
-  
-  
+
+--Dylan's 2 Car Purchases (Step 3 in task 5)
 
   
 -- Nate's 2 sales (Step 4 in task 5) out of 5 total
@@ -175,37 +167,45 @@ WHERE VIN = 83940738467859487;
 -- Jesus' 2 sales (Step 4 in task 5) out of 5 total
 -- 3rd customer to the customer table (trade-in)
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (112, 'Alejandro', 'Torres', 'Main St', 'Los Angeles', 90011, 3232137802, 'alejandrotorres@gmail.com')
+VALUES (112, 'Alejandro', 'Torres', 'S Main St', 'Los Angeles', 90011, 3232137802, 'alejandrotorres@gmail.com')
 
 -- add trade in
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
-VALUES ('WP0EB0911FS161840', 1985, 'Porsche', '911', 'Red', 'Carrera', 77571, 'Used', 'TRADEIN', 84499, 94499)
+VALUES ('WP0EB0911FS161840', 1985, 'Porsche', '911 Carrera', 'Red', NULL, 77571, 'Used', 'TRADEIN', 84499, 94499)
   
 -- add sales invoice
 INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN)
 VALUES (10003, 112, 22241113642310809, 1005, 'cash', 'WP0EB0911FS161840')
   
 -- update sales invoice to add approval from Larry
-UPDATE
-SET
-WHERE  
+UPDATE Sales_Invoice
+SET approving_manager = 100
+WHERE  invoice_id = 10003
+
 -- update sales vehicle status to sold
-UPDATE
-SET
-WHERE   
+UPDATE Sales_Vehicle
+SET status = 'SOLD'
+WHERE VIN = 22241113642310809
   
 -- update trade in
-UPDATE
-SET
-WHERE 
+UPDATE Sales_Vehicle
+SET status = 'FORSALE'
+WHERE VIN = 'WP0EB0911FS161840'
   
 -- 4th customer to the customer table (no trade-in)
+INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
+VALUES (113, 'Daniel', 'Solano', '750 Paso de Luz', 'Chula Vista', 91911, 6094583118, 'dsolano@gmail.com')
 
-  
 -- add sales invoice
-
+INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN)
+VALUES (10004, 113, 23163571633042318, 1005, 'cash', NULL)
+  
 -- update sales invoice
-  
+UPDATE Sales_Invoice
+SET approving_manager = 1000 
+WHERE invoice_id = 10004
+
 -- update sales vehicle
-  
--- update trade in 
+UPDATE Sales_Vehicle
+SET status = 'SOLD'
+WHERE VIN = 23163571633042318
