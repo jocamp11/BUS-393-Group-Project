@@ -242,3 +242,33 @@ WHERE invoice_id = 10004
 UPDATE Sales_Vehicle
 SET status = 'SOLD'
 WHERE VIN = 23163571633042318
+
+-- Jesus'  Service Invoices (Step 5 in task 5)
+-- One that was sold by SLO Vintage Auto (Only one part and only one service)
+-- add customer to customer table, if needed
+  
+-- add car to sevice vehicle table
+  
+-- add new service invoice
+  
+-- add service(s)
+  
+-- add part(s)
+  
+-- Another that was sold by SLO VA (Only one part)
+-- add customer to customer table, if needed
+  
+-- add car to sevice vehicle
+  
+-- add new service vehicle
+  
+-- add part(s)
+
+-- Not sold by SLO VA (only one service - tire rotation)
+-- add customer to customer table
+  
+-- add customer car to service vehicle table
+  
+-- add new service invoice
+  
+-- add service(s)
