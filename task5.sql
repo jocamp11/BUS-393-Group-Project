@@ -246,7 +246,7 @@ VALUES (113, 'Daniel', 'Solano', '750 Paso de Luz', 'Chula Vista', 91911, 609458
 
 -- add sales invoice
 INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN);
-VALUES (10004, 113, '23163571633042318', 1005, 'cash', NULL)
+VALUES (10004, 113, '23163571633042318', 1005, 'cash', NULL);
   
 -- update sales invoice
 UPDATE Sales_Invoice
