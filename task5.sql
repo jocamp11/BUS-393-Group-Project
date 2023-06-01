@@ -262,7 +262,7 @@ VALUES ('4T1BE46K8XU123456', 1972, 'Toyota', 'Carolla', 'Light Blue', NULL, 9104
   
 -- add sales invoice
 INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN)
-VALUES (10005, 114, '56789012345678901', 1004, 'check', '4T1BE46K8XU123456');
+VALUES (10005, 114, '24681357902468135', 1004, 'check', '4T1BE46K8XU123456');
   
 -- update sales invoice to add approval from Larry
 UPDATE Sales_Invoice
@@ -272,7 +272,7 @@ WHERE  invoice_id = 10005;
 -- update sales vehicle status to sold
 UPDATE Sales_Vehicle
 SET status = 'SOLD'
-WHERE VIN = '56789012345678901';
+WHERE VIN = '24681357902468135';
 
 -- update trade in
 UPDATE Sales_Vehicle
@@ -281,21 +281,21 @@ WHERE VIN = '4T1BE46K8XU123456';
 
 --2nd customer (no trade-in)
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (111, 'Wardell', 'Curry', '1667 41st Ave', 'San Francisco', 94122, 4157164547, 'stephcurry30@gmail.com')
+VALUES (111, 'Wardell', 'Curry', '1667 41st Ave', 'San Francisco', 94122, 4157164547, 'stephcurry30@gmail.com');
 
 -- add sales invoice
 INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN)
-VALUES (10001, 111, 98765432109876543, 1004, 'check', NULL)
+VALUES (10001, 111, 98765432109876543, 1004, 'check', NULL);
   
 -- update sales invoice to add approval from Larry
 UPDATE Sales_Invoice
 SET approving_manager = 100
-WHERE  invoice_id = 10005
+WHERE  invoice_id = 10005;
 
 -- update sales vehicle status to sold
 UPDATE Sales_Vehicle
 SET status = 'SOLD'
-WHERE VIN = 98765432109876543
+WHERE VIN = 98765432109876543;
 
 -- Jesus'  Service Invoices (Step 5 in task 5)
 -- One that was sold by SLO Vintage Auto (Only one part and only one service)
