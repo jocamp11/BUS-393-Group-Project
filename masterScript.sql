@@ -295,7 +295,7 @@ CREATE TABLE Service_Vehicle (
   VIN           VARCHAR2(17)   UNIQUE  NOT NULL REFERENCES sales_vehicle(VIN),
   employee_id   NUMBER(6)   NOT NULL REFERENCES employee(employee_id),
   terms         VARCHAR2(6) NOT NULL,
-  tradein_VIN   NUMBER(6)   UNIQUE,
+  tradein_VIN   VARCHAR2(17)   UNIQUE  REFERENCES sales_vehicle(VIN),
   approving_manager   NUMBER(6) REFERENCES employee(employee_id),
   sale_date     DATE,
   CHECK(terms IN('cash', 'check', 'credit')));
