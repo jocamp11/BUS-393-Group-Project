@@ -327,9 +327,7 @@ CREATE TABLE Service_Invoice (
   employee_id NUMBER(6) NOT NULL REFERENCES employee(employee_id),
   customer_id NUMBER(6) NOT NULL REFERENCES customer(customer_id),
   service_date DATE NOT NULL,
-  service_code VARCHAR2(20) NOT NULL,
-  service_VIN VARCHAR2(17) NOT NULL REFERENCES service_vehicle(VIN), 
-  parts_code VARCHAR2(20),   
+  service_VIN VARCHAR2(17) NOT NULL REFERENCES service_vehicle(VIN),   
   );
 
  --Nate's 3 Car Purchases (Step 3 in task 5)
