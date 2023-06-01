@@ -59,11 +59,11 @@ VALUES (100, 'Vintage Auto America', 'Jason Jackson', '1045 Johnson St.', 'Atasc
 
 -- First sales vehicle insert statement
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
-VALUES (17392043928394073, 1963, 'Lincoln', 'Continental', 'black', 'convertible', 'Good', 'FORSALE', 55000, 90000);
+VALUES ('17392043928394073', 1963, 'Lincoln', 'Continental', 'black', 'convertible', 'Good', 'FORSALE', 55000, 90000);
   
 -- PO for Lincoln Continental
 INSERT INTO Purchase_Order (purchase_id, terms, VIN, vendor_id, employee_id, purchase_date)
-VALUES (1, 'cash', 17392043928394073, 100, 1000, '05/29/2023');
+VALUES (1, 'cash', '17392043928394073', 100, 1000, '05/29/2023');
   
 -- Update of Lincoln Continental purchase order to add manager approval
 UPDATE Purchase_Order
@@ -72,11 +72,11 @@ WHERE purchase_id = 1;
   
 -- Second sales vehicle insert statement
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
-VALUES (84638459374937489, 1967, 'Chevrolet', 'Corvette Stingray', 'blue', 'convertible', 'Great', 'FORSALE', 40000, 60000);
+VALUES ('84638459374937489', 1967, 'Chevrolet', 'Corvette Stingray', 'blue', 'convertible', 'Great', 'FORSALE', 40000, 60000);
   
 -- PO for Chevrolet Stingray
 INSERT INTO Purchase_Order (purchase_id, terms, VIN, vendor_id, employee_id, purchase_date)
-VALUES (2, 'credit', 84638459374937489, 100, 1004, '05/23/2023');
+VALUES (2, 'credit', '84638459374937489', 100, 1004, '05/23/2023');
   
 -- Update of Chevrolet Stingray purchase order to add manager approval
 UPDATE Purchase_Order
@@ -85,11 +85,11 @@ WHERE purchase_id = 2;
   
 -- Third sales vehicle insert statement
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
-VALUES (93759382749506876, 1962, 'Ford', 'Galaxie 500', 'white', NULL, 'Good', 'FORSALE', 35000, 80000);
+VALUES ('93759382749506876', 1962, 'Ford', 'Galaxie 500', 'white', NULL, 'Good', 'FORSALE', 35000, 80000);
   
 -- PO for Ford Galaxie 500
 INSERT INTO Purchase_Order (purchase_id, terms, VIN, vendor_id, employee_id, purchase_date)
-VALUES (3, 'cash', 93759382749506876, 100, 1005, '05/26/2023');
+VALUES (3, 'cash', '93759382749506876', 100, 1005, '05/26/2023');
   
 -- Update of Ford Galaxie 500 purchase order to add manager approval
 UPDATE Purchase_Order
@@ -104,11 +104,11 @@ VALUES (101, 'LAX Porsche', 'Alan Jones', '112 Airport Drive', 'Los Angeles', 'C
 -- Porsche from PO example
 -- Fourth sales vehicle insert statement
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
-VALUES (22241113642310809, 2023, 'Porsche', '911 Carrera', 'Metallic Black', 'Shadow Grey', 'New', 'FORSALE', 89400, 97175);
+VALUES ('22241113642310809', 2023, 'Porsche', '911 Carrera', 'Metallic Black', 'Shadow Grey', 'New', 'FORSALE', 89400, 97175);
                   
 -- Purchase Order for Porsche 911 Carrera
 INSERT INTO Purchase_Order (purchase_id, terms, VIN, vendor_id, employee_id, purchase_date)
-VALUES (4, 'credit', 22241113642310809, 101, 1005, '04/22/2023');
+VALUES (4, 'credit', '22241113642310809', 101, 1005, '04/22/2023');
 
 -- Update of Porsche 911 Carrera purchase order to add manager approval
 UPDATE  Purchase_Order
@@ -121,11 +121,11 @@ VALUES (102, 'Classic Cars', 'Roger Falcione', '7400 E Monte Cristo Ave', 'Scott
 
 -- Fifth sales vehicle insert statement
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
-VALUES (23163571633042318, 1997, 'Nissan', 'Skyline', 'Bayside Blue', 'GT-R V-Spec', 75000, 'Very Good', 'FORSALE', 53000, 85000);
+VALUES ('23163571633042318', 1997, 'Nissan', 'Skyline', 'Bayside Blue', 'GT-R V-Spec', 75000, 'Very Good', 'FORSALE', 53000, 85000);
   
  -- Purchase Order for Nissan Skyline
 INSERT INTO Purchase_Order (purchase_id, terms, VIN, vendor_id, employee_id, purchase_date)
-VALUES (5, 'cash', 23163571633042318, 102, 1005, '05/31/2023');
+VALUES (5, 'cash', '23163571633042318', 102, 1005, '05/31/2023');
   
 -- Update of Nissan Skyline GT-R VSPEC purchase order to add manager approval
 UPDATE Purchase_Order
@@ -139,11 +139,11 @@ VALUES (103, 'Fast Cars & More', 'Neil King', '132 Golden West Pl.', 'Arroyo Gra
 
 -- Sixth sales vehicle insert statement
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
-VALUES (24681357902468135, 1995, 'Toyota', 'Tacoma', 'Sunshine Red', NULL , 67000, 'Very Good', 'FORSALE', 14000, 27000);
+VALUES ('24681357902468135', 1995, 'Toyota', 'Tacoma', 'Sunshine Red', NULL , 67000, 'Very Good', 'FORSALE', 14000, 27000);
   
  -- PO for car
 INSERT INTO Purchase_Order (purchase_id, terms, VIN, vendor_id, employee_id, purchase_date)
-VALUES (6, 'credit', 24681357902468135, 103, 1004, '06/01/2023');
+VALUES (6, 'credit', '24681357902468135', 103, 1004, '06/01/2023');
   
 -- Update of 1995 Toyota Tacoma purchase order to add manager approval
 UPDATE Purchase_Order
@@ -156,11 +156,11 @@ VALUES (104, "Bobby's Vintage Cars", 'Bobby Lee', '133 Hollywood St.', 'Los Ange
 
 -- Seventh sales vehicle insert statement
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
-VALUES (98765432109876543, 1971, 'Ford', 'Mustang', 'Jet Black', 'Fastback' , 87000, 'Good', 'FORSALE', 41700, 79000);
+VALUES ('98765432109876543', 1971, 'Ford', 'Mustang', 'Jet Black', 'Fastback' , 87000, 'Good', 'FORSALE', 41700, 79000);
 
 -- PO for car
 INSERT INTO Purchase_Order (purchase_id, terms, VIN, vendor_id, employee_id, purchase_date)
-VALUES (7, 'check', 98765432109876543, 104, 1005, '06/02/2023');
+VALUES (7, 'check', '98765432109876543', 104, 1005, '06/02/2023');
 
 -- Update of 1971 Ford Mustang purchase order to add manager approval
 UPDATE Purchase_Order
@@ -175,11 +175,11 @@ VALUES (110, LeBron, James, '1234 Lakers St.', 'Los Angeles', 'CA', '90015', '80
 
 -- Add trade in vehicle to the sales vehicles table
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
-VALUES (83940738467859487, 1970, 'Datsun', '240Z', 'yellow', NULL, 'Excellent', 'TRADEIN', 15000, NULL);
+VALUES ('83940738467859487', 1970, 'Datsun', '240Z', 'yellow', NULL, 'Excellent', 'TRADEIN', 15000, NULL);
   
 -- Add sales invoice for the 1st car being bought
 INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN)
-VALUES (10000, 110, 17392043928394073, 1005, 'cash', 83940738467859487);
+VALUES (10000, 110, '17392043928394073', 1005, 'cash', '83940738467859487');
   
 -- Update sales invoice to add approval from Larry
 UPDATE Sales_Invoice
@@ -189,12 +189,12 @@ WHERE invoice_id = 10000;
 -- Update sales vehicle status to sold
 UPDATE Sales_Vehicle 
 SET status = 'SOLD'
-WHERE VIN = 17392043928394073;
+WHERE VIN = '17392043928394073';
   
 -- Update trade in to be listed as 'FORSALE'
 UPDATE Sales_Vehicle
 SET status = 'FORSALE'
-WHERE VIN = 83940738467859487;
+WHERE VIN = '83940738467859487';
   
 
 -- Jesus' 2 sales (Step 4 in task 5) out of 5 total
@@ -208,7 +208,7 @@ VALUES ('WP0EB0911FS161840', 1985, 'Porsche', '911 Carrera', 'Red', NULL, 77571,
   
 -- add sales invoice
 INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN)
-VALUES (10003, 112, 22241113642310809, 1005, 'cash', 'WP0EB0911FS161840');
+VALUES (10003, 112, '22241113642310809', 1005, 'cash', 'WP0EB0911FS161840');
   
 -- update sales invoice to add approval from Larry
 UPDATE Sales_Invoice
@@ -218,7 +218,7 @@ WHERE  invoice_id = 10003;
 -- update sales vehicle status to sold
 UPDATE Sales_Vehicle
 SET status = 'SOLD'
-WHERE VIN = 22241113642310809;
+WHERE VIN = '22241113642310809';
   
 -- update trade in
 UPDATE Sales_Vehicle
@@ -231,7 +231,7 @@ VALUES (113, 'Daniel', 'Solano', '750 Paso de Luz', 'Chula Vista', 91911, 609458
 
 -- add sales invoice
 INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN);
-VALUES (10004, 113, 23163571633042318, 1005, 'cash', NULL)
+VALUES (10004, 113, '23163571633042318', 1005, 'cash', NULL)
   
 -- update sales invoice
 UPDATE Sales_Invoice
@@ -241,7 +241,7 @@ WHERE invoice_id = 10004;
 -- update sales vehicle
 UPDATE Sales_Vehicle
 SET status = 'SOLD'
-WHERE VIN = 23163571633042318;
+WHERE VIN = '23163571633042318';
 
 -- Dylan's Sale
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
@@ -253,7 +253,7 @@ VALUES ('4T1BE46K8XU123456', 1972, 'Toyota', 'Carolla', 'Light Blue', NULL, 9104
   
 -- add sales invoice
 INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN)
-VALUES (10005, 114, 56789012345678901, 1004, 'check', '4T1BE46K8XU123456');
+VALUES (10005, 114, '56789012345678901', 1004, 'check', '4T1BE46K8XU123456');
   
 -- update sales invoice to add approval from Larry
 UPDATE Sales_Invoice
