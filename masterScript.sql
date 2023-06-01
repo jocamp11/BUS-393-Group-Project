@@ -335,7 +335,7 @@ CREATE TABLE Service_Invoice (
  --Nate's 3 Car Purchases (Step 3 in task 5)
 -- Create a vendor to buy vehicles from  *this wasn't listed but I beleive we have to do it
 INSERT INTO Vendor (vendor_id, vendor_name, contact_name, street, city, state, zip, phone, fax)
-VALUES (100, 'Vintage Auto America', 'Jason Jackson', '1045 Johnson St.', 'Atascadero', 'CA', '93420', 2547368594);
+VALUES (100, 'Vintage Auto America', 'Jason Jackson', '1045 Johnson St.', 'Atascadero', 'CA', '93420', 2547368594, NULL);
 
 -- First sales vehicle insert statement
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
