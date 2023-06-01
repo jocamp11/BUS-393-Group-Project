@@ -507,7 +507,7 @@ VALUES (10003, 112, '22241113642310809', 1005, 'cash', 'WP0EB0911FS161840');
   
 -- update sales invoice to add approval from Larry
 UPDATE Sales_Invoice
-SET approving_manager = 100
+SET approving_manager = 1000
 WHERE  invoice_id = 10003;
 
 -- update sales vehicle status to sold
@@ -552,7 +552,7 @@ VALUES (10005, 114, '24681357902468135', 1004, 'check', '4T1BE46K8XU123456');
   
 -- update sales invoice to add approval from Larry
 UPDATE Sales_Invoice
-SET approving_manager = 100
+SET approving_manager = 1000
 WHERE  invoice_id = 10005;
 
 -- update sales vehicle status to sold
