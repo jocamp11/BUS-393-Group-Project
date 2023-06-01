@@ -323,7 +323,7 @@ CREATE TABLE Purchase_Order (
   );
   
 CREATE TABLE Service_Invoice (
-  invoice_number NUMBER(6),
+  invoice_number NUMBER(6) PRIMARY KEY,
   employee_id NUMBER(6) NOT NULL REFERENCES employee(employee_id),
   customer_id NUMBER(6) NOT NULL REFERENCES customer(customer_id),
   service_date DATE NOT NULL,
