@@ -272,3 +272,5 @@ WHERE VIN = 23163571633042318
 -- add new service invoice
   
 -- add service(s)
+
+-- Queries (Step 6 in task 5)
