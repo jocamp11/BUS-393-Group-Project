@@ -527,7 +527,7 @@ INSERT INTO customer (customer_id, first_name, last_name, street, city, state, z
 VALUES (113, 'Daniel', 'Solano', '750 Paso de Luz', 'Chula Vista', 91911, 6094583118, 'dsolano@gmail.com');
 
 -- add sales invoice
-INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN);
+INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN)
 VALUES (10004, 113, '23163571633042318', 1005, 'cash', NULL);
   
 -- update sales invoice
