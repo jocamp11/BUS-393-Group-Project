@@ -269,7 +269,7 @@ CREATE TABLE Sales_Vehicle (
   status          VARCHAR2(7)  NOT NULL,
   purchase_price  NUMBER(8, 2),
   list_price      NUMBER(8, 2),
-  CHECK(status IN ('SOLD', 'FORSALE', 'TRADEIN'),
+  CHECK(status IN ('SOLD', 'FORSALE', 'TRADEIN')),
   CHECK(mileage > 0),
   CHECK (purchase_price > 0),
   CHECK (list_price > 0));
