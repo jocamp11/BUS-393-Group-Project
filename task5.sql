@@ -325,6 +325,22 @@ VALUES('Oil-5/30', 6/1/2023, '3VWCM7AJ1CM123456');
 
 INSERT INTO services_provided (service_code, service_date, invoice number)
 VALUES('OC-123',6/1/2023,'3VWCM7AJ1CM123456');
+
+--2nd Customer not sold by SLO VA (one part, one service)
+INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
+VALUES (121, 'John', 'Turnover', '111 Higuera St', 'San Luis Obispo', 93408, 4158889201, 'johnturnover@gmail.com');
+
+INSERT INTO service_vehicle (VIN, year, make, model, mileage)
+VALUES('JTHBJ46G182123456', 2015, 'Bugatti', 'Chiron', 37000);
+
+INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin)
+VALUES(2002, 1008, 121, 6/3/2023, 'JTHBJ46G182123456');
+
+INSERT INTO service_parts (part_code, service_date, invoice_number)
+VALUES('PC-9873', 6/3/2023, '3VWCM7AJ1CM123456');
+
+INSERT INTO services_provided (service_code, service_date, invoice number)
+VALUES('SC-001',6/3/2023,'3VWCM7AJ1CM123456');
   
 --Sold by SLO VA (only one part)
 INSERT INTO service_vehicle (VIN, year, make, model, mileage)
