@@ -164,3 +164,4 @@ SET status = 'FORSALE'
 WHERE VIN = 83940738467859487;
   
 
+-- Jesus' 2 sales (Step 4 in task 5) out of 5 total
