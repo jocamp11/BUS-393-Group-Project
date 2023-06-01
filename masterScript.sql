@@ -118,7 +118,7 @@ ON (c.customer_id = p.customer_id);
 -- Create Employee Table
 
 CREATE TABLE employee (
-    employee_id NUMBER(4) PRIMARY KEY,
+    employee_id NUMBER(6) PRIMARY KEY,
     first_name VARCHAR2(20) NOT NULL,
     last_name VARCHAR2(20) NOT NULL,
     address VARCHAR2(50) NOT NULL,
