@@ -540,7 +540,7 @@ WHERE VIN = '23163571633042318';
 
 -- Dylan's Sale
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (114, 'Bob', 'Toliver', '1277 Singletree Ct', 'San Luis Obispo', 94568, 8052314439, 'btoliver13@gmail.com');
+VALUES (114, 'Bob', 'Toliver', '1277 Singletree Ct', 'San Luis Obispo', 'CA', 94568, 8052314439, 'btoliver13@gmail.com');
 
 -- add trade in
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
@@ -592,7 +592,7 @@ WHERE VIN = '4T1BE46K8XU123456';
   
 -- Not sold by SLO VA (only one service, one part)
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (120, 'Joshua', 'Treeburn', '111 Singletree Ct', 'San Luis Obispo', 93405, 8054529901, 'joshuatree@gmail.com') 
+VALUES (120, 'Joshua', 'Treeburn', '111 Singletree Ct', 'San Luis Obispo', 'CA', 93405, 8054529901, 'joshuatree@gmail.com') 
 
 INSERT INTO service_vehicle (VIN, year, make, model, mileage)
 VALUES('65432109876543210', 2002, 'Honda', 'Accord', 250000)
