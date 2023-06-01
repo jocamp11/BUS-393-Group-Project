@@ -147,6 +147,21 @@ VALUES (83940738467859487, 1970, 'Datsun', '240Z', 'yellow', NULL, 'Excellent', 
   
 -- Add sales invoice for the 1st car being bought
 INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN)
-VALUES (10000, 110, 17392043928394073, 1005, 'cash', 83940738467859487)
+VALUES (10000, 110, 17392043928394073, 1005, 'cash', 83940738467859487);
+  
+-- Update sales invoice to add approval from Larry
+UPDATE Sales_Invoice
+SET approving_manager = 1000
+WHERE invoice_id = 10000;
+  
+-- Update sales vehicle status to sold
+UPDATE Sales_Vehicle 
+SET status = 'SOLD'
+WHERE VIN = 17392043928394073;
+  
+-- Update trade in to be listed as 'FORSALE'
+UPDATE Sales_Vehicle
+SET status = 'FORSALE'
+WHERE VIN = 83940738467859487;
   
 
