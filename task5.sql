@@ -28,7 +28,7 @@ CREATE TABLE Vendor (
   fax           NUMBER(10));
   
 CREATE TABLE Purchase_Order (
-  purchase_ID  NUMBER(6)   PRIMARY KEY,
+  purchase_id  NUMBER(6)   PRIMARY KEY,
   terms             VARCHAR2(6) NOT NULL,
   VIN               NUMBER(17)  UNIQUE NOT NULL REFERENCES sales_vehicle(VIN),
   vendor_id         NUMBER(6)   NOT NULL REFERENCES vendor(vendor_id),
@@ -52,52 +52,58 @@ INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage
 VALUES (17392043928394073, 1963, 'Lincoln', 'Continental', 'black', 'convertible', 'Good', 'FORSALE', 55000, 90000);
   
 -- PO for Lincoln Continental
-INSERT INTO Purchase_Order (purchase_ID, terms, VIN, vendor_id, employee_id, purchase_date)
+INSERT INTO Purchase_Order (purchase_id, terms, VIN, vendor_id, employee_id, purchase_date)
 VALUES (1, 'cash', 17392043928394073, 100, 1000, '05/29/2023');
   
 -- Update of Lincoln Continental purchase order to add manager approval
 UPDATE Purchase_Order
 SET approving_manager = 1000
-WHERE purchase_ID = 1;
+WHERE purchase_id = 1;
   
 -- Second sales vehicle insert statement
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
 VALUES (84638459374937489, 1967, 'Chevrolet', 'Corvette Stingray', 'blue', 'convertible', 'Great', 'FORSALE', 40000, 60000);
   
 -- PO for Chevrolet Stingray
-INSERT INTO Purchase_Order (purchase_ID, terms, VIN, vendor_id, employee_id, purchase_date)
+INSERT INTO Purchase_Order (purchase_id, terms, VIN, vendor_id, employee_id, purchase_date)
 VALUES (2, 'credit', 84638459374937489, 100, 1004, '05/23/2023');
   
 -- Update of Chevrolet Stingray purchase order to add manager approval
 UPDATE Purchase_Order
 SET approving_manager = 1003
-WHERE purchase_ID = 2;
+WHERE purchase_id = 2;
   
 -- Third sales vehicle insert statement
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
 VALUES (93759382749506876, 1962, 'Ford', 'Galaxie 500', 'white', NULL, 'Good', 'FORSALE', 35000, 80000);
   
 -- PO for Ford Galaxie 500
-INSERT INTO Purchase_Order (purchase_ID, terms, VIN, vendor_id, employee_id, purchase_date)
+INSERT INTO Purchase_Order (purchase_id, terms, VIN, vendor_id, employee_id, purchase_date)
 VALUES (3, 'cash', 93759382749506876, 100, 1005, '05/26/2023');
   
 -- Update of Ford Galaxie 500 purchase order to add manager approval
 UPDATE Purchase_Order
 SET approving_manager = 1000
-WHERE purchase_ID = 3;
+WHERE purchase_id = 3;
                         
 --Jesus' 2 Car Purchases (Step 3 in task 5)
-
+-- Create new vendor to buy vehicles from 
+INSERT INTO Vendor (vendor_id, vendor_name, contact_name, street, city, state, zip, phone, fax)
+VALUES (101, 'LAX Porsche', 'Alan Jones', '112 Airport Drive', 'Los Angeles', 'CA', '90045', 8005551123, 8005554211);
   
--- Porsche from 1960's
+-- Porsche from PO example
 -- Fourth sales vehicle insert statement
-  
-
+INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
+VALUES (22241113642310809, 2023, 'Porsche', '911 Carrera', 'Metallic Black', 'Shadow Grey', 'New', 'FORSALE', 97175, 89400);
+                  
 -- PO for car
-  
+INSERT INTO Purchase_Order (purchase_id, terms, VIN, vendor_id, employee_id, purchase_date)
+VALUES (4, 'credit', 22241113642310809, 101, 1005, '04/22/2023');
 
 -- Update car po to add manager approval
-  
+UPDATE  Purchase_Order
+SET     approving_manager = 1000
+WHERE   purchase_id
 
 -- Fifth sales vehicle insert statement
   
