@@ -133,6 +133,12 @@ WHERE  purchase_id = 5
   
   
 
+  
 -- Nate's 2 sales (Step 4 in task 5) out of 5 total
--- Add customer to the customer table
-INSERT INTO customer (
+-- Add 1st customer to the customer table (trade-in)
+INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
+VALUES (110, LeBron, James, '1234 Lakers St.', 'Los Angeles', 'CA', '90015', '8082546781', 'lebronjames23@lakers.com');
+
+-- Add trade in vehicle to the sales vehicles table
+INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
+VALUES (83940738467859487, 1970, 'Datsun', '240Z', 'yellow', NULL, 'Excellent', 'TRADEIN', 15000, NULL);
