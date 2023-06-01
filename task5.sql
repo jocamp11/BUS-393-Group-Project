@@ -204,8 +204,23 @@ VALUES ('78394072647589475', 1974, 'Pontiac', 'Firebird', 'black', NULL, 'Good',
   
 -- Add sales invoice for the 2nd car being bought
 INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN)
-VALUES (10002, 111, '84638459374937489', 1005, 'cash', '78394072647589475');
-
+VALUES (10002, 111, '84638459374937489', 1004, 'credit', '78394072647589475');
+  
+-- Update sales invoice to add approval from Larry
+UPDATE Sales_Invoice
+SET approving_manager = 1000
+WHERE invoice_id = 10002;
+  
+-- Update sales vehicle status to sold
+UPDATE Sales_Vehicle 
+SET status = 'SOLD'
+WHERE VIN = '84638459374937489';
+  
+-- Update trade in to be listed as 'FORSALE'
+UPDATE Sales_Vehicle
+SET status = 'FORSALE'
+WHERE VIN = '78394072647589475';
+  
 -- Jesus' 2 sales (Step 4 in task 5) out of 5 total
 -- 3rd customer to the customer table (trade-in)
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
