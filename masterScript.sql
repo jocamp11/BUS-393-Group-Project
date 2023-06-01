@@ -449,7 +449,7 @@ WHERE  purchase_id = 7;
 -- Nate's 2 sales (Step 4 in task 5) out of 5 total
 -- Add 1st customer to the customer table (trade-in)
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (110, LeBron, James, '1234 Lakers St.', 'Los Angeles', 'CA', '90015', '8082546781', 'lebronjames23@lakers.com');
+VALUES (110, 'LeBron', 'James', '1234 Lakers St.', 'Los Angeles', 'CA', '90015', '8082546781', 'lebronjames23@lakers.com');
 
 -- Add trade in vehicle to the sales vehicles table
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
@@ -476,7 +476,7 @@ WHERE VIN = '83940738467859487';
   
 -- 2nd Customer to the customer table 
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (111, Stephen, Curry, '5678 Warriors Rd.', 'San Francisco', 'CA', '94016', '8158490049', 'stephencurry30@warriors.com');
+VALUES (111, 'Stephen', 'Curry', '5678 Warriors Rd.', 'San Francisco', 'CA', '94016', '8158490049', 'stephencurry30@warriors.com');
   
 -- Add sales invoice for the 2nd car being bought
 INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms)
