@@ -312,7 +312,7 @@ INSERT INTO service_vehicle (VIN, year, make, model, mileage)
 VALUES('JTHBJ46G182123456', 2015, 'Bugatti', 'Chiron', 37000);
 -- add new service_invoice
 INSERT INTO service_invoice (invoice_number, employee_id, customer_id, service_date, service_vin, terms);
-VALUES(2002, 1008, 121, 6/3/2023, 'JTHBJ46G182123456','credit');
+VALUES(10002, 1008, 121, 6/3/2023, 'JTHBJ46G182123456','credit');
 -- add parts
 INSERT INTO service_parts (part_code, service_date, invoice_number)
 VALUES('PC-9873', 6/3/2023, 'JTHBJ46G182123456');
@@ -321,7 +321,17 @@ INSERT INTO services_provided (service_code, service_date, invoice_number)
 VALUES('SC-001',6/3/2023,'JTHBJ46G182123456');
 
 -- 3rd customer not sold by SLO VA (one service)
-
+INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
+VALUES (122, 'John', 'Langle', '782 Marsh St', 'San Luis Obispo', 93401, 8052348901, 'johnlangle@gmail.com');
+-- add new car to service_vehicle
+INSERT INTO service_vehicle (VIN, year, make, model, mileage)
+VALUES('8Z7TCDKX1WL123456', 2012, 'Dodge', 'Challenger', 20000);
+-- add new service_invoice
+INSERT INTO service_invoice (invoice_number, employee_id, customer_id, service_date, service_vin, terms);
+VALUES(10004, 1009, 122, 6/4/2023, '8Z7TCDKX1WL123456','check');
+-- add services
+INSERT INTO services_provided (service_code, service_date, invoice_number)
+VALUES('TR-01',6/4/2023,'8Z7TCDKX1WL123456');
   
 --Sold by SLO VA (only one part)
 -- copy sales-vehicle into service
@@ -330,7 +340,7 @@ SELECT('24681357902468135', 1995, 'Toyota', 'Tacoma', 67000);
 FROM sales_vehicle;
 -- create new service-invoice
 INSERT INTO service_invoice (invoice_number, employee_id, customer_id, service_date, service_vin, terms);
-VALUES(10001, 1002, 114, 6/2/2023, '24681357902468135', 'credit');
+VALUES(10003, 1002, 114, 6/2/2023, '24681357902468135', 'credit');
 -- add parts
 INSERT INTO service_parts (part_code, service_date, invoice_number)
 VALUES('FIL-1234', 6/2/2023, 10001);
