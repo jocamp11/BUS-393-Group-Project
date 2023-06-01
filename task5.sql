@@ -110,3 +110,15 @@ WHERE purchase_ID = 3;
   
  
 -- Update of car purchase order to add manager approval
+  
+  
+  
+  
+  
+  
+  
+  
+
+-- Nate's 2 sales (Step 4 in task 5) out of 5 total
+-- Add customer to the customer table
+INSERT INTO customer (
