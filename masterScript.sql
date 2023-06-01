@@ -495,7 +495,7 @@ WHERE VIN = '84638459374937489';
 -- Jesus' 2 sales (Step 4 in task 5) out of 5 total
 -- 3rd customer to the customer table (trade-in)
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (112, 'Alejandro', 'Torres', 'S Main St', 'Los Angeles', 90011, 3232137802, 'alejandrotorres@gmail.com');
+VALUES (112, 'Alejandro', 'Torres', 'S Main St', 'Los Angeles', 'CA', 90011, 3232137802, 'alejandrotorres@gmail.com');
 
 -- add trade in
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
@@ -522,7 +522,7 @@ WHERE VIN = 'WP0EB0911FS161840';
   
 -- 4th customer to the customer table (no trade-in)
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (113, 'Daniel', 'Solano', '750 Paso de Luz', 'Chula Vista', 91911, 6094583118, 'dsolano@gmail.com');
+VALUES (113, 'Daniel', 'Solano', '750 Paso de Luz', 'Chula Vista', 'CA', 91911, 6094583118, 'dsolano@gmail.com');
 
 -- add sales invoice
 INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN)
