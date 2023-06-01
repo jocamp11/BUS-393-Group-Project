@@ -48,7 +48,7 @@ CREATE TABLE Service_Invoice (
   service_code VARCHAR2(20) NOT NULL,
   service_VIN VARCHAR2(17) NOT NULL REFERENCES service_vehicle(VIN), 
   parts_code VARCHAR2(20),   
-);
+  );
   
 --Nate's 3 Car Purchases (Step 3 in task 5)
 -- Create a vendor to buy vehicles from  *this wasn't listed but I beleive we have to do it
