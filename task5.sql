@@ -319,18 +319,21 @@ VALUES('PC-9873', 6/3/2023, '3VWCM7AJ1CM123456');
 -- add services
 INSERT INTO services_provided (service_code, service_date, invoice number)
 VALUES('SC-001',6/3/2023,'3VWCM7AJ1CM123456');
+
+-- 3rd customer not sold by SLO VA (one service)
+
   
 --Sold by SLO VA (only one part)
 -- copy sales-vehicle into service
 INSERT INTO service_vehicle (VIN, year, make, model, mileage)
-SELECT('24681357902468135', 1995, 'Toyota', 'Tacoma', 67000)
+SELECT('24681357902468135', 1995, 'Toyota', 'Tacoma', 67000);
 FROM sales_vehicle;
 -- create new service-invoice
 INSERT INTO service_invoice (invoice_number, employee_id, customer_id, service_date, service_vin)
 VALUES(10001, 1002, 114, 6/2/2023, '24681357902468135');
 -- add parts
 INSERT INTO service_parts (part_code, service_date, invoice_number)
-VALUES('FIL-1234', 6/2/2023, 10001)
+VALUES('FIL-1234', 6/2/2023, 10001);
 
 -- Jesus'  Service Invoices(Step 5 in task 5)
 -- One that was sold by SLO Vintage Auto (Only one part and only one service)
