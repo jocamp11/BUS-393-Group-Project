@@ -350,7 +350,7 @@ WHERE purchase_id = 1;
   
 -- Second sales vehicle insert statement
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
-VALUES ('84638459374937489', 1967, 'Chevrolet', 'Corvette Stingray', 'blue', 'convertible',25000, 'Great', 'FORSALE', 40000, 60000);
+VALUES ('84638459374937489', 1967, 'Chevrolet', 'Corvette Stingray', 'blue', 'convertible', 25000, 'Great', 'FORSALE', 40000, 60000);
   
 -- PO for Chevrolet Stingray
 INSERT INTO Purchase_Order (purchase_id, terms, VIN, vendor_id, employee_id, purchase_date)
