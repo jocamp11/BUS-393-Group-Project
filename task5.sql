@@ -125,7 +125,6 @@ SET    approving_manager = 1000
 WHERE  purchase_id = 5
   
  
--- Update of car purchase order to add manager approval
   
   
   
