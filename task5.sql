@@ -12,6 +12,7 @@ CREATE TABLE Sales_Invoice(
   customer_id   NUMBER(6)   NOT NULL REFERENCES customer(customer_id),
   VIN           NUMBER(6)   UNIQUE NOT NULL REFERENCES sales_vehicle(VIN),
   employee_id   NUMBER(6)   NOT NULL REFERENCES employee(employee_id),
+  terms         VARCHAR2(6) NOT NULL,
   tradein_VIN   NUMBER(6)   UNIQUE,
   sale_date     DATE,
   CHECK(terms IN('cash', 'check', 'credit')));
@@ -144,4 +145,4 @@ INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage
 VALUES (83940738467859487, 1970, 'Datsun', '240Z', 'yellow', NULL, 'Excellent', 'TRADEIN', 15000, NULL);
   
 -- Add sales invoice for the 1st car being bought
-INSERT INTO Sales_Invoice (
+INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id)
