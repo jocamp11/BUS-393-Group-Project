@@ -102,7 +102,7 @@ VALUES (22241113642310809, 2023, 'Porsche', '911 Carrera', 'Metallic Black', 'Sh
 INSERT INTO Purchase_Order (purchase_id, terms, VIN, vendor_id, employee_id, purchase_date)
 VALUES (4, 'credit', 22241113642310809, 101, 1005, '04/22/2023');
 
--- Update car po to add manager approval
+-- Update of Porsche 911 Carrera purchase order to add manager approval
 UPDATE  Purchase_Order
 SET     approving_manager = 1000
 WHERE   purchase_id = 4
@@ -113,13 +113,13 @@ VALUES (102, 'Classic Cars', 'Roger Falcione', '7400 E Monte Cristo Ave', 'Scott
 
 -- Fifth sales vehicle insert statement
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
-VALUES (23163571633042318, 1997, 'Nissan', 'Skyline GT-R R33 VSPEC', 'Bayside Blue', NULL, 'New', 'FORSALE', 53000, 85000);
+VALUES (23163571633042318, 1997, 'Nissan', 'Skyline GT-R VSPEC', 'Bayside Blue', NULL, 'New', 'FORSALE', 53000, 85000);
   
  -- PO for car
 INSERT INTO Purchase_Order (purchase_id, terms, VIN, vendor_id, employee_id, purchase_date)
 VALUES (5, 'cash', 23163571633042318, 102, 1005, '05/31/2023');
   
--- Update car po to add manager approval
+-- Update of Nissan Skyline GT-R VSPEC purchase order to add manager approval
 UPDATE Purchase_Order
 SET    approving_manager = 1000
 WHERE  purchase_id = 5
