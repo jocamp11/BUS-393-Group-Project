@@ -171,19 +171,25 @@ VALUES (112, 'Alejandro', 'Torres', 'Main St', 'Los Angeles', 90011, 3232137802,
 
 -- add trade in
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
-VALUES (WP0EB0911FS161840, 1985, 'Porsche', '911', 'Red', 
+VALUES ('WP0EB0911FS161840', 1985, 'Porsche', '911', 'Red', 'Carrera', 77571, 'Used', 'TRADEIN', 84499, 94499)
   
 -- add sales invoice
-
+INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN)
+VALUES (10003, 112, 22241113642310809, 1005, 'cash', 'WP0EB0911FS161840')
   
--- update sales invoice
-  
-  
--- update sales vehicle
-  
+-- update sales invoice to add approval from Larry
+UPDATE
+SET
+WHERE  
+-- update sales vehicle status to sold
+UPDATE
+SET
+WHERE   
   
 -- update trade in
-  
+UPDATE
+SET
+WHERE 
   
 -- 4th customer to the customer table (no trade-in)
 
