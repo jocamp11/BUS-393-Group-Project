@@ -142,3 +142,6 @@ VALUES (110, LeBron, James, '1234 Lakers St.', 'Los Angeles', 'CA', '90015', '80
 -- Add trade in vehicle to the sales vehicles table
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
 VALUES (83940738467859487, 1970, 'Datsun', '240Z', 'yellow', NULL, 'Excellent', 'TRADEIN', 15000, NULL);
+  
+-- Add sales invoice for the 1st car being bought
+INSERT INTO Sales_Invoice (
