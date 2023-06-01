@@ -113,7 +113,7 @@ VALUES (102, 'Classic Cars', 'Roger Falcione', '7400 E Monte Cristo Ave', 'Scott
 
 -- Fifth sales vehicle insert statement
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
-VALUES (23163571633042318, 1997, 'Nissan', 'Skyline GT-R VSPEC', 'Bayside Blue', NULL, 'New', 'FORSALE', 53000, 85000);
+VALUES (23163571633042318, 1997, 'Nissan', 'Skyline GT-R VSPEC', 'Bayside Blue', NULL, 'Very Good', 'FORSALE', 53000, 85000);
   
  -- PO for car
 INSERT INTO Purchase_Order (purchase_id, terms, VIN, vendor_id, employee_id, purchase_date)
@@ -165,3 +165,28 @@ WHERE VIN = 83940738467859487;
   
 
 -- Jesus' 2 sales (Step 4 in task 5) out of 5 total
+-- 3rd customer to the customer table (trade-in)
+INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
+VALUES (112, 'Alejandro', 'Torres', 'Main St', 'Los Angeles', 90011, 3232137802, 'alejandrotorres@gmail.com')
+
+-- add trade in
+  
+-- add sales invoice
+
+-- update sales invoice
+  
+-- update sales vehicle
+  
+-- update trade in
+  
+-- 4th customer to the customer table (no trade-in)
+  
+-- add trade in
+  
+-- add sales invoice
+
+-- update sales invoice
+  
+-- update sales vehicle
+  
+-- update trade in 
