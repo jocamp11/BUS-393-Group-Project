@@ -323,12 +323,13 @@ CREATE TABLE Purchase_Order (
   );
   
 CREATE TABLE Service_Invoice (
-  SI_id NUMBER(6) PRIMARY KEY,
+  SI_ID NUMBER(6) PRIMARY KEY,
   employee_id NUMBER(6) NOT NULL REFERENCES employee(employee_id),
   customer_id NUMBER(6) NOT NULL REFERENCES customer(customer_id),
   service_date DATE NOT NULL,
-  service_VIN VARCHAR2(17) NOT NULL REFERENCES service_vehicle(VIN)   
-  );
+  service_VIN VARCHAR2(17) NOT NULL REFERENCES service_vehicle(VIN),
+  terms VARCHAR2(6) NOT NULL,   
+  CHECK (terms IN('credit', 'check', 'cash')));
 
  --Nate's 3 Car Purchases (Step 3 in task 5)
 -- Create a vendor to buy vehicles from  *this wasn't listed but I beleive we have to do it
