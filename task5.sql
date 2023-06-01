@@ -171,17 +171,21 @@ VALUES (112, 'Alejandro', 'Torres', 'Main St', 'Los Angeles', 90011, 3232137802,
 
 -- add trade in
   
+  
 -- add sales invoice
 
+  
 -- update sales invoice
+  
   
 -- update sales vehicle
   
+  
 -- update trade in
   
--- 4th customer to the customer table (no trade-in)
   
--- add trade in
+-- 4th customer to the customer table (no trade-in)
+
   
 -- add sales invoice
 
