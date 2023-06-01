@@ -106,7 +106,7 @@ VALUES ('22241113642310809', 2023, 'Porsche', '911 Carrera', 'Metallic Black', '
                   
 -- Purchase Order for Porsche 911 Carrera
 INSERT INTO Purchase_Order (purchase_id, terms, VIN, vendor_id, employee_id, purchase_date)
-VALUES (4, 'credit', '22241113642310809', 101, 1005, '04/22/2023');
+VALUES (4, 'credit', '22241113642310809', 101, 1004, '04/22/2023');
 
 -- Update of Porsche 911 Carrera purchase order to add manager approval
 UPDATE  Purchase_Order
@@ -123,7 +123,7 @@ VALUES ('23163571633042318', 1997, 'Nissan', 'Skyline', 'Bayside Blue', 'GT-R V-
   
  -- Purchase Order for Nissan Skyline
 INSERT INTO Purchase_Order (purchase_id, terms, VIN, vendor_id, employee_id, purchase_date)
-VALUES (5, 'cash', '23163571633042318', 102, 1005, '05/31/2023');
+VALUES (5, 'cash', '23163571633042318', 102, 1004, '05/31/2023');
   
 -- Update of Nissan Skyline GT-R VSPEC purchase order to add manager approval
 UPDATE Purchase_Order
