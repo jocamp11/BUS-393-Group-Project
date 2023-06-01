@@ -310,10 +310,19 @@ WHERE VIN = '4T1BE46K8XU123456';
 -- Not sold by SLO VA (only one service - tire rotation)
 -- add customer to customer table
   
--- add customer car to service vehicle table
-  
--- add new service invoice
-  
--- add service(s)
+-- Not sold by SLO VA (only one service, one part)
+INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
+VALUES (120, 'Joshua', 'Treeburn', '111 Singletree Ct', 'San Luis Obispo', 93405, 8054529901, 'joshuatree@gmail.com') 
 
+INSERT INTO service_vehicle (VIN, year, make, model, mileage)
+VALUES('65432109876543210', 2002, 'Honda', 'Accord', 250000)
+
+INSERT INTO service_invoice (invoice_number, employee_id, customer_id, service_date, service_vin)
+VALUES(10000, 1002, 120, 6/1/2023, '3VWCM7AJ1CM123456')
+
+INSERT INTO service_parts (part_code, service_date, invoice_number)
+VALUES('Oil-5/30', 6/1/2023, '3VWCM7AJ1CM123456')
+
+INSERT INTO services_provided (service_code, service_date, invoice number)
+VALUES(OC-123,6/1/2023,'3VWCM7AJ1CM123456')
 -- Queries (Step 6 in task 5)
