@@ -204,7 +204,7 @@ VALUES ('78394072647589475', 1974, 'Pontiac', 'Firebird', 'black', NULL, 'Good',
   
 -- Add sales invoice for the 2nd car being bought
 INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN)
-VALUES (10000, 110, '17392043928394073', 1005, 'cash', '78394072647589475');
+VALUES (10000, 110, '84638459374937489', 1005, 'cash', '78394072647589475');
 
 -- Jesus' 2 sales (Step 4 in task 5) out of 5 total
 -- 3rd customer to the customer table (trade-in)
