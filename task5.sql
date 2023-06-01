@@ -133,6 +133,39 @@ SET    approving_manager = 1000
 WHERE  purchase_id = 5
 
 --Dylan's 2 Car Purchases (Step 3 in task 5)
+--New Vendor 
+INSERT INTO Vendor (vendor_id, vendor_name, contact_name, street, city, state, zip, phone, fax)
+VALUES (103, 'Fast Cars & More', 'Neil King', '132 Golden West Pl.', 'Arroyo Grande', 'CA', '93420', 8054437211);
+
+-- Sixth sales vehicle insert statement
+INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
+VALUES (24681357902468135, 1995, 'Toyota', 'Tacoma', 'Sunshine Red', NULL , 67000, 'Very Good', 'FORSALE', 14000, 27000);
+  
+ -- PO for car
+INSERT INTO Purchase_Order (purchase_id, terms, VIN, vendor_id, employee_id, purchase_date)
+VALUES (6, 'credit', 24681357902468135, 103, 1004, '06/01/2023');
+  
+-- Update of 1995 Toyota Tacoma purchase order to add manager approval
+UPDATE Purchase_Order
+SET    approving_manager = 1000
+WHERE  purchase_id = 6
+
+--- New Vendor
+INSERT INTO Vendor (vendor_id, vendor_name, contact_name, street, city, state, zip, phone, fax)
+VALUES (104, 'SLO Vintage Auto', 'Larry Margaria', '10000 Los Valley Road', 'San Luis Obispo', 'CA', '93408', 8051231234,8051231235);
+
+-- Seventh sales vehicle insert statement
+INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
+VALUES (98765432109876543, 1971, 'Ford', 'Mustang', 'Jet Black', 'Fastback' , 87000, 'Good', 'FORSALE', 41700, 79000);
+
+-- PO for car
+INSERT INTO Purchase_Order (purchase_id, terms, VIN, vendor_id, employee_id, purchase_date)
+VALUES (7, 'check', 98765432109876543, 104, 1005, '06/02/2023');
+
+-- Update of 1971 Ford Mustang purchase order to add manager approval
+UPDATE Purchase_Order
+SET    approving_manager = 1000
+WHERE  purchase_id = 7
 
   
 -- Nate's 2 sales (Step 4 in task 5) out of 5 total
