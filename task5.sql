@@ -45,9 +45,9 @@ CREATE TABLE Service_Invoice (
   employee_id NUMBER(4) NOT NULL REFERENCES employee(employee_id),
   customer_id NUMBER(6) NOT NULL REFERENCES customer(customer_id),
   service_date DATE NOT NULL,
-  service_code VARCHAR2(20) NOT NULL,
-  service_VIN VARCHAR2(17) NOT NULL REFERENCES service_vehicle(VIN), 
-  parts_code VARCHAR2(20),   
+  service_VIN VARCHAR2(17) NOT NULL REFERENCES service_vehicle(VIN),
+  terms VARCHAR2(6) NOT NULL,
+  CHECK (terms IN ('credit','cash','check')
   );
   
 --Nate's 3 Car Purchases (Step 3 in task 5)
@@ -311,14 +311,14 @@ VALUES (121, 'John', 'Turnover', '111 Higuera St', 'San Luis Obispo', 93408, 415
 INSERT INTO service_vehicle (VIN, year, make, model, mileage)
 VALUES('JTHBJ46G182123456', 2015, 'Bugatti', 'Chiron', 37000);
 -- add new service_invoice
-INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin)
+INSERT INTO service_invoice (invoice_number, employee_id, customer_id, service_date, service_vin)
 VALUES(2002, 1008, 121, 6/3/2023, 'JTHBJ46G182123456');
 -- add parts
 INSERT INTO service_parts (part_code, service_date, invoice_number)
-VALUES('PC-9873', 6/3/2023, '3VWCM7AJ1CM123456');
+VALUES('PC-9873', 6/3/2023, 'JTHBJ46G182123456');
 -- add services
-INSERT INTO services_provided (service_code, service_date, invoice number)
-VALUES('SC-001',6/3/2023,'3VWCM7AJ1CM123456');
+INSERT INTO services_provided (service_code, service_date, invoice_number)
+VALUES('SC-001',6/3/2023,'JTHBJ46G182123456');
 
 -- 3rd customer not sold by SLO VA (one service)
 
