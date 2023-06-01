@@ -319,7 +319,7 @@ CREATE TABLE Purchase_Order (
   employee_id       NUMBER(6)   NOT NULL REFERENCES employee(employee_id),
   approving_manager NUMBER(6)   REFERENCES employee(employee_id),
   purchase_date     DATE,
-  CHECK (terms IN ('credit', 'cash', 'check')
+  CHECK (terms IN ('credit', 'cash', 'check'))
   );
   
 CREATE TABLE Service_Invoice (
