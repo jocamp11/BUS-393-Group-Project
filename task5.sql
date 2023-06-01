@@ -243,6 +243,34 @@ UPDATE Sales_Vehicle
 SET status = 'SOLD'
 WHERE VIN = 23163571633042318
 
+-- Dylan's Sale
+INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
+VALUES (114, 'Bob', 'Toliver', '1277 Singletree Ct', 'San Luis Obispo', 94568, 8052314439, 'btoliver13@gmail.com')
+
+-- add trade in
+INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
+VALUES ('4T1BE46K8XU123456', 1972, 'Toyota', 'Carolla', 'Light Blue', NULL, 91047, 'Used', 'TRADEIN', 24000, 40000)
+  
+-- add sales invoice
+INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN)
+VALUES (10005, 114, 56789012345678901, 1004, 'check', '4T1BE46K8XU123456')
+  
+-- update sales invoice to add approval from Larry
+UPDATE Sales_Invoice
+SET approving_manager = 100
+WHERE  invoice_id = 10005
+
+-- update sales vehicle status to sold
+UPDATE Sales_Vehicle
+SET status = 'SOLD'
+WHERE VIN = 56789012345678901
+
+  
+-- update trade in
+UPDATE Sales_Vehicle
+SET status = 'FORSALE'
+WHERE VIN = '4T1BE46K8XU123456' 
+
 -- Jesus'  Service Invoices (Step 5 in task 5)
 -- One that was sold by SLO Vintage Auto (Only one part and only one service)
 -- add customer to customer table, if needed
