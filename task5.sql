@@ -263,7 +263,7 @@ WHERE  invoice_id = 10005;
 -- update sales vehicle status to sold
 UPDATE Sales_Vehicle
 SET status = 'SOLD'
-WHERE VIN = 56789012345678901;
+WHERE VIN = '56789012345678901';
 
   
 -- update trade in
