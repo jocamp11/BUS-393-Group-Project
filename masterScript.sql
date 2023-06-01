@@ -314,7 +314,7 @@ CREATE TABLE Vendor (
 CREATE TABLE Purchase_Order (
   purchase_id  NUMBER(6)   PRIMARY KEY,
   terms             VARCHAR2(6) NOT NULL,
-  VIN               NUMBER(17)  UNIQUE NOT NULL REFERENCES sales_vehicle(VIN),
+  VIN               VARCHAR2(17)  UNIQUE NOT NULL REFERENCES sales_vehicle(VIN),
   vendor_id         NUMBER(6)   NOT NULL REFERENCES vendor(vendor_id),
   employee_id       NUMBER(6)   NOT NULL REFERENCES employee(employee_id),
   approving_manager NUMBER(6)   REFERENCES employee(employee_id),
@@ -323,8 +323,8 @@ CREATE TABLE Purchase_Order (
   );
   
 CREATE TABLE Service_Invoice (
-  invoice_number NUMBER(4),
-  employee_id NUMBER(4) NOT NULL REFERENCES employee(employee_id),
+  invoice_number NUMBER(6),
+  employee_id NUMBER(6) NOT NULL REFERENCES employee(employee_id),
   customer_id NUMBER(6) NOT NULL REFERENCES customer(customer_id),
   service_date DATE NOT NULL,
   service_code VARCHAR2(20) NOT NULL,
