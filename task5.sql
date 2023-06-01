@@ -324,7 +324,7 @@ INSERT INTO service_parts (part_code, service_date, invoice_number)
 VALUES('Oil-5/30', 6/1/2023, '3VWCM7AJ1CM123456');
 
 INSERT INTO services_provided (service_code, service_date, invoice number)
-VALUES(OC-123,6/1/2023,'3VWCM7AJ1CM123456');
+VALUES('OC-123',6/1/2023,'3VWCM7AJ1CM123456');
   
 --Sold by SLO VA (only one part)
 INSERT INTO service_vehicle (VIN, year, make, model, mileage)
