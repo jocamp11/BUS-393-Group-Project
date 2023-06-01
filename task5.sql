@@ -103,16 +103,24 @@ VALUES (4, 'credit', 22241113642310809, 101, 1005, '04/22/2023');
 -- Update car po to add manager approval
 UPDATE  Purchase_Order
 SET     approving_manager = 1000
-WHERE   purchase_id
+WHERE   purchase_id = 4
+
+-- New Vendor for fifth vehicle
+INSERT INTO Vendor (vendor_id, vendor_name, contact_name, street, city, state, zip, phone, fax)
+VALUES (102, 'Classic Cars', 'Roger Falcione', '7400 E Monte Cristo Ave', 'Scottsdale', 'AZ', '85260', 4802851600);
 
 -- Fifth sales vehicle insert statement
-  
+INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
+VALUES (23163571633042318, 1997, 'Nissan', 'Skyline GT-R R33 VSPEC', 'Bayside Blue', NULL, 'New', 'FORSALE', 53000, 85000);
   
  -- PO for car
-  
+INSERT INTO Purchase_Order (purchase_id, terms, VIN, vendor_id, employee_id, purchase_date)
+VALUES (5, 'cash', 23163571633042318, 102, 1005, '05/31/2023');
   
 -- Update car po to add manager approval
-  
+UPDATE Purchase_Order
+SET    approving_manager = 1000
+WHERE  purchase_id = 5
   
  
 -- Update of car purchase order to add manager approval
