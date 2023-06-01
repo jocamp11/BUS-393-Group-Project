@@ -312,17 +312,28 @@ WHERE VIN = '4T1BE46K8XU123456';
   
 -- Not sold by SLO VA (only one service, one part)
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (120, 'Joshua', 'Treeburn', '111 Singletree Ct', 'San Luis Obispo', 93405, 8054529901, 'joshuatree@gmail.com') 
+VALUES (120, 'Joshua', 'Treeburn', '111 Singletree Ct', 'San Luis Obispo', 93405, 8054529901, 'joshuatree@gmail.com');
 
 INSERT INTO service_vehicle (VIN, year, make, model, mileage)
-VALUES('65432109876543210', 2002, 'Honda', 'Accord', 250000)
+VALUES('3VWCM7AJ1CM123456', 2002, 'Honda', 'Accord', 250000);
 
-INSERT INTO service_invoice (invoice_number, employee_id, customer_id, service_date, service_vin)
-VALUES(10000, 1002, 120, 6/1/2023, '3VWCM7AJ1CM123456')
+INSERT INTO service_invoice (invoice_number, employee_id, customer_id, service_date, service_vin);
+VALUES(10000, 1002, 120, 6/1/2023, '3VWCM7AJ1CM123456');
 
 INSERT INTO service_parts (part_code, service_date, invoice_number)
-VALUES('Oil-5/30', 6/1/2023, '3VWCM7AJ1CM123456')
+VALUES('Oil-5/30', 6/1/2023, '3VWCM7AJ1CM123456');
 
 INSERT INTO services_provided (service_code, service_date, invoice number)
-VALUES(OC-123,6/1/2023,'3VWCM7AJ1CM123456')
+VALUES(OC-123,6/1/2023,'3VWCM7AJ1CM123456');
+  
+--Sold by SLO VA (only one part)
+INSERT INTO service_vehicle (VIN, year, make, model, mileage)
+SELECT('24681357902468135', 1995, 'Toyota', 'Tacoma', 67000)
+FROM sales_vehicle;
+
+INSERT INTO service_invoice (invoice_number, employee_id, customer_id, service_date, service_vin)
+VALUES(10001, 1002, 114, 6/2/2023, '24681357902468135');
+
+INSERT INTO service_parts (part_code, service_date, invoice_number)
+VALUES('FIL-1234', 6/2/2023, 10001)
 -- Queries (Step 6 in task 5)
