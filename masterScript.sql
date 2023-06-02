@@ -701,7 +701,7 @@ AS SELECT s.invoice_id, e.first_name || ' ' || e.last_name "Sales Person", a.fir
 FROM sales_invoice s LEFT OUTER JOIN employee a ON s.approving_manager = a.employee_id
 JOIN employee e ON s.employee_id = e.employee_id
 JOIN sales_vehicle v ON v.VIN = s.VIN
-LEFT OUTER JOIN sales_vehicle vt ON vt.tradein_VIN = s.VIN;
+LEFT OUTER JOIN sales_vehicle vt ON s.tradein_VIN = vt.VIN;
 
 -- Car seller list
 CREATE OR REPLACE VIEW car_seller_list AS 
