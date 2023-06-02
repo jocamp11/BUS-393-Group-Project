@@ -687,3 +687,16 @@ VALUES ()
 INSERT INTO services_provided (service_code, service_date, invoice number)
 VALUES ()
 -- Queries (Step 6 in task 5)
+
+
+-- Query B, Vehicle Sales List (Nate)
+-- Invoice Number, Sales person name, Approved by Name, VIN,
+-- Make, Model, Trade In Vin, Trade In Make, Trade In Model, Selling price, Shipping,
+-- Discount, Trade In Allowance, Subtotal, Taxes, Misc, Total Selling Price (Order by Invoice
+-- Number
+
+CREATE OR REPLACE VIEW Sales_List (
+AS SELECT s.invoice_id, e.first_name || ' ' || e.last_name "Sales Person", a.first_name || ' ' || a.last_name "Approved By", v.VIN "VIN",
+          v.make "Make", v.model "Model", 
+ 
+ 
