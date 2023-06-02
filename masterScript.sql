@@ -635,7 +635,7 @@ VALUES('OILFILTER', '5/2/2023', 20001);
 INSERT INTO service_vehicle (vin, year, make, model, mileage)
 VALUES (SELECT VIN, year, make, model, mileage
         FROM sales_vehicle
-        WHERE VIN = '22241113642310809')
+        WHERE VIN = '22241113642310809');
 
 -- add new service invoice
 INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin, terms)
@@ -654,7 +654,7 @@ VALUES ('OILFILTER', '5/30/2023', 20004);
 INSERT INTO service_vehicle (vin, year, make, model, mileage)
 VALUES (SELECT VIN, year, make, model, mileage
         FROM sales_vehicle
-        WHERE VIN = '23163571633042318')
+        WHERE VIN = '23163571633042318');
 
 -- add new service invoice
 INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin)
@@ -667,19 +667,19 @@ VALUES ('SPARKPLUG4', '6/2/2023', 20005);
 -- Not sold by SLO VA (only one service - tire rotation)
 -- add customer to customer table
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (125, 'Jeff', 'Jefferson', '2783 Chorro St.', 'San Luis Obispo', 'CA', '93405',   );
+VALUES (125, 'Jeff', 'Jefferson', '2783 Chorro St.', 'San Luis Obispo', 'CA', '93405', 8059998383, 'jeffjohnson1995@yahoo.com');
 
 -- add customer's car to service vehicle table
 INSERT INTO service_vehicle (VIN, year, make, model, mileage)
-VALUES ();
+VALUES ('84938726485974857', 2018, 'Ford', 'Mustang', 55000);
 
 -- add new service invoice
 INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin)
-VALUES ()
+VALUES (20006, 1008, 125, '05/24/2023', '84938726485974857');
 
 -- add service
 INSERT INTO services_provided (service_code, service_date, si_id)
-VALUES ()
+VALUES ('TIREROTATE', '05/24/2023', 20006);
 -- Queries (Step 6 in task 5)
 
 
