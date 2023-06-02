@@ -520,7 +520,7 @@ WHERE VIN = 'WP0EB0911FS161840';
   
 -- 4th customer to the customer table (no trade-in)
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (113, 'Daniel', 'Solano', '750 Paso de Luz', 'Chula Vista', 'CA', 91911, 6094583118, 'dsolano@gmail.com');
+VALUES (113, 'Daniel', 'Solano', '750 Paso de Luz', 'Chula Vista', 'CA', '91911', 6094583118, 'dsolano@gmail.com');
 
 -- add sales invoice
 INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN)
@@ -538,7 +538,7 @@ WHERE VIN = '23163571633042318';
 
 -- Dylan's Sale
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (114, 'Bob', 'Toliver', '1277 Singletree Ct', 'San Luis Obispo', 'CA', 94568, 8052314439, 'btoliver13@gmail.com');
+VALUES (114, 'Bob', 'Toliver', '1277 Singletree Ct', 'San Luis Obispo', 'CA', '94568', 8052314439, 'btoliver13@gmail.com');
 
 -- add trade in
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
@@ -569,7 +569,7 @@ WHERE VIN = '4T1BE46K8XU123456';
 -- Service Invoice (Step 5 of Task 5) 
 
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (120, 'Joshua', 'Treeburn', '111 Singletree Ct', 'San Luis Obispo', 'CA',93405, 8054529901, 'joshuatree@gmail.com');
+VALUES (120, 'Joshua', 'Treeburn', '111 Singletree Ct', 'San Luis Obispo', 'CA','93405', 8054529901, 'joshuatree@gmail.com');
 -- Add new car to service_vehicle
 INSERT INTO service_vehicle (VIN, year, make, model, mileage)
 VALUES('3VWCM7AJ1CM123456', 2002, 'Honda', 'Accord', 250000);
@@ -585,7 +585,7 @@ VALUES('OILCHG','5/1/2023',20000);
 
 --2nd Customer not sold by SLO VA (one part, one service)
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (121, 'John', 'Turnover', '111 Higuera St', 'San Luis Obispo','CA',93408, 4158889201, 'johnturnover@gmail.com');
+VALUES (121, 'John', 'Turnover', '111 Higuera St', 'San Luis Obispo','CA','93408', 4158889201, 'johnturnover@gmail.com');
 -- add new car to service_vehicle
 INSERT INTO service_vehicle (VIN, year, make, model, mileage)
 VALUES('JTHBJ46G182123456', 2015, 'Bugatti', 'Chiron', 37000);
@@ -601,7 +601,7 @@ VALUES('TUNEUPBASIC', '5/3/2023', 20002);
 
 -- 3rd customer not sold by SLO VA (one service)
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (122, 'John', 'Langle', '782 Marsh St', 'San Luis Obispo', 'CA', 93401, 8052348901, 'johnlangle@gmail.com');
+VALUES (122, 'John', 'Langle', '782 Marsh St', 'San Luis Obispo', 'CA', '93401', 8052348901, 'johnlangle@gmail.com');
 -- add new car to service_vehicle
 INSERT INTO service_vehicle (VIN, year, make, model, mileage)
 VALUES('8Z7TCDKX1WL123456', 2012, 'Dodge', 'Challenger', 20000);
@@ -667,7 +667,7 @@ VALUES ('SPARKPLUG4', '6/2/2023', 20005);
 -- Not sold by SLO VA (only one service - tire rotation)
 -- add customer to customer table
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (125, );
+VALUES (125, 'Jeff', 'Jefferson', '2783 Chorro St.', 'San Luis Obispo', 'CA', '93405',   );
 
 -- add customer's car to service vehicle table
 INSERT INTO service_vehicle (VIN, year, make, model, mileage)
