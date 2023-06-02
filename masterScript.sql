@@ -732,8 +732,9 @@ SELECT
     s.mileage, 
     NVL(ROUND(SUM(se.price)), 0) "Service Charge",
     NVL(ROUND(SUM(p.price)), 0) "Parts Charge",
-    ROUND((NVL(SUM(se.price), 0) + NVL(SUM(p.price), 0)) * .10, 2) "Taxes", 
-    ROUND(NVL(SUM(se.price), 0) + NVL(SUM(p.price), 0) + (NVL(SUM(se.price), 0) + NVL(SUM(p.price), 0)) * .10) "Total Charges"
+    ROUND((NVL(SUM(se.price), 0) + NVL(SUM(p.price), 0)) * .0725, 2) "Taxes", 
+    ROUND((NVL(SUM(se.price), 0) + NVL(SUM(p.price), 0)) * .015, 2) "Misc Charges",
+    ROUND(NVL(SUM(se.price), 0) + NVL(SUM(p.price), 0) + ((NVL(SUM(se.price), 0) + NVL(SUM(p.price), 0)) * .0725)+ (NVL(SUM(se.price),0)+NVL(SUM(p.price),0)*.015)) "Total Charges"
 FROM service_invoice i 
 JOIN customer c 
 ON i.customer_id = c.customer_id 
