@@ -545,7 +545,7 @@ VALUES (114, 'Bob', 'Toliver', '1277 Singletree Ct', 'San Luis Obispo', 'CA', 94
 
 -- add trade in
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
-VALUES ('4T1BE46K8XU123456', 1972, 'Toyota', 'Carolla', 'Light Blue', NULL, 91047, 'Used', 'TRADEIN', 24000, 28800);
+VALUES ('4T1BE46K8XU123456', 1972, 'Toyota', 'Corolla', 'Light Blue', NULL, 91047, 'Used', 'TRADEIN', 24000, 28800);
   
 -- add sales invoice
 INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN)
@@ -619,8 +619,10 @@ VALUES('TIREROTATE', '5/4/2023',20003);
 -- copy sales-vehicle into service
 
 INSERT INTO service_vehicle (vin, year, make, model, mileage)
-SELECT('24681357902468135', 1995, 'Toyota', 'Tacoma', 67000)
-FROM sales_vehicle;
+VALUES (SELECT VIN, year, make, model, mileage
+        FROM sales_vehicle
+        WHERE VIN = '24681357902468135');
+
 -- create new service-invoice
 INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin, terms)
 VALUES(20001, 1008, 114, '5/2/2023', '24681357902468135', 'credit');
