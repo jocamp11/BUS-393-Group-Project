@@ -660,11 +660,11 @@ INSERT INTO service_vehicle (VIN, year, make, model, mileage)
 VALUES ()
 
 -- add new service invoice
-INSERT INTO service_invoice (invoice_number, employee_id, customer_id, service_date, service_vin)
+INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin)
 VALUES ()
 
 -- add part(s)
-INSERT INTO service_parts (part_code, service_date, invoice_number)
+INSERT INTO service_parts (part_code, service_date, si_id)
 VALUES ()
 
 -- Not sold by SLO VA (only one service - tire rotation)
@@ -677,7 +677,7 @@ INSERT INTO service_vehicle (VIN, year, make, model, mileage)
 VALUES ()
 
 -- add new service invoice
-INSERT INTO service_invoice (invoice_number, employee_id, customer_id, service_date, service_vin)
+INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin)
 VALUES ()
 
 -- add service
