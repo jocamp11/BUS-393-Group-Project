@@ -616,7 +616,7 @@ VALUES('TIREROTATE', '5/4/2023',20003);
 -- copy sales-vehicle into service
 
 INSERT INTO service_vehicle (vin, year, make, model, mileage)
-VALUES (SELECT VIN, year, make, model, mileage
+SELECT VIN, year, make, model, mileage
         FROM sales_vehicle
         WHERE VIN = '24681357902468135');
 
@@ -633,9 +633,9 @@ VALUES('OILFILTER', '5/2/2023', 20001);
 
 -- add car to sevice vehicle table using an insert/select subquery
 INSERT INTO service_vehicle (vin, year, make, model, mileage)
-VALUES (SELECT VIN, year, make, model, mileage
+SELECT VIN, year, make, model, mileage
         FROM sales_vehicle
-        WHERE VIN = '22241113642310809');
+        WHERE VIN = '22241113642310809';
 
 -- add new service invoice
 INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin, terms)
@@ -652,9 +652,9 @@ VALUES ('OILFILTER', '5/30/2023', 20004);
 -- Another that was sold by SLO VA (Only one part)
 -- add car to sevice vehicle table
 INSERT INTO service_vehicle (vin, year, make, model, mileage)
-VALUES (SELECT VIN, year, make, model, mileage
+SELECT VIN, year, make, model, mileage
         FROM sales_vehicle
-        WHERE VIN = '23163571633042318');
+        WHERE VIN = '23163571633042318';
 
 -- add new service invoice
 INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin, terms)
