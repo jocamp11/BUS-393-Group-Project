@@ -686,6 +686,14 @@ VALUES ()
 -- Queries (Step 6 in task 5)
 
 
+
+-- Car seller list
+CREATE OR REPLACE VIEW car_seller_list AS 
+SELECT vendor_name, contact_name, street, city, state, zip, phone, fax
+FROM vendor
+ORDER BY vendor_name; 
+
+
 -- Query B, Vehicle Sales List (Nate)
 -- Invoice Number, Sales person name, Approved by Name, VIN,
 -- Make, Model, Trade In Vin, Trade In Make, Trade In Model, Selling price, Shipping,
@@ -702,12 +710,6 @@ FROM sales_invoice s LEFT OUTER JOIN employee a ON s.approving_manager = a.emplo
 JOIN employee e ON s.employee_id = e.employee_id
 JOIN sales_vehicle v ON v.VIN = s.VIN
 LEFT OUTER JOIN sales_vehicle vt ON s.tradein_VIN = vt.VIN;
-
--- Car seller list
-CREATE OR REPLACE VIEW car_seller_list AS 
-SELECT vendor_name, contact_name, street, city, state, zip, phone, fax
-FROM vendor
-ORDER BY vendor_name; 
 
 
 -- service invoice list
