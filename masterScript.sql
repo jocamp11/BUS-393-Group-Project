@@ -695,8 +695,40 @@ VALUES ()
 -- Discount, Trade In Allowance, Subtotal, Taxes, Misc, Total Selling Price (Order by Invoice
 -- Number
 
+-- Car seller list
+CREATE OR REPLACE VIEW car_seller_list AS 
+SELECT vendor_name, contact_name, street, city, state, zip, phone, fax
+FROM vendor
+ORDER BY vendor_name; 
+
 CREATE OR REPLACE VIEW Sales_List (
 AS SELECT s.invoice_id, e.first_name || ' ' || e.last_name "Sales Person", a.first_name || ' ' || a.last_name "Approved By", v.VIN "VIN",
           v.make "Make", v.model "Model", 
  
- 
+-- service invoice list
+CREATE OR REPLACE VIEW service_invoice_list AS 
+SELECT 
+    i.si_id "Invoice Number", 
+    c.first_name || ' ' || c.last_name "Customer Name", 
+    i.service_vin "VIN", 
+    s.make, 
+    s.model, 
+    s.mileage, 
+    NVL(ROUND(SUM(se.price)), 0) "Service Charge",
+    NVL(ROUND(SUM(p.price)), 0) "Parts Charge",
+    ROUND((NVL(SUM(se.price), 0) + NVL(SUM(p.price), 0)) * .10, 2) "Taxes", 
+    ROUND(NVL(SUM(se.price), 0) + NVL(SUM(p.price), 0) + (NVL(SUM(se.price), 0) + NVL(SUM(p.price), 0)) * .10) "Total Charges"
+FROM service_invoice i 
+JOIN customer c 
+ON i.customer_id = c.customer_id 
+JOIN service_vehicle s
+ON i.service_vin = s.vin
+LEFT JOIN services_provided spr
+ON i.si_id = spr.si_id 
+LEFT JOIN services se
+ON se.service_code = spr.service_code
+LEFT JOIN service_parts spa
+ON i.si_id = spa.si_id 
+LEFT JOIN parts p
+ON spa.part_code = p.part_code
+GROUP BY i.si_id, c.first_name, c.last_name, i.service_vin, s.make, s.model, s.mileage;
