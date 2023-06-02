@@ -632,57 +632,57 @@ VALUES('OILFILTER', '5/2/2023', 20001);
 -- One that was sold by SLO Vintage Auto (Only one part and only one service)
 -- add customer to customer table, if needed
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (123, 'Mary', 'Jones', '12 Peach Street', 'San Luis Obispo', 'CA', 93401, 8003334444, 'mjones@hotmail.com')
+VALUES (123, 'Mary', 'Jones', '12 Peach Street', 'San Luis Obispo', 'CA', 93401, 8003334444, 'mjones@hotmail.com');
 
 -- add car to sevice vehicle table
 INSERT INTO service_vehicle (VIN, year, make, model, mileage)
-VALUES ('JT3RN37J1L0003278', 1990, 'Toyota', '4Runner', 135000)
+VALUES ('JT3RN37J1L0003278', 1990, 'Toyota', '4Runner', 135000);
 
 -- add new service invoice
 INSERT INTO service_invoice (invoice_number, employee_id, customer_id, service_date, service_vin, terms)
-VALUES (20004, 1009, 123, '05/30/2023', 'JT3RN37J1L0003278', 'credit')
+VALUES (20004, 1009, 123, '05/30/2023', 'JT3RN37J1L0003278', 'credit');
 
 -- add service(s)
 INSERT INTO services_provided (service_code, service_date, invoice number)
-VALUES ('OC-123', '5/30/2023', 20004)
+VALUES ('OC-123', '5/30/2023', 20004);
 
 -- add part(s)
 INSERT INTO service_parts (part_code, service_date, invoice_number)
-VALUES ('OIL-530', '5/30/2023', 20004)
+VALUES ('OIL-530', '5/30/2023', 20004);
 
 -- Another that was sold by SLO VA (Only one part)
 -- add customer to customer table, if needed
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (124, )
+VALUES (124, );
 
 -- add car to sevice vehicle table
 INSERT INTO service_vehicle (VIN, year, make, model, mileage)
-VALUES ()
+VALUES ();
 
 -- add new service invoice
 INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin)
-VALUES ()
+VALUES ();
 
 -- add part(s)
 INSERT INTO service_parts (part_code, service_date, si_id)
-VALUES ()
+VALUES ();
 
 -- Not sold by SLO VA (only one service - tire rotation)
 -- add customer to customer table
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (125, )
+VALUES (125, );
 
 -- add customer's car to service vehicle table
 INSERT INTO service_vehicle (VIN, year, make, model, mileage)
-VALUES ()
+VALUES ();
 
 -- add new service invoice
 INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin)
-VALUES ()
+VALUES ();
 
 -- add service
 INSERT INTO services_provided (service_code, service_date, invoice number)
-VALUES ()
+VALUES ();
 -- Queries (Step 6 in task 5)
 
 
@@ -702,7 +702,7 @@ FROM service_invoice s JOIN employee e
 ON (s.employee_id = e.employee_id)
 JOIN employee a ON (s.approving_manager = a.employee_id)
 JOIN sales_vehicle v ON (v.VIN = s.VIN)
-JOIN sales_vehicle vt ON (vt.tradein_VIN = s.VIN);
+JOIN sales_vehicle vt ON (vt.tradein_VIN = s.VIN));
 
 -- Car seller list
 CREATE OR REPLACE VIEW car_seller_list AS 
