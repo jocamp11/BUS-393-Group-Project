@@ -231,21 +231,6 @@ VALUES('SPARKPLUG4', 'Spark plug set (4)', 9.95, 19.95);
 INSERT INTO Parts (Part_Code, Description, Cost, Price)
 VALUES('AIRFILTER', 'Air Filter', 3.95, 8.95);
 
--- This is the associative entity table between the Service_invoice table and Parts table
--- Will add in the foreign key for the Service Invoice Later
-
-CREATE TABLE Service_Parts (
-  Part_Code     VARCHAR2(20),
-  Service_Date  DATE,
-  PRIMARY KEY(Part_Code, Service_Date));
-
--- This is the associative entity table between the Service_Invoice table and Services table
---  We will add in the foreign key for the Service Invoice Later
-
-CREATE TABLE Services_Provided  (
-  Service_Code    VARCHAR2(20),
-  Service_Date    Date,
-  PRIMARY KEY(Service_Code, Service_Date));
 
 -- Views for task 3
 
@@ -330,6 +315,18 @@ CREATE TABLE Service_Invoice (
   service_VIN VARCHAR2(17) NOT NULL REFERENCES service_vehicle(VIN),
   terms VARCHAR2(6) NOT NULL,   
   CHECK (terms IN('credit', 'check', 'cash')));
+
+CREATE TABLE Service_Parts (
+  Part_Code     VARCHAR2(20),
+  Service_Date  DATE,
+  si_id NUMBER(6) REFERENCES service_invoice(si_id),
+  PRIMARY KEY(Part_Code, si_id));
+
+CREATE TABLE Services_Provided  (
+  Service_Code    VARCHAR2(20),
+  Service_Date    Date,
+  si_id NUMBER(6) REFERENCES service_invoice(si_id),
+  PRIMARY KEY(Service_Code, si_id));
 
  --Nate's 3 Car Purchases (Step 3 in task 5)
 -- Create a vendor to buy vehicles from  *this wasn't listed but I beleive we have to do it
