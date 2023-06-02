@@ -702,7 +702,7 @@ FROM service_invoice s JOIN employee e
 ON (s.employee_id = e.employee_id)
 JOIN employee a ON (s.approving_manager = a.employee_id)
 JOIN sales_vehicle v ON (v.VIN = s.VIN)
-JOIN sales_vehicle vt ON (vt.tradein_VIN = s.VIN)
+JOIN sales_vehicle vt ON (vt.tradein_VIN = s.VIN);
 
 -- Car seller list
 CREATE OR REPLACE VIEW car_seller_list AS 
