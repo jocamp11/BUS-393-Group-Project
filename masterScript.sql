@@ -695,7 +695,7 @@ VALUES ()
 CREATE OR REPLACE VIEW Sales_List 
 AS SELECT s.invoice_id, e.first_name || ' ' || e.last_name "Sales Person", a.first_name || ' ' || a.last_name "Approved By", v.VIN "VIN",
           v.make "Make", v.model "Model", NVL(s.tradein_VIN, 'none') "Trade-in VIN", NVL(vt.make, 'none') "Trade-in Make", NVL(vt.model, 'none') "Trade-in Model",
-          v.list_price "Selling Price", 0.01 * v.list_price "Shipping", vt.purchase_price "Trade-in Allowance", 
+          v.list_price "Selling Price", 0.01 * v.list_price "Shipping", NVL(vt.purchase_price, 0) "Trade-in Allowance", 
           v.list_price + (0.01 * v.list_price) - (NVL(vt.purchase_price, 0)) AS "Subtotal", 
           0.075 * v.list_price "Taxes", v.list_price + (0.01 * v.list_price) - (NVL(vt.purchase_price, 0)) + (0.075 * v.list_price) AS "Total Selling Price"
 FROM sales_invoice s LEFT OUTER JOIN employee a ON s.approving_manager = a.employee_id
