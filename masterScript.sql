@@ -318,13 +318,11 @@ CREATE TABLE Service_Invoice (
 
 CREATE TABLE Service_Parts (
   Part_Code     VARCHAR2(20) REFERENCES parts(part_code),
-  Service_Date  DATE,
   si_id NUMBER(6) REFERENCES service_invoice(si_id),
   PRIMARY KEY(Part_Code, si_id));
 
 CREATE TABLE Services_Provided  (
   Service_Code    VARCHAR2(20) REFERENCES services(service_code),
-  Service_Date    Date,
   si_id NUMBER(6) REFERENCES service_invoice(si_id),
   PRIMARY KEY(Service_Code, si_id));
 
@@ -577,11 +575,11 @@ VALUES('3VWCM7AJ1CM123456', 2002, 'Honda', 'Accord', 250000);
 INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin, terms)
 VALUES(20000, 1009, 120, '5/1/2023', '3VWCM7AJ1CM123456', 'cash');
 -- add parts
-INSERT INTO service_parts (part_code, service_date, si_id)
-VALUES('OIL10W30', '5/1/2023', 20000);
+INSERT INTO service_parts (part_code, si_id)
+VALUES('OIL10W30', 20000);
 -- add services
-INSERT INTO services_provided (service_code, service_date, si_id)
-VALUES('OILCHG','5/1/2023',20000);
+INSERT INTO services_provided (service_code, si_id)
+VALUES('OILCHG',20000);
 
 --2nd Customer not sold by SLO VA (one part, one service)
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
@@ -593,11 +591,11 @@ VALUES('JTHBJ46G182123456', 2015, 'Bugatti', 'Chiron', 37000);
 INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin, terms)
 VALUES(20002, 1008, 121, '5/3/2023', 'JTHBJ46G182123456','credit');
 -- add parts
-INSERT INTO service_parts (part_code, service_date, si_id)
-VALUES('WINDSHIELDFLUID', '5/3/2023', 20002);
+INSERT INTO service_parts (part_code, si_id)
+VALUES('WINDSHIELDFLUID', 20002);
 -- add services
-INSERT INTO services_provided (service_code, service_date, si_id)
-VALUES('TUNEUPBASIC', '5/3/2023', 20002);
+INSERT INTO services_provided (service_code, si_id)
+VALUES('TUNEUPBASIC', 20002);
 
 -- 3rd customer not sold by SLO VA (one service)
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
@@ -609,8 +607,8 @@ VALUES('8Z7TCDKX1WL123456', 2012, 'Dodge', 'Challenger', 20000);
 INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin, terms)
 VALUES(20003, 1009, 122, '5/4/2023', '8Z7TCDKX1WL123456','check');
 -- add services
-INSERT INTO services_provided (service_code, service_date, si_id)
-VALUES('TIREROTATE', '5/4/2023',20003);
+INSERT INTO services_provided (service_code, si_id)
+VALUES('TIREROTATE', 20003);
   
 --Sold by SLO VA (only one part)
 -- copy sales-vehicle into service
@@ -624,8 +622,8 @@ SELECT VIN, year, make, model, mileage
 INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin, terms)
 VALUES(20001, 1008, 114, '5/2/2023', '24681357902468135', 'credit');
 -- add parts
-INSERT INTO service_parts (part_code, service_date, si_id)
-VALUES('OILFILTER', '5/2/2023', 20001);
+INSERT INTO service_parts (part_code, si_id)
+VALUES('OILFILTER', 20001);
 
 
 -- Jesus'  Service Invoices (Step 5 in task 5)
@@ -642,12 +640,12 @@ INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, serv
 VALUES (20004, 1009, 112, '05/30/2023', '22241113642310809', 'credit');
 
 -- add service(s)
-INSERT INTO services_provided (service_code, service_date, si_id)
-VALUES ('OILCHG', '5/30/2023', 20004);
+INSERT INTO services_provided (service_code, si_id)
+VALUES ('OILCHG', 20004);
 
 -- add part(s)
-INSERT INTO service_parts (part_code, service_date, si_id)
-VALUES ('OILFILTER', '5/30/2023', 20004);
+INSERT INTO service_parts (part_code, si_id)
+VALUES ('OILFILTER', 20004);
 
 -- Another that was sold by SLO VA (Only one part)
 -- add car to sevice vehicle table
@@ -661,8 +659,8 @@ INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, serv
 VALUES (20005, 1009, 113, '6/2/2023', '23163571633042318', 'credit');
 
 -- add part(s)
-INSERT INTO service_parts (part_code, service_date, si_id)
-VALUES ('SPARKPLUG4', '6/2/2023', 20005);
+INSERT INTO service_parts (part_code, si_id)
+VALUES ('SPARKPLUG4', 20005);
 
 -- Not sold by SLO VA (only one service - tire rotation)
 -- add customer to customer table
@@ -678,8 +676,8 @@ INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, serv
 VALUES (20006, 1008, 125, '05/24/2023', '84938726485974857', 'cash');
 
 -- add service
-INSERT INTO services_provided (service_code, service_date, si_id)
-VALUES ('TIREROTATE', '05/24/2023', 20006);
+INSERT INTO services_provided (service_code, si_id)
+VALUES ('TIREROTATE', 20006);
 -- Queries (Step 6 in task 5)
 
 
