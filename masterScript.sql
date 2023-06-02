@@ -618,7 +618,7 @@ VALUES('TIREROTATE', '5/4/2023',20003);
 INSERT INTO service_vehicle (vin, year, make, model, mileage)
 SELECT VIN, year, make, model, mileage
         FROM sales_vehicle
-        WHERE VIN = '24681357902468135');
+        WHERE VIN = '24681357902468135';
 
 -- create new service-invoice
 INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin, terms)
