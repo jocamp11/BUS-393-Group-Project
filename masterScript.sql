@@ -317,13 +317,13 @@ CREATE TABLE Service_Invoice (
   CHECK (terms IN('credit', 'check', 'cash')));
 
 CREATE TABLE Service_Parts (
-  Part_Code     VARCHAR2(20),
+  Part_Code     VARCHAR2(20) REFERENCES parts(part_code),
   Service_Date  DATE,
   si_id NUMBER(6) REFERENCES service_invoice(si_id),
   PRIMARY KEY(Part_Code, si_id));
 
 CREATE TABLE Services_Provided  (
-  Service_Code    VARCHAR2(20),
+  Service_Code    VARCHAR2(20) REFERENCES services(service_code),
   Service_Date    Date,
   si_id NUMBER(6) REFERENCES service_invoice(si_id),
   PRIMARY KEY(Service_Code, si_id));
