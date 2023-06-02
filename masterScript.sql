@@ -713,8 +713,15 @@ LEFT OUTER JOIN sales_vehicle vt ON s.tradein_VIN = vt.VIN;
 -- Make, Model, Sales Amount, Shipping, Taxes, Total Price, Manager Name
 
 CREATE OR REPLACE VIEW Vehicle_Purchase_List
-AS SELECT po.purchase_id, v.vendor_name, v.contact_name, p.vin, sv.make, sv.model, sv.list_price,
-          0.01 * sv.list_price "Shipping", 0.075 * sv.list_price "Taxes", 
+AS SELECT po.purchase_id, v.vendor_name, v.contact_name, po.vin, sv.make, sv.model, sv.list_price,
+          0.01 * sv.list_price "Shipping", 0.075 * sv.list_price "Taxes", (0.01 * sv.list_price) + sv.list_price + (0.075 * sv.list_price) "Total Price",
+          e.first_name || ' ' || e.last_name
+FROM purchase_order po JOIN vendor v
+ON po.vendor_id = v.vendor_id
+JOIN sales_vehicle sv 
+ON sv.vin = po.vin
+LEFT OUTER JOIN employee e
+ON po.approving_manager = e.employee_id;
 
 
 -- service invoice list
