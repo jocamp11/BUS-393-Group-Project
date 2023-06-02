@@ -657,8 +657,8 @@ VALUES (SELECT VIN, year, make, model, mileage
         WHERE VIN = '23163571633042318');
 
 -- add new service invoice
-INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin)
-VALUES (20005, 1009, 113, '6/2/2023', '23163571633042318');
+INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin, terms)
+VALUES (20005, 1009, 113, '6/2/2023', '23163571633042318', 'credit');
 
 -- add part(s)
 INSERT INTO service_parts (part_code, service_date, si_id)
@@ -674,8 +674,8 @@ INSERT INTO service_vehicle (VIN, year, make, model, mileage)
 VALUES ('84938726485974857', 2018, 'Ford', 'Mustang', 55000);
 
 -- add new service invoice
-INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin)
-VALUES (20006, 1008, 125, '05/24/2023', '84938726485974857');
+INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin, terms)
+VALUES (20006, 1008, 125, '05/24/2023', '84938726485974857', 'cash');
 
 -- add service
 INSERT INTO services_provided (service_code, service_date, si_id)
