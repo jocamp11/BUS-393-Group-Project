@@ -692,7 +692,7 @@ VALUES ()
 -- Discount, Trade In Allowance, Subtotal, Taxes, Misc, Total Selling Price (Order by Invoice
 -- Number
 
-CREATE OR REPLACE VIEW Sales_List (
+CREATE OR REPLACE VIEW Sales_List 
 AS SELECT s.invoice_id, e.first_name || ' ' || e.last_name "Sales Person", a.first_name || ' ' || a.last_name "Approved By", v.VIN "VIN",
           v.make "Make", v.model "Model", NVL(s.tradein_VIN, 'none') "Trade-in VIN", NVL(vt.make, 'none') "Trade-in Make", NVL(vt.model, 'none') "Trade-in Model",
           v.list_price "Selling Price", 0.01 * v.list_price "Shipping", vt.purchase_price "Trade-in Allowance", 
@@ -702,7 +702,7 @@ FROM service_invoice s JOIN employee e
 ON (s.employee_id = e.employee_id)
 JOIN employee a ON (s.approving_manager = a.employee_id)
 JOIN sales_vehicle v ON (v.VIN = s.VIN)
-JOIN sales_vehicle vt ON (vt.tradein_VIN = s.VIN));
+JOIN sales_vehicle vt ON (vt.tradein_VIN = s.VIN);
 
 -- Car seller list
 CREATE OR REPLACE VIEW car_seller_list AS 
