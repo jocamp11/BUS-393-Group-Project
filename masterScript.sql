@@ -639,15 +639,15 @@ INSERT INTO service_vehicle (VIN, year, make, model, mileage)
 VALUES ('JT3RN37J1L0003278', 1990, 'Toyota', '4Runner', 135000);
 
 -- add new service invoice
-INSERT INTO service_invoice (invoice_number, employee_id, customer_id, service_date, service_vin, terms)
+INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin, terms)
 VALUES (20004, 1009, 123, '05/30/2023', 'JT3RN37J1L0003278', 'credit');
 
 -- add service(s)
-INSERT INTO services_provided (service_code, service_date, invoice number)
+INSERT INTO services_provided (service_code, service_date, si_id)
 VALUES ('OC-123', '5/30/2023', 20004);
 
 -- add part(s)
-INSERT INTO service_parts (part_code, service_date, invoice_number)
+INSERT INTO service_parts (part_code, service_date, si_id)
 VALUES ('OIL-530', '5/30/2023', 20004);
 
 -- Another that was sold by SLO VA (Only one part)
