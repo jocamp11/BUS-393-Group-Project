@@ -623,10 +623,10 @@ SELECT('24681357902468135', 1995, 'Toyota', 'Tacoma', 67000)
 FROM sales_vehicle;
 -- create new service-invoice
 INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin, terms)
-VALUES(20002, 1008, 114, '5/2/2023', '24681357902468135', 'credit');
+VALUES(20001, 1008, 114, '5/2/2023', '24681357902468135', 'credit');
 -- add parts
 INSERT INTO service_parts (part_code, service_date, si_id)
-VALUES('FIL-1234', '5/2/2023', 20002);
+VALUES('FIL-1234', '5/2/2023', 20001);
 
 
 -- Jesus'  Service Invoices (Step 5 in task 5)
