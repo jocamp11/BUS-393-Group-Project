@@ -678,11 +678,11 @@ VALUES ();
 
 -- add new service invoice
 INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin)
-VALUES ();
+VALUES ()
 
 -- add service
-INSERT INTO services_provided (service_code, service_date, invoice number)
-VALUES ();
+INSERT INTO services_provided (service_code, service_date, si_id)
+VALUES ()
 -- Queries (Step 6 in task 5)
 
 
