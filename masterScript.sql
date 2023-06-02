@@ -635,28 +635,28 @@ VALUES('OILFILTER', '5/2/2023', 20001);
 -- One that was sold by SLO Vintage Auto (Only one part and only one service)
 -- add customer to customer table, if needed
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (117, 'blank', 'blank', 'streat', 'city', 'state', 00000, 0000000000, 'email.com')
+VALUES (123, 'Mary', 'Jones', '12 Peach Street', 'San Luis Obispo', 'CA', 93401, 8003334444, 'mjones@hotmail.com')
 
 -- add car to sevice vehicle table
 INSERT INTO service_vehicle (VIN, year, make, model, mileage)
-VALUES (111111111111111111, 2002, '', '', 10000)
+VALUES ('JT3RN37J1L0003278', 1990, 'Toyota', '4Runner', 135000)
 
 -- add new service invoice
-INSERT INTO service_invoice (invoice_number, employee_id, customer_id, service_date, service_vin)
-VALUES (1000, )
+INSERT INTO service_invoice (invoice_number, employee_id, customer_id, service_date, service_vin, terms)
+VALUES (20004, 1009, 123, '05/30/2023', 'JT3RN37J1L0003278', 'credit')
 
 -- add service(s)
 INSERT INTO services_provided (service_code, service_date, invoice number)
-VALUES ()
+VALUES ('OC-123', '5/30/2023', 20004)
 
 -- add part(s)
 INSERT INTO service_parts (part_code, service_date, invoice_number)
-VALUES ()
+VALUES ('OIL-530', '5/30/2023', 20004)
 
 -- Another that was sold by SLO VA (Only one part)
 -- add customer to customer table, if needed
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES ()
+VALUES (124, )
 
 -- add car to sevice vehicle table
 INSERT INTO service_vehicle (VIN, year, make, model, mileage)
@@ -673,7 +673,7 @@ VALUES ()
 -- Not sold by SLO VA (only one service - tire rotation)
 -- add customer to customer table
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES ()
+VALUES (125, )
 
 -- add customer's car to service vehicle table
 INSERT INTO service_vehicle (VIN, year, make, model, mileage)
