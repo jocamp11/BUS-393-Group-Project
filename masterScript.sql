@@ -698,7 +698,7 @@ AS SELECT s.invoice_id, e.first_name || ' ' || e.last_name "Sales Person", a.fir
           v.list_price "Selling Price", 0.01 * v.list_price "Shipping", vt.purchase_price "Trade-in Allowance", 
           v.list_price + (0.01 * v.list_price) - (NVL(vt.purchase_price, 0)) AS "Subtotal", 
           0.075 * v.list_price "Taxes", v.list_price + (0.01 * v.list_price) - (NVL(vt.purchase_price, 0)) + (0.075 * v.list_price) AS "Total Selling Price"
-FROM service_invoice s LEFT OUTER JOIN employee a ON s.approving_manager = a.employee_id
+FROM sales_invoice s LEFT OUTER JOIN employee a ON s.approving_manager = a.employee_id
 JOIN employee e ON s.employee_id = e.employee_id
 JOIN sales_vehicle v ON v.VIN = s.VIN
 LEFT OUTER JOIN sales_vehicle vt ON vt.tradein_VIN = s.VIN;
