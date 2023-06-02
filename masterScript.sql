@@ -695,12 +695,8 @@ ORDER BY vendor_name;
 
 
 -- Query B, Vehicle Sales List (Nate)
--- Invoice Number, Sales person name, Approved by Name, VIN,
--- Make, Model, Trade In Vin, Trade In Make, Trade In Model, Selling price, Shipping,
--- Discount, Trade In Allowance, Subtotal, Taxes, Misc, Total Selling Price (Order by Invoice
--- Number
 
-CREATE OR REPLACE VIEW Sales_List 
+CREATE OR REPLACE VIEW Vehicle_Sales_List 
 AS SELECT s.invoice_id, e.first_name || ' ' || e.last_name "Sales Person", a.first_name || ' ' || a.last_name "Approved By", v.VIN "VIN",
           v.make "Make", v.model "Model", NVL(s.tradein_VIN, 'none') "Trade-in VIN", NVL(vt.make, 'none') "Trade-in Make", NVL(vt.model, 'none') "Trade-in Model",
           v.list_price "Selling Price", 0.01 * v.list_price "Shipping", NVL(vt.purchase_price, 0) "Trade-in Allowance", 
@@ -710,6 +706,15 @@ FROM sales_invoice s LEFT OUTER JOIN employee a ON s.approving_manager = a.emplo
 JOIN employee e ON s.employee_id = e.employee_id
 JOIN sales_vehicle v ON v.VIN = s.VIN
 LEFT OUTER JOIN sales_vehicle vt ON s.tradein_VIN = vt.VIN;
+
+
+-- Query C, Vehicle Purchase List
+-- Vehicle Purchase List: Purchase Order Number, Company Name, Contact Name, VIN,
+-- Make, Model, Sales Amount, Shipping, Taxes, Total Price, Manager Name
+
+CREATE OR REPLACE VIEW Vehicle_Purchase_List
+AS SELECT po.purchase_id, v.vendor_name, v.contact_name, p.vin, sv.make, sv.model, sv.list_price,
+          0.01 * sv.list_price "Shipping", 0.075 * sv.list_price "Taxes", 
 
 
 -- service invoice list
