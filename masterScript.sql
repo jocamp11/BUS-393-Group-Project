@@ -633,18 +633,18 @@ VALUES('OILFILTER', '5/2/2023', 20001);
 -- One that was sold by SLO Vintage Auto (Only one part and only one service)
 -- add customer to customer table, if needed
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES ()
+VALUES (117, 'blank', 'blank', 'streat', 'city', 'state', 00000, 0000000000, 'email.com')
 
 -- add car to sevice vehicle table
 INSERT INTO service_vehicle (VIN, year, make, model, mileage)
-VALUES ()
+VALUES (111111111111111111, 2002, '', '', 10000)
 
 -- add new service invoice
-INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin, terms)
-VALUES ()
+INSERT INTO service_invoice (invoice_number, employee_id, customer_id, service_date, service_vin)
+VALUES (1000, )
 
 -- add service(s)
-INSERT INTO services_provided (service_code, service_date, si_id)
+INSERT INTO services_provided (service_code, service_date, invoice number)
 VALUES ()
 
 -- add part(s)
@@ -661,11 +661,11 @@ INSERT INTO service_vehicle (VIN, year, make, model, mileage)
 VALUES ()
 
 -- add new service invoice
-INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin, terms)
+INSERT INTO service_invoice (invoice_number, employee_id, customer_id, service_date, service_vin)
 VALUES ()
 
 -- add part(s)
-INSERT INTO service_parts (part_code, service_date, si_id)
+INSERT INTO service_parts (part_code, service_date, invoice_number)
 VALUES ()
 
 -- Not sold by SLO VA (only one service - tire rotation)
@@ -678,11 +678,10 @@ INSERT INTO service_vehicle (VIN, year, make, model, mileage)
 VALUES ()
 
 -- add new service invoice
-INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin, terms)
+INSERT INTO service_invoice (invoice_number, employee_id, customer_id, service_date, service_vin)
 VALUES ()
 
 -- add service
-INSERT INTO services_provided (service_code, service_date, si_id)
+INSERT INTO services_provided (service_code, service_date, invoice number)
 VALUES ()
-
 -- Queries (Step 6 in task 5)
