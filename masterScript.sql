@@ -581,7 +581,7 @@ INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, serv
 VALUES(20000, 1009, 120, '5/1/2023', '3VWCM7AJ1CM123456', 'cash');
 -- add parts
 INSERT INTO service_parts (part_code, service_date, si_id)
-VALUES('Oil-5/30', '5/1/2023', '3VWCM7AJ1CM123456');
+VALUES('Oil-5/30', '5/1/2023', 20000);
 -- add services
 INSERT INTO services_provided (service_code, service_date, si_id)
 VALUES('OC-123','5/1/2023',20000);
@@ -597,7 +597,7 @@ INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, serv
 VALUES(20002, 1008, 121, '5/3/2023', 'JTHBJ46G182123456','credit');
 -- add parts
 INSERT INTO service_parts (part_code, service_date, si_id)
-VALUES('PC-9873', '5/3/2023', 'JTHBJ46G182123456');
+VALUES('PC-9873', '5/3/2023', 20002);
 -- add services
 INSERT INTO services_provided (service_code, service_date, si_id)
 VALUES('SC-001', '5/3/2023', 20002);
@@ -610,10 +610,10 @@ INSERT INTO service_vehicle (VIN, year, make, model, mileage)
 VALUES('8Z7TCDKX1WL123456', 2012, 'Dodge', 'Challenger', 20000);
 -- add new service_invoice
 INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin, terms)
-VALUES(20004, 1009, 122, '5/4/2023', '8Z7TCDKX1WL123456','check');
+VALUES(20003, 1009, 122, '5/4/2023', '8Z7TCDKX1WL123456','check');
 -- add services
 INSERT INTO services_provided (service_code, service_date, si_id)
-VALUES('TR-01', '5/4/2023',20004);
+VALUES('TR-01', '5/4/2023',20003);
   
 --Sold by SLO VA (only one part)
 -- copy sales-vehicle into service
@@ -623,10 +623,10 @@ SELECT('24681357902468135', 1995, 'Toyota', 'Tacoma', 67000)
 FROM sales_vehicle;
 -- create new service-invoice
 INSERT INTO service_invoice (si_id, employee_id, customer_id, service_date, service_vin, terms)
-VALUES(20003, 1008, 114, '5/2/2023', '24681357902468135', 'credit');
+VALUES(20002, 1008, 114, '5/2/2023', '24681357902468135', 'credit');
 -- add parts
 INSERT INTO service_parts (part_code, service_date, si_id)
-VALUES('FIL-1234', '5/2/2023', 20003);
+VALUES('FIL-1234', '5/2/2023', 20002);
 
 
 -- Jesus'  Service Invoices (Step 5 in task 5)
