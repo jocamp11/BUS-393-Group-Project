@@ -130,7 +130,7 @@ CREATE TABLE employee (
     hire_date DATE DEFAULT SYSDATE NOT NULL,
     title VARCHAR2(20) NOT NULL,
     commission_pct NUMBER(2,2) CHECK(commission_pct BETWEEN 0.20 AND 0.30),
-    manager_id NUMBER(4) REFERENCES employee(employee_id),
+    manager_id NUMBER(6) REFERENCES employee(employee_id),
     CHECK (employee_id <> manager_id));
 
 -- PRIMARY KEY (employee_id),
