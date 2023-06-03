@@ -27,7 +27,7 @@ CREATE TABLE customer (
     city VARCHAR2(20),
     state CHAR(2) DEFAULT 'CA' NOT NULL,
     zip CHAR(5),
-    phone VARCHAR2(12) NOT NULL UNIQUE,
+    phone VARCHAR2(15) NOT NULL UNIQUE,
     email VARCHAR2(50) NOT NULL UNIQUE);
 
 
@@ -125,7 +125,7 @@ CREATE TABLE employee (
     city VARCHAR2(20) NOT NULL,
     state VARCHAR2(2) DEFAULT 'CA' NOT NULL,
     zip CHAR(5) NOT NULL,
-    phone VARCHAR2(12) NOT NULL UNIQUE,
+    phone VARCHAR2(15) NOT NULL UNIQUE,
     email VARCHAR2(50) NOT NULL UNIQUE,
     hire_date DATE DEFAULT SYSDATE NOT NULL,
     title VARCHAR2(20) NOT NULL,
@@ -293,7 +293,7 @@ CREATE TABLE Vendor (
   city          VARCHAR2(30)  NOT NULL,
   state         VARCHAR2(30)  NOT NULL,
   zip           VARCHAR2(30)  NOT NULL,
-  phone         VARCHAR2(11)  UNIQUE  NOT NULL,
+  phone         VARCHAR2(15)  UNIQUE  NOT NULL,
   fax           NUMBER(10));
   
 CREATE TABLE Purchase_Order (
@@ -329,7 +329,7 @@ CREATE TABLE Services_Provided  (
  --Nate's 3 Car Purchases (Step 3 in task 5)
 -- Create a vendor to buy vehicles from  *this wasn't listed but I beleive we have to do it
 INSERT INTO Vendor (vendor_id, vendor_name, contact_name, street, city, state, zip, phone, fax)
-VALUES (100, 'Vintage Auto America', 'Jason Jackson', '1045 Johnson St.', 'Atascadero', 'CA', '93420', 2547368594, NULL);
+VALUES (100, 'Vintage Auto America', 'Jason Jackson', '1045 Johnson St.', 'Atascadero', 'CA', '93420', '254-736-8594', NULL);
 
 -- First sales vehicle insert statement
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
@@ -373,7 +373,7 @@ WHERE purchase_id = 3;
 --Jesus' 2 Car Purchases (Step 3 in task 5)
 -- Create new vendor to buy vehicles from 
 INSERT INTO Vendor (vendor_id, vendor_name, contact_name, street, city, state, zip, phone, fax)
-VALUES (101, 'LAX Porsche', 'Alan Jones', '112 Airport Drive', 'Los Angeles', 'CA', '90045', 8005551123, 8005554211);
+VALUES (101, 'LAX Porsche', 'Alan Jones', '112 Airport Drive', 'Los Angeles', 'CA', '90045', '800-555-1123', 8005554211);
   
 -- Porsche from PO example
 -- Fourth sales vehicle insert statement
@@ -391,7 +391,7 @@ WHERE   purchase_id = 4;
 
 -- New Vendor for fifth vehicle
 INSERT INTO Vendor (vendor_id, vendor_name, contact_name, street, city, state, zip, phone, fax)
-VALUES (102, 'Classic Cars', 'Roger Falcione', '7400 E Monte Cristo Ave', 'Scottsdale', 'AZ', '85260', 4802851600, NULL);
+VALUES (102, 'Classic Cars', 'Roger Falcione', '7400 E Monte Cristo Ave', 'Scottsdale', 'AZ', '85260', '480-285-1600', NULL);
 
 -- Fifth sales vehicle insert statement
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
@@ -409,7 +409,7 @@ WHERE  purchase_id = 5;
 --Dylan's 2 Car Purchases (Step 3 in task 5)
 --New Vendor 
 INSERT INTO Vendor (vendor_id, vendor_name, contact_name, street, city, state, zip, phone, fax)
-VALUES (103, 'Fast Cars & More', 'Neil King', '132 Golden West Pl.', 'Arroyo Grande', 'CA', '93420', 8054437211, NULL);
+VALUES (103, 'Fast Cars & More', 'Neil King', '132 Golden West Pl.', 'Arroyo Grande', 'CA', '93420', '805-443-7211', NULL);
 
 -- Sixth sales vehicle insert statement
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
@@ -426,7 +426,7 @@ WHERE  purchase_id = 6;
 
 --- New Vendor
 INSERT INTO Vendor (vendor_id, vendor_name, contact_name, street, city, state, zip, phone, fax)
-VALUES (104, 'Bobbys Vintage Cars', 'Bobby Lee', '133 Hollywood St.', 'Los Angeles', 'CA', '93408', 8503322782,8053327899);
+VALUES (104, 'Bobbys Vintage Cars', 'Bobby Lee', '133 Hollywood St.', 'Los Angeles', 'CA', '93408', '850-332-2782',8053327899);
 
 -- Seventh sales vehicle insert statement
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
@@ -445,7 +445,7 @@ WHERE  purchase_id = 7;
 -- Nate's 2 sales (Step 4 in task 5) out of 5 total
 -- Add 1st customer to the customer table (trade-in)
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (110, 'LeBron', 'James', '1234 Lakers St.', 'Los Angeles', 'CA', '90015', '8082546781', 'lebronjames23@lakers.com');
+VALUES (110, 'LeBron', 'James', '1234 Lakers St.', 'Los Angeles', 'CA', '90015', '808-254-6781', 'lebronjames23@lakers.com');
 
 -- Add trade in vehicle to the sales vehicles table
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
@@ -472,7 +472,7 @@ WHERE VIN = '83940738467859487';
   
 -- 2nd Customer to the customer table 
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (111, 'Stephen', 'Curry', '5678 Warriors Rd.', 'San Francisco', 'CA', '94016', '8158490049', 'stephencurry30@warriors.com');
+VALUES (111, 'Stephen', 'Curry', '5678 Warriors Rd.', 'San Francisco', 'CA', '94016', '815-849-0049', 'stephencurry30@warriors.com');
   
 -- Add sales invoice for the 2nd car being bought
 INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms)
@@ -491,7 +491,7 @@ WHERE VIN = '84638459374937489';
 -- Jesus' 2 sales (Step 4 in task 5) out of 5 total
 -- 3rd customer to the customer table (trade-in)
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (112, 'Alejandro', 'Torres', 'S Main St', 'Los Angeles', 'CA', 90011, 3232137802, 'alejandrotorres@gmail.com');
+VALUES (112, 'Alejandro', 'Torres', 'S Main St', 'Los Angeles', 'CA', 90011, '323-213-7802', 'alejandrotorres@gmail.com');
 
 -- add trade in
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
@@ -518,7 +518,7 @@ WHERE VIN = 'WP0EB0911FS161840';
   
 -- 4th customer to the customer table (no trade-in)
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (113, 'Daniel', 'Solano', '750 Paso de Luz', 'Chula Vista', 'CA', '91911', 6094583118, 'dsolano@gmail.com');
+VALUES (113, 'Daniel', 'Solano', '750 Paso de Luz', 'Chula Vista', 'CA', '91911', '609-458-3118', 'dsolano@gmail.com');
 
 -- add sales invoice
 INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN)
@@ -536,7 +536,7 @@ WHERE VIN = '23163571633042318';
 
 -- Dylan's Sale
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (114, 'Bob', 'Toliver', '1277 Singletree Ct', 'San Luis Obispo', 'CA', '94568', 8052314439, 'btoliver13@gmail.com');
+VALUES (114, 'Bob', 'Toliver', '1277 Singletree Ct', 'San Luis Obispo', 'CA', '94568', '805-231-4439', 'btoliver13@gmail.com');
 
 -- add trade in
 INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage, condition, status, purchase_price, list_price)
@@ -567,7 +567,7 @@ WHERE VIN = '4T1BE46K8XU123456';
 -- Service Invoice (Step 5 of Task 5) 
 
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (120, 'Joshua', 'Treeburn', '111 Singletree Ct', 'San Luis Obispo', 'CA','93405', 8054529901, 'joshuatree@gmail.com');
+VALUES (120, 'Joshua', 'Treeburn', '111 Singletree Ct', 'San Luis Obispo', 'CA','93405', '805-452-9901', 'joshuatree@gmail.com');
 -- Add new car to service_vehicle
 INSERT INTO service_vehicle (VIN, year, make, model, mileage)
 VALUES('3VWCM7AJ1CM123456', 2002, 'Honda', 'Accord', 250000);
@@ -583,7 +583,7 @@ VALUES('OILCHG',20000);
 
 --2nd Customer not sold by SLO VA (one part, one service)
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (121, 'John', 'Turnover', '111 Higuera St', 'San Luis Obispo','CA','93408', 4158889201, 'johnturnover@gmail.com');
+VALUES (121, 'John', 'Turnover', '111 Higuera St', 'San Luis Obispo','CA','93408', '415-888-9201', 'johnturnover@gmail.com');
 -- add new car to service_vehicle
 INSERT INTO service_vehicle (VIN, year, make, model, mileage)
 VALUES('JTHBJ46G182123456', 2015, 'Bugatti', 'Chiron', 37000);
@@ -599,7 +599,7 @@ VALUES('TUNEUPBASIC', 20002);
 
 -- 3rd customer not sold by SLO VA (one service)
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (122, 'John', 'Langle', '782 Marsh St', 'San Luis Obispo', 'CA', '93401', 8052348901, 'johnlangle@gmail.com');
+VALUES (122, 'John', 'Langle', '782 Marsh St', 'San Luis Obispo', 'CA', '93401', '805-234-8901', 'johnlangle@gmail.com');
 -- add new car to service_vehicle
 INSERT INTO service_vehicle (VIN, year, make, model, mileage)
 VALUES('8Z7TCDKX1WL123456', 2012, 'Dodge', 'Challenger', 20000);
@@ -665,7 +665,7 @@ VALUES ('SPARKPLUG4', 20005);
 -- Not sold by SLO VA (only one service - tire rotation)
 -- add customer to customer table
 INSERT INTO customer (customer_id, first_name, last_name, street, city, state, zip, phone, email)
-VALUES (125, 'Jeff', 'Jefferson', '2783 Chorro St.', 'San Luis Obispo', 'CA', '93405', 8059998383, 'jeffjohnson1995@yahoo.com');
+VALUES (125, 'Jeff', 'Jefferson', '2783 Chorro St.', 'San Luis Obispo', 'CA', '93405', '805-999-8383', 'jeffjohnson1995@yahoo.com');
 
 -- add customer's car to service vehicle table
 INSERT INTO service_vehicle (VIN, year, make, model, mileage)
