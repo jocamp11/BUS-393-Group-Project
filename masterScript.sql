@@ -21,11 +21,11 @@ DROP TABLE Service_Invoice CASCADE CONSTRAINTS PURGE;
 
 CREATE TABLE customer (
     customer_id NUMBER(6) PRIMARY KEY,
-    first_name VARCHAR2(20),
-    last_name VARCHAR2(20),
+    first_name VARCHAR2(20) NOT NULL,
+    last_name VARCHAR2(20) NOT NULL,
     street VARCHAR2(50),
     city VARCHAR2(20),
-    state VARCHAR2(2) DEFAULT 'CA' NOT NULL,
+    state CHAR(2) DEFAULT 'CA' NOT NULL,
     zip CHAR(5),
     phone VARCHAR2(12) NOT NULL UNIQUE,
     email VARCHAR2(50) NOT NULL UNIQUE);
