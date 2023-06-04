@@ -692,7 +692,7 @@ ORDER BY make, model;
 
 -- Task 4 Query B (Vehicle List For Sale)
 CREATE OR REPLACE VIEW Forsale_List 
-AS SELECT Year, Make, Model, exterior-color, Trim, Mileage, Condition, Status, List-price
+AS SELECT Year, Make, Model, exterior-color, Trim, Mileage, Condition, Status, List_price
 FROM sales_vehicle
 WHERE status = 'SOLD'
 ORDER BY make, model;
