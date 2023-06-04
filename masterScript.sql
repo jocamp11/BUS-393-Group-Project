@@ -692,7 +692,7 @@ ORDER BY make, model;
 
 -- Task 4 Query B (Vehicle List For Sale)
 CREATE OR REPLACE VIEW Forsale_List 
-AS SELECT Year, Make, Model, Exterior Color, Trim, Mileage, Condition, Status, List-price
+AS SELECT Year, Make, Model, exterior-color, Trim, Mileage, Condition, Status, List-price
 FROM sales_vehicle
 WHERE status = 'SOLD'
 ORDER BY make, model;
@@ -701,7 +701,7 @@ ORDER BY make, model;
 -- Task 4 Query e (Vehicle Inventory Value by Make: Make and the total value of the vehicles for sale,
 -- ordered by Make)
 CREATE OR REPLACE VIEW Inventory_value_by_make
-AS SELECT make, SUM(list_price)
+AS SELECT make, SUM(list_price) AS "Inventory Value"
 FROM sales_vehicle
 GROUP BY make
 ORDER BY make;
