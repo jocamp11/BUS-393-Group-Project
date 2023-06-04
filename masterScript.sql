@@ -244,7 +244,7 @@ AS SELECT Part_Code, Description, Cost, Price
 FROM Parts
 ORDER BY Part_Code;
 
--- Create Sales_Vehicle & Service_Vehicle
+-- Create Sales_Vehicle & Service_Vehicle (Task 4 Part A)
 
 CREATE TABLE Sales_Vehicle (
   VIN             VARCHAR2(17)  PRIMARY KEY,
@@ -273,6 +273,7 @@ CREATE TABLE Service_Vehicle (
   model     VARCHAR2(30)  NOT NULL,
   mileage   NUMBER(8, 2)  NOT NULL,
   CHECK(mileage > 0));
+
   
   CREATE TABLE Sales_Invoice(
   invoice_id    NUMBER(6)   PRIMARY KEY,
@@ -681,17 +682,40 @@ VALUES ('TIREROTATE', 20006);
 -- Queries (Step 6 in task 5)
 
 
+-- Task 4 Part B (Queries)
 
--- Car seller list
+-- Task 4 Query A (Vehicle List)
+CREATE OR REPLACE VIEW Vehicle_List 
+AS SELECT VIN, year, make, model, exterior_color, trim, mileage, condition, status, list_price
+FROM Sales_vehicle
+ORDER BY make, model;
+
+-- Task 4 Query B (Vehicle List For Sale)
+CREATE OR REPLACE VIEW Forsale_List 
+AS SELECT Year, Make, Model, Exterior Color, Trim, Mileage, Condition, Status, List-price
+FROM sales_vehicle
+WHERE status = 'SOLD'
+ORDER BY make, model;
+
+
+-- Task 4 Query e (Vehicle Inventory Value by Make: Make and the total value of the vehicles for sale,
+-- ordered by Make)
+CREATE OR REPLACE VIEW Inventory_value_by_make
+AS SELECT make, SUM(list_price)
+FROM sales_vehicle
+GROUP BY make
+ORDER BY make;
+
+-- Car seller list (Task 5 Query A)
 CREATE OR REPLACE VIEW car_seller_list AS 
 SELECT vendor_name, contact_name, street, city, state, zip, phone, fax
 FROM vendor
 ORDER BY vendor_name; 
 
 
--- Query B, Vehicle Sales List (Nate)
+-- Query B, Vehicle Sales List (Nate) (Task 5 Query B)
 
-CREATE OR REPLACE VIEW Vehicle_Sales_List 
+CREATE OR REPLACE VIEW Sales_Invoice_List 
 AS SELECT s.invoice_id, e.first_name || ' ' || e.last_name "Sales Person", a.first_name || ' ' || a.last_name "Approved By", v.VIN "VIN",
           v.make "Make", v.model "Model", NVL(s.tradein_VIN, 'none') "Trade-in VIN", NVL(vt.make, 'none') "Trade-in Make", NVL(vt.model, 'none') "Trade-in Model",
           v.list_price "Selling Price", 0.01 * v.list_price "Shipping", NVL(vt.purchase_price, 0) "Trade-in Allowance", 
@@ -719,7 +743,7 @@ LEFT OUTER JOIN employee e
 ON po.approving_manager = e.employee_id;
 
 
--- service invoice list
+-- service invoice list (Task 5 Query D)
 CREATE OR REPLACE VIEW service_invoice_list AS 
 SELECT 
     i.si_id "Invoice Number", 
