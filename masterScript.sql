@@ -295,7 +295,7 @@ CREATE TABLE Vendor (
   state         VARCHAR2(30)  NOT NULL,
   zip           CHAR(5)  NOT NULL,
   phone         VARCHAR2(15)  UNIQUE  NOT NULL,
-  fax           NUMBER(10));
+  fax           NUMBER(10) UNIQUE);
   
 CREATE TABLE Purchase_Order (
   purchase_id  NUMBER(6)   PRIMARY KEY,
