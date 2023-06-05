@@ -701,13 +701,13 @@ ORDER BY make, model;
 CREATE OR REPLACE VIEW Sold_List
 AS SELECT VIN, year, make, model, mileage, condition, list_price
 FROM sales_vehicle
-WHERE status = 'SOLD'
+WHERE status = 'SOLD';
 
 -- Task 4 Query d (Vehicle Inventory Value)
 CREATE OR REPLACE VIEW Inventory_Value
 SELECT SUM(list_price)
 FROM sales_vehicle
-WHERE status = 'FORSALE'
+WHERE status = 'FORSALE';
 
 -- Task 4 Query e (Vehicle Inventory Value by Make: Make and the total value of the vehicles for sale,
 -- ordered by Make)
