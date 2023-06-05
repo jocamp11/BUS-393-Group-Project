@@ -293,7 +293,7 @@ CREATE TABLE Vendor (
   street        VARCHAR2(30)  NOT NULL,
   city          VARCHAR2(30)  NOT NULL,
   state         VARCHAR2(30)  NOT NULL,
-  zip           VARCHAR2(30)  NOT NULL,
+  zip           CHAR(5)  NOT NULL,
   phone         VARCHAR2(15)  UNIQUE  NOT NULL,
   fax           NUMBER(10));
   
