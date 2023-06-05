@@ -784,13 +784,52 @@ ON spa.part_code = p.part_code
 GROUP BY i.si_id, c.first_name, c.last_name, i.service_vin, s.make, s.model, s.mileage;
 
 -- Customer Reports (Task 6 1-6)
+-- List of customers who have purchased a car from us: Customer name, Phone
+
+-- Number of customers grouped by city: City, number of customers in that city
+
+-- List of customers who have purchased a car from us but have not had a car serviced with us: Customer Name, Phone.
+
+-- List of all customers who are interested in a Porsche (or choose a vehicle type if you don’t have
+-- a Porsche in the list of interests) and their interest is still relevant (i.e., end date hasn’t passed ...
+-- include those who have a null value for the end date): Customer Name, Phone, End date.
+
+-- List of customers who bought a car from us and did not bring in a trade in. Customer Names
+
+-- List of best Customer (two queries, one for each of the following):
+--     a. Highest number of car’s purchased: Customer Name, number of cars purchased
+--     b. Highest total profit we made from the customer: Customer Name, sum of profit from all
+--     the cars they bought (Selling price less discount ... do not include TradeIn allowances in
+--     calculating profit)
+
 
 
 -- Purchasing Reports (Task 6 7-8)
+-- List the Manufacturer that we paid the most amount of total dollars to (this is not just the
+-- highest for one car purchase but the sum of money paid to a manufacturer for all the cars
+-- bought from them): Manufacturer Name, total amount paid (show ties)
 
+-- List the manufacturer that sold us the most number of vehicles? Manufacturer Name, total
+-- number of cars sold to use (show ties)
 
 -- Sales Reports (Task 6 9-12)
 
+-- List of cars sold by us in the past 30 days of the date the query is being run (i.e., you cannot
+-- hard code the date): VIN, Make, Model, List Price
+
+-- Most popular make of car sold (which make of car was sold the most times): Make, Number
+-- Sold (show ties)
+
+-- Sum of the total profit from car sales (cost of vehicle less selling price less discount): Amount
+
+-- List of best “Sales Person” (two queries, one for each of the following)
+--   a. Highest commissions: Sales person name, total commissions earned (show ties)
+--   b. Highest number of cars sold: Sales person name, number of vehicles sold. (show ties
 
 -- Service Reports (Task 13-14)
 
+-- Sum of profits (price less cost) for all services performed where the profits are grouped by
+-- service code / service name (show both): Service Code, Service Name, Total Profit.
+
+-- Sum of profits (price less cost) for all parts sold where the profits are grouped by part code /
+-- part name (show both): Part Code, Part Name, Total Profit.
