@@ -687,12 +687,12 @@ VALUES ('TIREROTATE', 20006);
 -- Task 4 Query A (Vehicle List)
 CREATE OR REPLACE VIEW Vehicle_List 
 AS SELECT VIN, year, make, model, exterior_color, trim, mileage, condition, status, list_price
-FROM Sales_vehicle
+FROM sales_vehicle
 ORDER BY make, model;
 
 -- Task 4 Query B (Vehicle List For Sale)
 CREATE OR REPLACE VIEW Forsale_List 
-AS SELECT Year, Make, Model, exterior-color, Trim, Mileage, Condition, Status, List_price
+AS SELECT year, make, model, exterior_color, trim, mileage, condition, status, list_price
 FROM sales_vehicle
 WHERE status = 'FORSALE'
 ORDER BY make, model;
