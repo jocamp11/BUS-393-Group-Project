@@ -705,7 +705,7 @@ WHERE status = 'SOLD';
 
 -- Task 4 Query d (Vehicle Inventory Value)
 CREATE OR REPLACE VIEW Inventory_Value
-SELECT SUM(list_price)
+SELECT status, SUM(list_price)
 FROM sales_vehicle
 WHERE status = 'FORSALE';
 
