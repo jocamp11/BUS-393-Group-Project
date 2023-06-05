@@ -783,13 +783,14 @@ LEFT JOIN parts p
 ON spa.part_code = p.part_code
 GROUP BY i.si_id, c.first_name, c.last_name, i.service_vin, s.make, s.model, s.mileage;
 
--- Customer Reports (Task 6)
+-- Customer Reports (Task 6 1-6)
 
 
--- Purchasing Reports
+-- Purchasing Reports (Task 6 7-8)
 
 
--- Sales Reports
+-- Sales Reports (Task 6 9-12)
 
 
--- Service Reports
+-- Service Reports (Task 13-14)
+
