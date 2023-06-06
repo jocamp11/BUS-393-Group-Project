@@ -825,6 +825,7 @@ WHERE s.tradein_VIN IS NOT NULL;
 
 -- List of best Customer (two queries, one for each of the following):
 --     a. Highest number of car’s purchased: Customer Name, number of cars purchased
+
 --     b. Highest total profit we made from the customer: Customer Name, sum of profit from all
 --     the cars they bought (Selling price less discount ... do not include TradeIn allowances in
 --     calculating profit)
@@ -862,10 +863,10 @@ FETCH FIRST 1 ROW WITH TIES;
 -- List of cars sold by us in the past 30 days of the date the query is being run (i.e., you cannot
 -- hard code the date): VIN, Make, Model, List Price
 CREATE VIEW Past30DaysSold
-AS SELECT Sales_Vehicle.VIN, Sales_Vehicle.make, Sales_Vehicle.model, Sales_Vehicle.list_price
-FROM Sales_Vehicle 
-JOIN Sales_Invoice ON Sales_Vehicle.VIN = Sales_Invoice.VIN
-WHERE Sales_Invoice.sale_date <= SYSDATE - 30
+AS SELECT sv.VIN, sv.make, sv.model, sv.list_price
+FROM Sales_Vehicle sv
+JOIN Sales_Invoice si ON sv.VIN = si.VIN
+WHERE si.sale_date < SYSDATE - 30
 
 -- Most popular make of car sold (which make of car was sold the most times): Make, Number
 -- Sold (show ties)
@@ -887,11 +888,12 @@ WHERE status = 'SOLD';
 
 -- List of best “Sales Person” (two queries, one for each of the following)
 --   a. Highest commissions: Sales person name, total commissions earned (show ties)
+
+
 --   b. Highest number of cars sold: Sales person name, number of vehicles sold. (show ties
 
 
 -- Service Reports (Task 13-14)
-
 
 -- Sum of profits (price less cost) for all services performed where the profits are grouped by
 -- service code / service name (show both): Service Code, Service Name, Total Profit.
