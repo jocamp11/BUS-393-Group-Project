@@ -835,9 +835,10 @@ AND customer_id NOT IN (SELECT customer_id FROM Service_Invoice);
 -- List of cars sold by us in the past 30 days of the date the query is being run (i.e., you cannot
 -- hard code the date): VIN, Make, Model, List Price
 CREATE VIEW Past30DaysSold
-AS SELECT VIN, make, model, list_price
+AS SELECT Sales_Vehicle.VIN, Sales_Vehicle.make, Sales_Vehicle.model, Sales_Vehicle.list_price
 FROM Sales_Vehicle 
-
+JOIN Sales_Invoice ON Sales_Vehicle.VIN = Sales_Invoice.VIN
+WHERE Sales_Invoice.sale_date <= SYSDATE - 30
 
 -- Most popular make of car sold (which make of car was sold the most times): Make, Number
 -- Sold (show ties)
