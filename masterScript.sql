@@ -545,7 +545,7 @@ VALUES ('4T1BE46K8XU123456', 1972, 'Toyota', 'Corolla', 'Light Blue', NULL, 9104
   
 -- add sales invoice
 INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN, sale_date)
-VALUES (10005, 114, '24681357902468135', 1004, 'check', '4T1BE46K8XU123456', '06/04/2023');
+VALUES (10005, 114, '24681357902468135', 1003, 'check', '4T1BE46K8XU123456', '06/04/2023');
   
 -- update sales invoice to add approval from Larry
 UPDATE Sales_Invoice
