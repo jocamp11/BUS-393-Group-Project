@@ -869,7 +869,10 @@ FETCH FIRST 1 ROW WITH TIES;
 
 
 -- Sum of the total profit from car sales (cost of vehicle less selling price less discount): Amount
-
+CREATE OR REPLACE VIEW sum_total_profit_carsales AS 
+SELECT SUM(list_price-purchase_price) AS "Amount"
+FROM sales_vehicle
+WHERE status = 'SOLD';
 
 -- List of best “Sales Person” (two queries, one for each of the following)
 --   a. Highest commissions: Sales person name, total commissions earned (show ties)
