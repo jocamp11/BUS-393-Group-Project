@@ -835,16 +835,6 @@ GROUP BY v.vendor_name
 ORDER BY "Total Amount" desc
 FETCH FIRST 1 ROW WITH TIES; 
 
-CREATE OR REPLACE VIEW most_amount_total_cars_vendor AS
-SELECT v.vendor_name, COUNT(p.vin) AS "Total Cars"
-FROM vendor v 
-JOIN purchase_order p
-ON v.vendor_id = p.vendor_id
-GROUP BY v.vendor_name
-ORDER BY "Total Cars" desc
-FETCH FIRST 1 ROW WITH TIES
-
-
 -- List the manufacturer that sold us the most number of vehicles? Manufacturer Name, total
 -- number of cars sold to use (show ties)
 CREATE OR REPLACE VIEW most_amount_total_cars_vendor AS
