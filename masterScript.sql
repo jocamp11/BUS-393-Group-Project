@@ -824,7 +824,7 @@ AND customer_id NOT IN (SELECT customer_id FROM Service_Invoice);
 -- List the Manufacturer that we paid the most amount of total dollars to (this is not just the
 -- highest for one car purchase but the sum of money paid to a manufacturer for all the cars
 -- bought from them): Manufacturer Name, total amount paid (show ties)
-CREATE OR REPLACE VIEW vendor_most AS
+CREATE OR REPLACE VIEW most_amount_total_dollars_vendor AS
 SELECT v.vendor_name, SUM(sv.purchase_price) AS "Total Amount"
 FROM vendor v 
 JOIN purchase_order p
@@ -834,6 +834,15 @@ ON sv.vin = p.vin
 GROUP BY v.vendor_name
 ORDER BY "Total Amount" desc
 FETCH FIRST 1 ROW WITH TIES; 
+
+CREATE OR REPLACE VIEW most_amount_total_cars_vendor AS
+SELECT v.vendor_name, COUNT(p.vin) AS "Total Cars"
+FROM vendor v 
+JOIN purchase_order p
+ON v.vendor_id = p.vendor_id
+GROUP BY v.vendor_name
+ORDER BY "Total Cars" desc
+FETCH FIRST 1 ROW WITH TIES
 
 
 -- List the manufacturer that sold us the most number of vehicles? Manufacturer Name, total
