@@ -941,11 +941,11 @@ HAVING COUNT(s.VIN) >= ALL (SELECT COUNT(s.VIN) AS "Number of Cars Sold"
 
 -- Sum of profits (price less cost) for all services performed where the profits are grouped by
 -- service code / service name (show both): Service Code, Service Name, Total Profit.
-SELECT sp.service_code, s.description, sum(s.price)
+SELECT sp.service_code, s.description, sum(s.price - s.cost) AS "Total Profit"
 FROM services s
 JOIN services_provided sp
-ON d.service_code = s.service_code
-GROUP BY service_code, description, s.price
+ON sp.service_code = s.service_code
+GROUP BY sp.service_code, s.description, s.price
 
 
 -- Sum of profits (price less cost) for all parts sold where the profits are grouped by part code /
