@@ -825,7 +825,7 @@ WHERE s.tradein_VIN IS NOT NULL;
 
 -- List of best Customer (two queries, one for each of the following):
 --     a. Highest number of car’s purchased: Customer Name, number of cars purchased
-CREATE OR REPLACE VIEW MostCustomer AS
+CREATE OR REPLACE VIEW MostCustomerPurchases AS
 SELECT c.last_name, COUNT(s.VIN) AS "Number of Cars Purchased"
 FROM customer c JOIN sales_invoice s
 ON c.customer_id = s.customer_id
@@ -838,8 +838,19 @@ HAVING COUNT(s.VIN) >= ALL (SELECT COUNT(s.VIN) AS "Number of Cars Purchased"
 --     b. Highest total profit we made from the customer: Customer Name, sum of profit from all
 --     the cars they bought (Selling price less discount ... do not include TradeIn allowances in
 --     calculating profit)
-
-
+CREATE OR REPLACE VIEW MostCustomerProfit
+SELECT c.last_name, SUM(sv.list_price - sv.purchase_price) AS "Best Customer"
+FROM customer c JOIN sales_invoice vi
+ON c.customer_id = vi.customer_id
+JOIN sales_vehicle sv 
+ON vi.VIN = sv.VIN
+GROUP BY c.last_name
+HAVING SUM(sv.list_price - sv.purchase_price) >= ALL (SELECT SUM(sv.list_price - sv.purchase_price) AS "Best Customer"
+    FROM customer c JOIN sales_invoice vi
+    ON c.customer_id = vi.customer_id
+    JOIN sales_vehicle sv 
+    ON vi.VIN = sv.VIN
+    GROUP BY c.last_name);
 
 -- Purchasing Reports (Task 6 7-8)
 -- List the Manufacturer that we paid the most amount of total dollars to (this is not just the
