@@ -920,7 +920,15 @@ WHERE status = 'SOLD';
 
 
 --   b. Highest number of cars sold: Sales person name, number of vehicles sold. (show ties
-
+CREATE OR REPLACE VIEW MostEmployeeSales AS
+SELECT e.last_name, COUNT(s.VIN) AS "Number of Cars Sold"
+FROM employee e JOIN sales_invoice s
+ON e.employee_id = s.employee_id
+GROUP BY e.last_name
+HAVING COUNT(s.VIN) >= ALL (SELECT COUNT(s.VIN) AS "Number of Cars Sold"
+    FROM employee e JOIN sales_invoice s
+    ON e.employee_id = s.employee_id
+    GROUP BY e.last_name);
 
 -- Service Reports (Task 13-14)
 
