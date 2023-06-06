@@ -917,7 +917,14 @@ WHERE status = 'SOLD';
 
 -- List of best “Sales Person” (two queries, one for each of the following)
 --   a. Highest commissions: Sales person name, total commissions earned (show ties)
-
+CREATE OR REPLACE VIEW HighestCommission AS
+SELECT e.last_name, SUM((sv.list_price - sv.purchase_price)*e.commission_pct) AS "Commission"
+FROM employee e
+JOIN Sales_Invoice si ON e.employee_id = si.employee_id
+JOIN Sales_Vehicle sv ON si.VIN = sv.VIN
+GROUP BY e.last_name
+ORDER BY "Commission" DESC
+FETCH FIRST 1 ROW WITH TIES;
 
 --   b. Highest number of cars sold: Sales person name, number of vehicles sold. (show ties
 CREATE OR REPLACE VIEW MostEmployeeSales AS
