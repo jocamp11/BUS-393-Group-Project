@@ -785,10 +785,16 @@ GROUP BY i.si_id, c.first_name, c.last_name, i.service_vin, s.make, s.model, s.m
 
 -- Customer Reports (Task 6 1-6)
 -- List of customers who have purchased a car from us: Customer name, Phone
-SELECT 
+CREATE VIEW CustomerPurchases
+AS SELECT first_name || ' ' || last_name AS "Customer name", phone
+FROM customer
+WHERE customer_id IN (SELECT customer_id FROM Sales_Invoice);
 
 -- Number of customers grouped by city: City, number of customers in that city
-
+CREATE VIEW CustomerByCity
+AS SELECT city, COUNT(*)
+FROM customer
+GROUP BY city;
 
 -- List of customers who have purchased a car from us but have not had a car serviced with us: Customer Name, Phone.
 
