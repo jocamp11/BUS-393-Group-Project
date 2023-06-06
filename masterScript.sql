@@ -847,7 +847,7 @@ HAVING COUNT(s.VIN) >= ALL (SELECT COUNT(s.VIN) AS "Number of Cars Purchased"
 --     b. Highest total profit we made from the customer: Customer Name, sum of profit from all
 --     the cars they bought (Selling price less discount ... do not include TradeIn allowances in
 --     calculating profit)
-CREATE OR REPLACE VIEW MostCustomerProfit
+CREATE OR REPLACE VIEW MostCustomerProfit AS
 SELECT c.last_name, SUM(sv.list_price - sv.purchase_price) AS "Best Customer"
 FROM customer c JOIN sales_invoice vi
 ON c.customer_id = vi.customer_id
