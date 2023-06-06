@@ -784,19 +784,20 @@ ON spa.part_code = p.part_code
 GROUP BY i.si_id, c.first_name, c.last_name, i.service_vin, s.make, s.model, s.mileage;
 
 -- Customer Reports (Task 6 1-6)
--- List of customers who have purchased a car from us: Customer name, Phone
+
+-- 1. List of customers who have purchased a car from us: Customer name, Phone
 CREATE VIEW CustomerPurchases
 AS SELECT first_name || ' ' || last_name AS "Customer name", phone
 FROM customer
 WHERE customer_id IN (SELECT customer_id FROM Sales_Invoice);
 
--- Number of customers grouped by city: City, number of customers in that city
+-- 2. Number of customers grouped by city: City, number of customers in that city
 CREATE VIEW CustomerByCity
 AS SELECT city, COUNT(customer_id) AS "Number of Customers"
 FROM customer
 GROUP BY city;
 
--- List of customers who have purchased a car from us but have not had a car serviced with us: Customer Name, Phone.
+-- 3. List of customers who have purchased a car from us but have not had a car serviced with us: Customer Name, Phone.
 CREATE VIEW CustomerPurchases
 AS SELECT first_name || ' ' || last_name AS "Customer name", phone
 FROM customer
@@ -831,9 +832,11 @@ AND customer_id NOT IN (SELECT customer_id FROM Service_Invoice);
 
 -- Sales Reports (Task 6 9-12)
 
-
 -- List of cars sold by us in the past 30 days of the date the query is being run (i.e., you cannot
 -- hard code the date): VIN, Make, Model, List Price
+CREATE VIEW Past30DaysSold
+AS SELECT VIN, make, model, list_price
+FROM Sales_Vehicle 
 
 
 -- Most popular make of car sold (which make of car was sold the most times): Make, Number
