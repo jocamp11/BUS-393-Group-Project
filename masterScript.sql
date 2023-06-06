@@ -895,7 +895,7 @@ CREATE VIEW Past30DaysSold AS
 SELECT sv.VIN, sv.make, sv.model, sv.list_price
 FROM Sales_Vehicle sv
 JOIN Sales_Invoice si ON sv.VIN = si.VIN
-WHERE si.sale_date < SYSDATE - 30;
+WHERE si.sale_date > SYSDATE - 30;
 
 -- Most popular make of car sold (which make of car was sold the most times): Make, Number
 -- Sold (show ties)
