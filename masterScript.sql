@@ -825,6 +825,15 @@ WHERE s.tradein_VIN IS NOT NULL;
 
 -- List of best Customer (two queries, one for each of the following):
 --     a. Highest number of car’s purchased: Customer Name, number of cars purchased
+CREATE OR REPLACE VIEW MostCustomer AS
+SELECT c.last_name, COUNT(s.VIN) AS "Number of Cars Purchased"
+FROM customer c JOIN sales_invoice s
+ON c.customer_id = s.customer_id
+GROUP BY c.last_name
+HAVING COUNT(s.VIN) >= ALL (SELECT COUNT(s.VIN) AS "Number of Cars Purchased"
+    FROM customer c JOIN sales_invoice s
+    ON c.customer_id = s.customer_id
+    GROUP BY c.last_name);
 
 --     b. Highest total profit we made from the customer: Customer Name, sum of profit from all
 --     the cars they bought (Selling price less discount ... do not include TradeIn allowances in
