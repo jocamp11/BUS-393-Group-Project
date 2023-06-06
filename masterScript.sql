@@ -679,6 +679,15 @@ VALUES (20006, 1008, 125, '05/24/2023', '84938726485974857', 'cash');
 -- add service
 INSERT INTO services_provided (service_code, si_id)
 VALUES ('TIREROTATE', 20006);
+
+-- Additional data for querying purposes
+-- Add sales invoice for the car being bought (by Lebron James)
+INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, sale_date)
+VALUES (10006, 110, 'WP0EB0911FS161840', 1005, 'cash', '06/06/2023')
+
+
+
+
 -- Queries (Step 6 in task 5)
 
 
