@@ -30,3 +30,38 @@ CREATE TABLE Service_Vehicle (
   model     VARCHAR2(30)  NOT NULL,
   mileage   NUMBER(8, 2)  NOT NULL,
   CHECK(mileage > 0));
+
+-- Task 4 Part B (Queries)
+
+-- Task 4 Query A (Vehicle List)
+CREATE OR REPLACE VIEW Vehicle_List 
+AS SELECT VIN, year, make, model, exterior_color, trim, mileage, condition, status, list_price
+FROM sales_vehicle
+ORDER BY make, model;
+
+-- Task 4 Query B (Vehicle List For Sale)
+CREATE OR REPLACE VIEW Forsale_List 
+AS SELECT year, make, model, exterior_color, trim, mileage, condition, status, list_price
+FROM sales_vehicle
+WHERE status = 'FORSALE'
+ORDER BY make, model;
+
+-- Task 4 Query c (Vehicle List Sold)
+CREATE OR REPLACE VIEW Sold_List
+AS SELECT VIN, year, make, model, mileage, condition, list_price
+FROM sales_vehicle
+WHERE status = 'SOLD';
+
+-- Task 4 Query d (Vehicle Inventory Value)
+CREATE OR REPLACE VIEW Inventory_Value
+AS SELECT SUM(list_price) AS "Total Value ($)"
+FROM sales_vehicle
+WHERE status = 'FORSALE';
+
+-- Task 4 Query e (Vehicle Inventory Value by Make: Make and the total value of the vehicles for sale,
+-- ordered by Make)
+CREATE OR REPLACE VIEW Inventory_value_by_make
+AS SELECT make, SUM(list_price) AS "Inventory Value ($)"
+FROM sales_vehicle
+GROUP BY make
+ORDER BY make;
