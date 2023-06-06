@@ -786,19 +786,19 @@ GROUP BY i.si_id, c.first_name, c.last_name, i.service_vin, s.make, s.model, s.m
 -- Customer Reports (Task 6 1-6)
 
 -- 1. List of customers who have purchased a car from us: Customer name, Phone
-CREATE VIEW CustomerPurchases
+CREATE OR REPLACE VIEW CustomerPurchases
 AS SELECT first_name || ' ' || last_name AS "Customer name", phone
 FROM customer
 WHERE customer_id IN (SELECT customer_id FROM Sales_Invoice);
 
 -- 2. Number of customers grouped by city: City, number of customers in that city
-CREATE VIEW CustomerByCity
+CREATE OR REPLACE VIEW CustomerByCity
 AS SELECT city, COUNT(customer_id) AS "Number of Customers"
 FROM customer
 GROUP BY city;
 
 -- 3. List of customers who have purchased a car from us but have not had a car serviced with us: Customer Name, Phone.
-CREATE VIEW CustomerPurchases
+CREATE OR REPLACE VIEW CustomerPurchases
 AS SELECT first_name || ' ' || last_name AS "Customer name", phone
 FROM customer
 WHERE customer_id IN (SELECT customer_id FROM Sales_Invoice)
@@ -807,6 +807,12 @@ AND customer_id NOT IN (SELECT customer_id FROM Service_Invoice);
 -- List of all customers who are interested in a Porsche (or choose a vehicle type if you don’t have
 -- a Porsche in the list of interests) and their interest is still relevant (i.e., end date hasn’t passed ...
 -- include those who have a null value for the end date): Customer Name, Phone, End date.
+
+CREATE OR REPLACE VIEW PorshePreferences
+AS SELECT c.first_name || ' ' || c.last_name AS "Customer Name", c.phone, p.end_date
+FROM customer c LEFT OUTER JOIN preferences p 
+ON c.customer_id = p.customer_id
+WHERE p.make = 'Porsche';
 
 
 -- List of customers who bought a car from us and did not bring in a trade in. Customer Names
