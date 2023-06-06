@@ -453,8 +453,8 @@ INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage
 VALUES ('83940738467859487', 1970, 'Datsun', '240Z', 'yellow', NULL, 15000, 'Excellent', 'TRADEIN', 15000, 18000);
   
 -- Add sales invoice for the 1st car being bought
-INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN)
-VALUES (10000, 110, '17392043928394073', 1005, 'cash', '83940738467859487');
+INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN, sale_date)
+VALUES (10000, 110, '17392043928394073', 1005, 'cash', '83940738467859487', '05/23/2023');
   
 -- Update sales invoice to add approval from Larry
 UPDATE Sales_Invoice
@@ -476,8 +476,8 @@ INSERT INTO customer (customer_id, first_name, last_name, street, city, state, z
 VALUES (111, 'Stephen', 'Curry', '5678 Warriors Rd.', 'San Francisco', 'CA', '94016', '815-849-0049', 'stephencurry30@warriors.com');
   
 -- Add sales invoice for the 2nd car being bought
-INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms)
-VALUES (10002, 111, '84638459374937489', 1004, 'credit');
+INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, sale_date)
+VALUES (10002, 111, '84638459374937489', 1004, 'credit', '05/28/2023');
   
 -- Update sales invoice to add approval from Larry
 UPDATE Sales_Invoice
@@ -499,8 +499,8 @@ INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage
 VALUES ('WP0EB0911FS161840', 1985, 'Porsche', '911 Carrera', 'Red', NULL, 77571, 'Used', 'TRADEIN', 85000, 102000);
   
 -- add sales invoice
-INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN)
-VALUES (10003, 112, '22241113642310809', 1005, 'cash', 'WP0EB0911FS161840');
+INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN, sale_date)
+VALUES (10003, 112, '22241113642310809', 1005, 'cash', 'WP0EB0911FS161840', '05/29/2023');
   
 -- update sales invoice to add approval from Larry
 UPDATE Sales_Invoice
@@ -522,8 +522,8 @@ INSERT INTO customer (customer_id, first_name, last_name, street, city, state, z
 VALUES (113, 'Daniel', 'Solano', '750 Paso de Luz', 'Chula Vista', 'CA', '91911', '609-458-3118', 'dsolano@gmail.com');
 
 -- add sales invoice
-INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN)
-VALUES (10004, 113, '23163571633042318', 1005, 'cash', NULL);
+INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN, sale_date)
+VALUES (10004, 113, '23163571633042318', 1005, 'cash', NULL, '06/05/2023');
   
 -- update sales invoice
 UPDATE Sales_Invoice
@@ -544,8 +544,8 @@ INSERT INTO Sales_Vehicle (VIN, year, make, model, exterior_color, trim, mileage
 VALUES ('4T1BE46K8XU123456', 1972, 'Toyota', 'Corolla', 'Light Blue', NULL, 91047, 'Used', 'TRADEIN', 24000, 28800);
   
 -- add sales invoice
-INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN)
-VALUES (10005, 114, '24681357902468135', 1004, 'check', '4T1BE46K8XU123456');
+INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, tradein_VIN, sale_date)
+VALUES (10005, 114, '24681357902468135', 1004, 'check', '4T1BE46K8XU123456', '06/04/2023');
   
 -- update sales invoice to add approval from Larry
 UPDATE Sales_Invoice
