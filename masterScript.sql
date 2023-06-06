@@ -683,7 +683,7 @@ VALUES ('TIREROTATE', 20006);
 -- Additional data for querying purposes
 -- Add sales invoice for the car being bought (by Lebron James)
 INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, sale_date)
-VALUES (10006, 110, 'WP0EB0911FS161840', 1005, 'cash', '06/06/2023')
+VALUES (10006, 110, 'WP0EB0911FS161840', 1005, 'cash', '06/06/2023');
 
 
 
@@ -946,7 +946,7 @@ SELECT sp.service_code, s.description, sum(s.price - s.cost) AS "Total Profit"
 FROM services s
 JOIN services_provided sp
 ON sp.service_code = s.service_code
-GROUP BY sp.service_code, s.description, s.price
+GROUP BY sp.service_code, s.description, s.price;
 
 
 -- Sum of profits (price less cost) for all parts sold where the profits are grouped by part code /
