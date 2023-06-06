@@ -820,7 +820,7 @@ WHERE p.make = 'Porsche';
 CREATE OR REPLACE VIEW Tradein_Customers
 AS SELECT c.first_name || ' ' || c.last_name AS "Customer Name"
 FROM customer c JOIN sales_invoice s
-ON c.customer_id = s.sales_invoice
+ON c.customer_id = s.customer_id
 WHERE s.tradein_VIN IS NOT NULL;
 
 -- List of best Customer (two queries, one for each of the following):
