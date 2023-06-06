@@ -847,7 +847,14 @@ FETCH FIRST 1 ROW WITH TIES
 
 -- List the manufacturer that sold us the most number of vehicles? Manufacturer Name, total
 -- number of cars sold to use (show ties)
-
+CREATE OR REPLACE VIEW most_amount_total_cars_vendor AS
+SELECT v.vendor_name, COUNT(p.vin) AS "Total Cars"
+FROM vendor v 
+JOIN purchase_order p
+ON v.vendor_id = p.vendor_id
+GROUP BY v.vendor_name
+ORDER BY "Total Cars" desc
+FETCH FIRST 1 ROW WITH TIES;
 
 -- Sales Reports (Task 6 9-12)
 
@@ -861,6 +868,14 @@ WHERE Sales_Invoice.sale_date <= SYSDATE - 30
 
 -- Most popular make of car sold (which make of car was sold the most times): Make, Number
 -- Sold (show ties)
+CREATE OR REPLACE VIEW most_popular_car AS
+SELECT sv.make, COUNT(si.invoice_id) AS "Number Sold"
+FROM sales_vehicle sv
+JOIN sales_invoice si 
+ON sv.vin = si.vin 
+GROUP BY sv.make
+ORDER BY "Number Sold"
+FETCH FIRST 1 ROW WITH TIES;
 
 
 -- Sum of the total profit from car sales (cost of vehicle less selling price less discount): Amount
