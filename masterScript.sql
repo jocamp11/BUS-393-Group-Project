@@ -200,6 +200,8 @@ CREATE TABLE Services (
   CHECK(Price > 0),
   CHECK(Months > 0),
   CHECK(Mileage > 0));
+  -- We did not put a (cost < price) constraint because there may be situations, like during a sale, where 
+  -- cost is lower than price to get people to come into the shop
   
 INSERT INTO Services  (Service_Code, Description, Cost, Price, Months, Mileage)
 VALUES ('OILCHG', 'Oil Change', 9.95, 10.95, 6, 6000);
@@ -219,6 +221,9 @@ CREATE TABLE Parts  (
   Price           NUMBER(6,2)     NOT NULL,
   CHECK(Cost > 0),
   CHECK(Price > 0));
+  -- We did not put a (cost < price) constraint because there may be situations, like during a sale, where 
+  -- cost is lower than price to get people to come into the shop
+  
   
 INSERT INTO Parts (Part_Code, Description, Cost, Price)
 VALUES('OIL10W30','Oil 10W30', 2.79, 3.95);
@@ -317,17 +322,19 @@ CREATE TABLE Service_Invoice (
   terms VARCHAR2(6) NOT NULL,   
   CHECK (terms IN('credit', 'check', 'cash')));
 
+-- associate entity between services and service_invoice
 CREATE TABLE Service_Parts (
   Part_Code     VARCHAR2(20) REFERENCES parts(part_code),
   si_id NUMBER(6) REFERENCES service_invoice(si_id),
   PRIMARY KEY(Part_Code, si_id));
 
+-- associate entity between parts and service_invoice
 CREATE TABLE Services_Provided  (
   Service_Code    VARCHAR2(20) REFERENCES services(service_code),
   si_id NUMBER(6) REFERENCES service_invoice(si_id),
   PRIMARY KEY(Service_Code, si_id));
 
- --Nate's 3 Car Purchases (Step 3 in task 5)
+-- Nate's 3 Car Purchases (Step 3 in task 5)
 -- Create a vendor to buy vehicles from  *this wasn't listed but I beleive we have to do it
 INSERT INTO Vendor (vendor_id, vendor_name, contact_name, street, city, state, zip, phone, fax)
 VALUES (100, 'Vintage Auto America', 'Jason Jackson', '1045 Johnson St.', 'Atascadero', 'CA', '93420', '254-736-8594', NULL);
@@ -686,13 +693,9 @@ INSERT INTO Sales_Invoice (invoice_id, customer_id, VIN, employee_id, terms, sal
 VALUES (10006, 110, 'WP0EB0911FS161840', 1005, 'cash', '06/06/2023');
 
 
-
-
 -- Queries (Step 6 in task 5)
 
-
 -- Task 4 Part B (Queries)
-
 -- Task 4 Query A (Vehicle List)
 CREATE OR REPLACE VIEW Vehicle_List 
 AS SELECT VIN, year, make, model, exterior_color, trim, mileage, condition, status, list_price
