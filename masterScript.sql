@@ -810,7 +810,7 @@ FROM customer
 GROUP BY city;
 
 -- 3. List of customers who have purchased a car from us but have not had a car serviced with us: Customer Name, Phone.
-CREATE OR REPLACE VIEW CustomerPurchases
+CREATE OR REPLACE VIEW CustomerPurchases_NotServiced
 AS SELECT first_name || ' ' || last_name AS "Customer name", phone
 FROM customer
 WHERE customer_id IN (SELECT customer_id FROM Sales_Invoice)
