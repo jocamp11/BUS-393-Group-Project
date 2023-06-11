@@ -27,7 +27,7 @@ CREATE TABLE customer (
     city VARCHAR2(20),
     state CHAR(2) DEFAULT 'CA' NOT NULL,
     zip CHAR(5),
-    phone VARCHAR2(15) NOT NULL UNIQUE,
+    phone VARCHAR2(14) NOT NULL UNIQUE,
     email VARCHAR2(50) NOT NULL UNIQUE);
 
 
