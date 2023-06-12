@@ -726,6 +726,7 @@ WHERE status = 'FORSALE';
 CREATE OR REPLACE VIEW Inventory_value_by_make
 AS SELECT make, SUM(list_price) AS "Inventory Value ($)"
 FROM sales_vehicle
+WHERE status = 'FORSALE'
 GROUP BY make
 ORDER BY make;
 
