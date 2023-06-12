@@ -246,6 +246,16 @@ VALUES('SPARKPLUG4', 'Spark plug set (4)', 9.95, 19.95);
 INSERT INTO Parts (Part_Code, Description, Cost, Price)
 VALUES('AIRFILTER', 'Air Filter', 3.95, 8.95);
 
+INSERT INTO Parts (Part_Code, Description, Cost, Price)
+VALUES('INTAKEFILTER','Air Intake Filter', 10.95, 19.95);
+INSERT INTO Parts (Part_Code, Description, Cost, Price)
+VALUES('WINDSHIELD','Windshield Replacement Glass', 50.96, 70.95);
+INSERT INTO Parts (Part_Code, Description, Cost, Price)
+VALUES('OCATNEBOOSTER', 'Octane Booster', 5.95, 8.95);
+INSERT INTO Parts (Part_Code, Description, Cost, Price)
+VALUES('RADIO', 'Replacement Radio', 39.95, 49.95);
+
+
 
 -- Views for task 3
 
