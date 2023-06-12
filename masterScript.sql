@@ -850,11 +850,11 @@ WHERE p.make = 'Porsche';
 
 -- List of customers who bought a car from us and did not bring in a trade in. Customer Names
 
-CREATE OR REPLACE VIEW Tradein_Customers
+CREATE OR REPLACE VIEW No_Tradein_Customers
 AS SELECT c.first_name || ' ' || c.last_name AS "Customer Name"
 FROM customer c JOIN sales_invoice s
 ON c.customer_id = s.customer_id
-WHERE s.tradein_VIN IS NOT NULL;
+WHERE s.tradein_VIN IS NULL;
 
 -- List of best Customer (two queries, one for each of the following):
 --     a. Highest number of car’s purchased: Customer Name, number of cars purchased
