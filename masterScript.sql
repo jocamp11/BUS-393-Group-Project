@@ -929,7 +929,7 @@ FROM sales_vehicle sv
 JOIN sales_invoice si 
 ON sv.vin = si.vin 
 GROUP BY sv.make
-ORDER BY "Number Sold"
+ORDER BY "Number Sold" DESC
 FETCH FIRST 1 ROW WITH TIES;
 
 
