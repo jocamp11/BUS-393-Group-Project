@@ -859,10 +859,10 @@ WHERE s.tradein_VIN IS NULL;
 -- List of best Customer (two queries, one for each of the following):
 --     a. Highest number of car’s purchased: Customer Name, number of cars purchased
 CREATE OR REPLACE VIEW MostCustomerPurchases AS
-SELECT c.last_name, COUNT(s.VIN) AS "Number of Cars Purchased"
+SELECT c.first_name, c.last_name, COUNT(s.VIN) AS "Number of Cars Purchased"
 FROM customer c JOIN sales_invoice s
 ON c.customer_id = s.customer_id
-GROUP BY c.last_name
+GROUP BY c.last_name, c.first_name
 HAVING COUNT(s.VIN) >= ALL (SELECT COUNT(s.VIN) AS "Number of Cars Purchased"
     FROM customer c JOIN sales_invoice s
     ON c.customer_id = s.customer_id
@@ -872,12 +872,12 @@ HAVING COUNT(s.VIN) >= ALL (SELECT COUNT(s.VIN) AS "Number of Cars Purchased"
 --     the cars they bought (Selling price less discount ... do not include TradeIn allowances in
 --     calculating profit)
 CREATE OR REPLACE VIEW MostCustomerProfit AS
-SELECT c.last_name, SUM(sv.list_price - sv.purchase_price) AS "Best Customer"
+SELECT c.first_name, c.last_name, SUM(sv.list_price - sv.purchase_price) AS "Best Customer"
 FROM customer c JOIN sales_invoice vi
 ON c.customer_id = vi.customer_id
 JOIN sales_vehicle sv 
 ON vi.VIN = sv.VIN
-GROUP BY c.last_name
+GROUP BY c.last_name, c.first_name
 HAVING SUM(sv.list_price - sv.purchase_price) >= ALL (SELECT SUM(sv.list_price - sv.purchase_price) AS "Best Customer"
     FROM customer c JOIN sales_invoice vi
     ON c.customer_id = vi.customer_id
@@ -942,20 +942,20 @@ WHERE status = 'SOLD';
 -- List of best “Sales Person” (two queries, one for each of the following)
 --   a. Highest commissions: Sales person name, total commissions earned (show ties)
 CREATE OR REPLACE VIEW HighestCommission AS
-SELECT e.last_name, SUM((sv.list_price - sv.purchase_price)*e.commission_pct) AS "Commission"
+SELECT e.first_name, e.last_name, SUM((sv.list_price - sv.purchase_price)*e.commission_pct) AS "Commission"
 FROM employee e
 JOIN Sales_Invoice si ON e.employee_id = si.employee_id
 JOIN Sales_Vehicle sv ON si.VIN = sv.VIN
-GROUP BY e.last_name
+GROUP BY e.last_name, e.first_name
 ORDER BY "Commission" DESC
 FETCH FIRST 1 ROW WITH TIES;
 
 --   b. Highest number of cars sold: Sales person name, number of vehicles sold. (show ties
 CREATE OR REPLACE VIEW MostEmployeeSales AS
-SELECT e.last_name, COUNT(s.VIN) AS "Number of Cars Sold"
+SELECT e.first_name, e.last_name, COUNT(s.VIN) AS "Number of Cars Sold"
 FROM employee e JOIN sales_invoice s
 ON e.employee_id = s.employee_id
-GROUP BY e.last_name
+GROUP BY e.last_name, e.first_name
 HAVING COUNT(s.VIN) >= ALL (SELECT COUNT(s.VIN) AS "Number of Cars Sold"
     FROM employee e JOIN sales_invoice s
     ON e.employee_id = s.employee_id
