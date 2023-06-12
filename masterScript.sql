@@ -125,7 +125,7 @@ CREATE TABLE employee (
     city VARCHAR2(20) NOT NULL,
     state VARCHAR2(2) DEFAULT 'CA' NOT NULL,
     zip CHAR(5) NOT NULL,
-    phone VARCHAR2(15) NOT NULL UNIQUE,
+    phone VARCHAR2(14) NOT NULL UNIQUE,
     email VARCHAR2(50) NOT NULL UNIQUE,
     hire_date DATE DEFAULT SYSDATE NOT NULL,
     title VARCHAR2(20) NOT NULL,
@@ -299,7 +299,7 @@ CREATE TABLE Vendor (
   city          VARCHAR2(30)  NOT NULL,
   state         VARCHAR2(30)  NOT NULL,
   zip           CHAR(5)  NOT NULL,
-  phone         VARCHAR2(15)  UNIQUE  NOT NULL,
+  phone         VARCHAR2(14)  UNIQUE  NOT NULL,
   fax           NUMBER(10) UNIQUE);
   
 CREATE TABLE Purchase_Order (
