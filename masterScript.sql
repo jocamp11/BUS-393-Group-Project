@@ -213,6 +213,16 @@ INSERT INTO Services  (Service_Code, Description, Cost, Price, Months, Mileage)
 VALUES ('TUNEUPBASIC', 'Basic Engine tune up', 69.95, 149.95, 18, 18000);
 INSERT INTO Services  (Service_Code, Description, Cost, Price, Months, Mileage)
 VALUES ('MULTIPOINTINSP', 'Multi-Point inspection', 29.95, 59.95, 6, 6000);
+
+INSERT INTO Services  (Service_Code, Description, Cost, Price, Months, Mileage)
+VALUES ('TIREREPLACEMENT', 'Tire Replacement', 20.95, 30.95, 24, 30000);
+INSERT INTO Services  (Service_Code, Description, Cost, Price, Months, Mileage)
+VALUES ('TRANSMITIONFLUID', 'Transmition Fluid Replacement', 19.95, 39.96, 30, 30000);
+INSERT INTO Services  (Service_Code, Description, Cost, Price, Months, Mileage)
+VALUES ('TURBOREPLACEMENT', 'Engine Turbo Replacement', 49.95, 79.95, 60, 50000);
+INSERT INTO Services  (Service_Code, Description, Cost, Price, Months, Mileage)
+VALUES ('CYLINDERCLEANING', 'Full Inner-Engine Cleaning', 59.95, 99.95, 72, 70000);
+
   
 CREATE TABLE Parts  (
   Part_Code       VARCHAR2(20)    PRIMARY KEY,
