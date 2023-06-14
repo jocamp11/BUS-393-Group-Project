@@ -309,6 +309,9 @@ CREATE TABLE Service_Vehicle (
   tradein_VIN   VARCHAR2(17)   UNIQUE  REFERENCES sales_vehicle(VIN),
   approving_manager   NUMBER(6) REFERENCES employee(employee_id),
   sale_date     DATE,
+  approval_date    DATE,
+  misc_costs    NUMBER(6),
+  discount     NUMBER(6)
   CHECK(terms IN('cash', 'check', 'credit')));
 
 CREATE TABLE Vendor (
@@ -339,7 +342,9 @@ CREATE TABLE Service_Invoice (
   customer_id NUMBER(6) NOT NULL REFERENCES customer(customer_id),
   service_date DATE NOT NULL,
   service_VIN VARCHAR2(17) NOT NULL REFERENCES service_vehicle(VIN),
-  terms VARCHAR2(6) NOT NULL,   
+  terms VARCHAR2(6) NOT NULL,  
+  misc_costs   NUMBER(6),
+  discount     NUMBER(6),
   CHECK (terms IN('credit', 'check', 'cash')));
 
 -- associate entity between services and service_invoice
