@@ -311,7 +311,7 @@ CREATE TABLE Service_Vehicle (
   sale_date     DATE,
   approval_date    DATE,
   misc_costs    NUMBER(6),
-  discount     NUMBER(6)
+  discount     NUMBER(6),
   CHECK(terms IN('cash', 'check', 'credit')));
 
 CREATE TABLE Vendor (
@@ -819,7 +819,7 @@ LEFT JOIN service_parts spa
 ON i.si_id = spa.si_id 
 LEFT JOIN parts p
 ON spa.part_code = p.part_code
--- GROUP BY i.si_id, c.first_name, c.last_name, i.service_vin, s.make, s.model, s.mileage;
+GROUP BY i.si_id, c.first_name, c.last_name, i.service_vin, s.make, s.model, s.mileage;
 
 -- Customer Reports (Task 6 1-6)
 
